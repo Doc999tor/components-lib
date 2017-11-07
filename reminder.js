@@ -1,0 +1,1 @@
+export default (c, u) => c !== '0' && c !== 0 ? moment().add(c, u).format('YYYY-MM-DD HH:mm') : undefined
