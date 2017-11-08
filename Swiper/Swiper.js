@@ -60,9 +60,7 @@ export default class ReactIdSwiper extends React.Component {
     const { containerClass, wrapperClass, children } = this.props
     return (
       <div className={containerClass}>
-        <div className={wrapperClass}>
-          {React.Children.map(children, this.renderContent)}
-        </div>
+        <div className={wrapperClass}>{React.Children.map(children, this.renderContent)}</div>
         {this.renderPagination()}
         {this.renderScrollBar()}
         {this.renderNextButton()}
@@ -71,13 +69,11 @@ export default class ReactIdSwiper extends React.Component {
     )
   }
 }
-
 ReactIdSwiper.defaultProps = {
   containerClass: 'swiper-container',
   wrapperClass: 'swiper-wrapper',
   slideClass: 'swiper-slide'
 }
-
 ReactIdSwiper.propTypes = {
   containerClass: PropTypes.string,
   wrapperClass: PropTypes.string,

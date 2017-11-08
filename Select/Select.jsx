@@ -8,30 +8,32 @@ export default class Select extends React.Component {
       isVisibleList: false
     }
   }
-  selectVal = i => {
-    this.props.onChange && this.props.onChange(i)
-    this.setState({isVisibleList: false})
-  }
   render () {
+    let arrow = '▼'
+    if (this.state.isVisibleList) arrow = '▲'
+    else arrow = '▼'
     return (
       <div id='select-main' ref='active' tabIndex='1' onBlur={() => this.setState({isVisibleList: false})}>
         <div className='active' onClick={() => this.setState({isVisibleList: true}, () => this.refs.active.focus())}>
-          {this.props.value && this.props.value}
-          <img className={'icon ' + (this.state.isVisibleList && 'icon-active')}
-            src={config.urls.media + 'select-icon.png'} />
+          {this.props.value}<span className='icon'>{arrow}</span>
         </div>
         <div className={this.state.isVisibleList ? 'options' : 'hidden'}>
-          {this.props.options && this.props.options.map(i => (
-            <div onClick={() => this.selectVal(i)}>{i.label}</div>
-          ))}
+          {this.props.options.map(i => (<div key={i.label} onClick={() => {
+            this.props.onChange(i)
+            this.setState({isVisibleList: false})
+          }}>{i.label}</div>))}
         </div>
       </div>
     )
   }
 }
-
 Select.propTypes = {
   onChange: PropTypes.func,
   value: PropTypes.string,
   options: PropTypes.arr
+}
+Select.defaultProps = {
+  onChange: () => {},
+  options: [],
+  value: ''
 }

@@ -11,6 +11,5 @@ export default d => {
     if (get(d, 'month') === 0 && get(t, 'month') === 11) { dl = getEO(t) - get(t, 'date') + get(d, 'date') } else
     if (get(d, 'month') === 11 && get(t, 'month') === 0) { dl = -1 * (getEO(d) - get(d, 'date') + get(t, 'date')) }
   }
-  return config.translations.dates.days[dl]
-    ? config.translations.dates.days[dl] + config.translations.at + ' ' + moment(d).format('HH:mm') : d
+  return config.translations.dates.days[dl] ? config.translations.dates.days[dl] + config.translations.at + ' ' + moment(d).format('HH:mm') : d
 }

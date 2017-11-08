@@ -32,9 +32,13 @@ export default class Modal extends React.Component {
     )
   }
 }
-
 Modal.propTypes = {
   children: PropTypes.any,
   onHide: PropTypes.func,
   show: PropTypes.bool
+}
+Modal.defaultProps = {
+  onHide: () => {},
+  children: '',
+  show: false
 }
