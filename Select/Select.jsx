@@ -14,7 +14,7 @@ export default class Select extends React.Component {
     else arrow = '▼'
     return (
       <div id='select-main' ref='active' tabIndex='1' onBlur={() => this.setState({isVisibleList: false})}>
-        <div className='active' onClick={() => this.setState({isVisibleList: true}, () => this.refs.active.focus())}>
+        <div className='active' onClick={this.props.disabled ? () => {} : () => this.setState({isVisibleList: true}, () => this.refs.active.focus())}>
           {this.props.value}<span className='icon'>{arrow}</span>
         </div>
         <div className={this.state.isVisibleList ? 'options' : 'hidden'}>
@@ -29,11 +29,13 @@ export default class Select extends React.Component {
 }
 Select.propTypes = {
   onChange: PropTypes.func,
+  disabled: PropTypes.bool,
   value: PropTypes.string,
   options: PropTypes.arr
 }
 Select.defaultProps = {
   onChange: () => {},
+  disabled: false,
   options: [],
   value: ''
 }
