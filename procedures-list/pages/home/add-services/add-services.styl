@@ -1,0 +1,154 @@
+.add-procedure
+  font-size: 15px;
+  padding-bottom: 100px;
+  .error-container
+  .create-category
+    background #fff
+    :last-child
+      border-bottom: none
+    .category-arrow
+      display flex
+      justify-content flex-end
+      flex-grow 1
+      padding 30px 25px
+      border 1px solid #a5a5a5
+      .create-arrow-category
+        flex-grow 1
+    .error-message
+      font-size 14px
+      color orange
+      text-align center
+      padding 30px
+      word-wrap break-word
+    .error-content
+      border-bottom 1px solid #808080
+      margin 20px 0px
+      float right
+      display flex
+      align-items center
+      flex-direction row-reverse
+      width 100%
+      padding: 10px 20px
+      .input-duration, .input-price
+        background none
+        height 40px
+        padding-right 10px
+        font-size 23px
+        border none
+        text-align right
+        font-size 20px
+        width 18%
+      .add-services
+        font-size 14px
+        background #1693ef
+        display flex
+        width 28px
+        height 28px
+        padding 19px
+        align-items center
+        border-radius 50px
+        color #fff
+        margin 0px 20px
+      .minus-services
+        font-size 14px
+        background red
+        display flex
+        width 28px
+        height 28px
+        padding 20px
+        align-items center
+        border-radius 50px
+        color #fff
+        margin-right 20px
+      .procedure-number
+        font-size 14px
+      .error-message-text
+        float right
+        font-size 14px
+      .error-content-text
+        padding-right 40px
+        color #426b87
+        font-size 14px
+        float right
+    .input-content-text
+      float right
+      border none
+      outline 0
+      text-align right
+      padding-right 40px
+      font-size 14px
+      color #426b87
+      float right
+    .send-link-number
+      display none
+      padding 0px 30px
+      outline none
+      width auto
+      height 70px
+      background-color white
+      border 5px solid #2bbddf
+      border-radius 25px
+      color #2bbddf
+      margin 0 auto
+      font-size 14px
+      #clients-list
+        .add-client
+          display none
+  .select-color-text
+    float right
+    padding-right 20px
+  .circrle-color
+    display inline-block
+  .color-services
+    border 3px solid #ccc
+    padding 14px
+    width 20px
+    border-radius 50px
+  .select-color-container
+    display inline-block
+    .circrle-container
+      padding 15px
+      column-count: 6
+
+  .most-popular-category
+    display: none;
+  .show-most-popular-category
+    .most-popular-category
+      display: block;
+    .category
+      display: none;
+
+  .show-select-category
+    .most-popular-category
+      display: none;
+    .category
+      display: block;
+
+  .category
+    padding: 10px;
+    border-bottom: 1px solid #777;
+    &.active
+      .choose-category-list
+        display block
+      .choose-category-title .arrow
+        transform: rotate(-90deg);
+
+  .choose-category-title
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    .arrow
+      height: 20px;
+
+  .choose-category-list
+    display: none
+    margin: 0;
+    padding: 0;
+
+  .choose-category-list-item
+    padding: 10px;
+    border: 1px solid #909090;
+    background-color: #d0d0d0;
+
+.add-procedure.visible
+  display block

@@ -1,0 +1,41 @@
+.search
+    width: 100%
+    height: 130px
+    display: flex
+    justify-content: center;
+    align-items: center;
+    background: #fff
+    align-self: center
+    &-inner
+        position: relative
+
+    input[type='search']
+        position relative
+        height 45px
+        border 2px solid #648da4
+        border-radius 50px
+        font-size 24px
+        padding-right 70px
+        &:focus
+            outline-color: #fff
+
+        &::-webkit-search-cancel-button
+            position: absolute;
+            right: 40px;
+            display: block;
+            background-color: red;
+            appearance textfield
+            height 90px
+            width 100px
+            border-radius 10px
+            content: 'X'
+            -webkit-appearance: searchfield-cancel-button;
+
+    .search-img
+        height 25px
+        width 30px
+        position absolute
+        right 30px
+        top 10px
+    &.dirty .search-img
+        display: none;

@@ -1,0 +1,45 @@
+$bottombar
+    display inline-block
+    border none
+    margin 0 auto
+    width 50%
+
+$button
+    width 100%
+    height 70px
+    box-sizing border-box
+    border-right 1px solid #fff
+    background-color #14ab6b
+    color #fff
+    font-size 20px
+    &:focus
+        outline none
+    &:hover
+        cursor pointer
+
+.bottomnav
+    position fixed
+    bottom -5px
+    width 100%
+
+    .bottombar-next
+        @extends $bottombar
+        float right
+        .bottom
+            @extends $button
+
+    .bottombar-back
+        @extends $bottombar
+        float left
+        .bottom
+            @extends $button
+
+    // &.no-next-step .bottombar-next .bottom
+    //     pointer-events none
+    //     background-color #126c46
+    //     color #969696
+    //
+    // &.no-prev-step .bottombar-back .bottom
+    //     pointer-events none
+    //     background-color #126c46
+    //     color #969696

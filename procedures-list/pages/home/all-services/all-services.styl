@@ -1,0 +1,49 @@
+.all-services
+  margin-bottom 150px
+  .services-item
+    padding-left 30px
+    font-size 14px
+    border-bottom 1px solid
+    display flex
+    height 120px
+    align-items center
+    .price-services
+      width 100%
+    .duration-services
+      width 100%
+    .name-services
+      width 100%
+      text-overflow ellipsis
+      white-space nowrap
+      overflow hidden
+    .myCheckbox input
+      display none
+    .myCheckbox span
+      width 30px
+      height 30px
+      right 11px
+      display block
+      position relative
+      background url("../../../media/checkboxes.svg") no-repeat
+    .myCheckbox input:checked + span
+      background url("../../../media/select.svg") no-repeat
+    .color-services
+      padding 8px
+      pointer-events none
+      background #f00
+      margin-left auto
+      -moz-border-radius 50px
+      -webkit-border-radius 50px
+      border 2px solid #ccc
+      border-radius 50px
+      margin-right 20px
+    .add-services
+      background #1693ef
+      display flex
+      width 40px
+      height 40px
+      padding 10px
+      align-items center
+      border-radius 50px
+      color #fff
+      margin 40px

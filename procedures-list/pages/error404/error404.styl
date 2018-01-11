@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Neucha');
+
+$centered
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+.error404
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+
+    &-img
+        @extend $centered !optional
+
+    &-text
+        @extend $centered !optional
+        top: 20%;
+        width: 90%;
+        text-align: center;
+        font-size: 50px;
+        font-family: 'Neucha', cursive;

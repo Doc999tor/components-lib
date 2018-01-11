@@ -1,0 +1,130 @@
+.categories-services
+  padding-bottom 150px
+
+  .bottomnav
+    display none
+
+  .all-category.some-category-open
+    .category:not(.open)
+      display none
+
+  .category
+    border-bottom 1px solid black
+
+    &:last-child
+      border-bottom: none
+
+    .category-container
+      display none
+
+    .icon-block
+      display none
+      .pencil
+        font-size: 35px;
+        padding: 15px;
+
+    &.open
+      .category-container
+        display block
+      .category-arrow
+        display none
+
+    &.longpress
+      .icon-block
+        display block
+
+
+    .category-arrow.green
+      color green
+    .category-arrow
+      display flex
+      justify-content space-between
+      padding 30px 25px
+      font-size: 20px;
+      .arrow-category
+        height 30px
+
+    .services-list
+      padding 30px 15px 30px 30px
+      border-bottom 1px solid
+      display flex
+      align-items center
+
+      .hendler-click-area
+        display flex
+        align-items center
+        width 90%
+
+      .price-services
+        width 100%
+        pointer-events none
+      .duration-services
+        width 100%
+        pointer-events none
+      .name-services
+        width 100%
+        pointer-events: none
+        text-overflow ellipsis
+        white-space nowrap
+        overflow hidden
+      .color-services
+        padding 8px
+        pointer-events none
+        background #f00
+        margin-left auto
+        -moz-border-radius 50px
+        -webkit-border-radius 50px
+        border 2px solid #ccc
+        border-radius 50px
+        margin-right 20px
+      .myCheckbox input
+        display none
+      .myCheckbox span
+        width 30px
+        height 30px
+        right 11px
+        display block
+        position relative
+        background url("../../../media/checkboxes.svg") no-repeat
+      .myCheckbox input:checked + span
+        background url("../../../media/select.svg") no-repeat
+    .current-step
+      display block
+    .current-list
+      transform rotate(-90deg)
+  .category.longpress
+    display: flex;
+    justify-content: space-between;
+    background: #8080803d;
+    .arrow-category
+      display none
+    .icon-block
+      display flex
+      background-color #808080e3
+      .pencil
+        display block
+         padding: 15px 15px;
+         font-size: 35px;
+        border 1px solid grey
+.categories-services.close
+  .category-arrow
+    .arrow-category.current-list
+      transform rotate(0deg)
+  .category-container.current-step
+    display none
+
+//modal-category
+.categories-services.active
+  .modal-removing-category
+    display: block;
+    position: fixed;
+    top: 36%;
+    left: 50%;
+    background-color: #ffffff;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 320px;
+    box-shadow: 0px 0px 20px 999px #86868685;
+    display block
+  .modal-removing-category.deactive
+    display none
