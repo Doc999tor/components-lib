@@ -3,10 +3,12 @@ import './ProceduresList.styl'
 export default class ProceduresList extends React.Component {
   constructor (props) {
     super(props)
+    this.categories = this.getGroup(props.data)
+    this.services = props.data
     this.state = {
-      categoryList: this.getGroup(props.data),
-      serviceList: props.data,
-      isOpenCategory: false,
+      isOpenServices: false,
+      categories: this.categories,
+      services: this.services,
       search: ''
     }
   }
@@ -16,15 +18,14 @@ export default class ProceduresList extends React.Component {
     return Object.values(o)
   }
   search = e => {
-    if (e !== '') {
-      this.setState({search: e, categoryList: this.state.categoryList.filter(i => i.name.includes(e) || (i.category && i.category.name.includes(e)))})
-    } else {
-      this.setState({search: e, categoryList: this.getGroup(this.props.data)})
+    const src = s => {
+      if (e !== '') this.setState({search: e, [s]: this[s].filter(i => i.name.includes(e) || (i.category && i.category.name.includes(e)))})
+      else this.setState({search: e, [s]: this[s]})
     }
+    src(this.props.isOpenServices ? 'services' : 'categories')
   }
-  next = id => {
-    this.setState({isOpenCategory: true, serviceList: this.state.serviceList.filter(i => i.category.id === id)})
-  }
+  next = id =>
+    this.setState({services: this.props.data.filter(i => i.category.id === id)}, () => { this.props.toogleOpenServices(); this.services = this.state.services })
   render () {
     return (
       <div id='procedures_list'>
@@ -32,11 +33,11 @@ export default class ProceduresList extends React.Component {
           <span className='search-icon'><img src={config.urls.media + 'search.png'} /></span>
           <input type='text' value={this.state.search} onChange={e => this.search(e.target.value)} placeholder={config.translations.serch_proc} />
         </div>
-        {!this.state.isOpenCategory && this.state.categoryList.map(i => <div className='category' onClick={() => this.next(i.id)}>
+        {!this.props.isOpenServices && this.state.categories.map(i => <div className='category' onClick={() => this.next(i.id)}>
           <h1>{i.name}</h1><h1>({i.count})</h1>
           <div className='icon_wrap'><img src={config.urls.media + 'arrow-punch.png'} /></div>
         </div>)}
-        {this.state.isOpenCategory && this.state.serviceList.map(i => <div className='service'>
+        {this.props.isOpenServices && this.state.services.map(i => <div className='service' onClick={() => this.props.getServiceId(i)}>
           <div className='add_wrap'>
             <img src={config.urls.media + 'add.svg'} />
           </div>
@@ -50,14 +51,14 @@ export default class ProceduresList extends React.Component {
   }
 }
 ProceduresList.propTypes = {
-  // onChange: PropTypes.func,
-  // disabled: PropTypes.bool,
-  // value: PropTypes.string,
+  toogleOpenServices: PropTypes.func,
+  isOpenServices: PropTypes.bool,
+  getServiceId: PropTypes.func,
   data: PropTypes.arr
 }
 ProceduresList.defaultProps = {
-  // onChange: () => {},
-  // disabled: false,
-  // value: '',
+  toogleOpenServices: () => {},
+  getServiceId: () => {},
+  isOpenServices: false,
   data: []
 }
