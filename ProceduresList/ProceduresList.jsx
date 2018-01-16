@@ -6,8 +6,8 @@ export default class ProceduresList extends React.Component {
     this.categories = this.getGroup(props.data)
     this.services = props.data
     this.state = {
-      isOpenServices: false,
       categories: this.categories,
+      isCategoryVisible: false,
       services: this.services,
       search: ''
     }
@@ -15,17 +15,16 @@ export default class ProceduresList extends React.Component {
   getGroup = a => {
     let o = {}
     a.forEach(i => { o[i.category.id] = { ...i.category, count: o[i.category.id] ? o[i.category.id].count + 1 : 1 } })
-    return Object.values(o)
+    const categories = Object.values(o)
+    return categories
   }
   search = e => {
-    const src = s => {
-      if (e !== '') this.setState({search: e, [s]: this[s].filter(i => i.name.includes(e) || (i.category && i.category.name.includes(e)))})
-      else this.setState({search: e, [s]: this[s]})
-    }
-    src(this.props.isOpenServices ? 'services' : 'categories')
+    if (!this.props.isOpenServices) this.props.toogleOpenServices()
+    if (e !== '') this.setState({isCategoryVisible: true, search: e, services: this.services.filter(i => i.name.includes(e) || (i.category && i.category.name.includes(e)))})
+    else this.setState({search: e, services: this.services})
   }
   next = id =>
-    this.setState({services: this.props.data.filter(i => i.category.id === id)}, () => { this.props.toogleOpenServices(); this.services = this.state.services })
+    this.setState({services: this.props.data.filter(i => i.category.id === id)}, () => this.props.toogleOpenServices())
   render () {
     return (
       <div id='procedures_list'>
@@ -45,6 +44,7 @@ export default class ProceduresList extends React.Component {
           <h1 className='name'>{i.name}</h1>
           <h1 className='duration'>{i.duration + 'mm'}</h1>
           <h1 className='price'>{i.price + config.data.currency}</h1>
+          {this.state.isCategoryVisible && <h1 style={{color: 'deepskyblue', padding: '0px 63px'}}>{i.category.name}</h1>}
         </div>)}
       </div>
     )
