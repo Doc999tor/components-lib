@@ -3,28 +3,25 @@ import './ProceduresList.styl'
 export default class ProceduresList extends React.Component {
   constructor (props) {
     super(props)
-    this.categories = this.getGroup(props.data)
     this.services = props.data
     this.state = {
-      categories: this.categories,
-      isCategoryVisible: false,
+      categories: this.getGroup(props.data),
       services: this.services,
+      isCategory: false,
       search: ''
     }
   }
   getGroup = a => {
     let o = {}
     a.forEach(i => { o[i.category.id] = { ...i.category, count: o[i.category.id] ? o[i.category.id].count + 1 : 1 } })
-    const categories = Object.values(o)
-    return categories
+    return Object.values(o)
   }
   search = e => {
     if (!this.props.isOpenServices) this.props.toogleOpenServices()
-    if (e !== '') this.setState({isCategoryVisible: true, search: e, services: this.services.filter(i => i.name.includes(e) || (i.category && i.category.name.includes(e)))})
-    else this.setState({search: e, services: this.services})
+    let services = e !== '' ? this.services.filter(i => i.name.includes(e) || (i.category && i.category.name.includes(e))) : this.services
+    this.setState({services, search: e, isCategory: true})
   }
-  next = id =>
-    this.setState({services: this.props.data.filter(i => i.category.id === id)}, () => this.props.toogleOpenServices())
+  next = id => this.setState({services: this.props.data.filter(i => i.category.id === id)}, () => this.props.toogleOpenServices())
   render () {
     return (
       <div id='procedures_list'>
@@ -33,18 +30,13 @@ export default class ProceduresList extends React.Component {
           <input type='text' value={this.state.search} onChange={e => this.search(e.target.value)} placeholder={config.translations.serch_proc} />
         </div>
         {!this.props.isOpenServices && this.state.categories.map(i => <div className='category' onClick={() => this.next(i.id)}>
-          <h1>{i.name}</h1><h1>({i.count})</h1>
-          <div className='icon_wrap'><img src={config.urls.media + 'arrow-punch.png'} /></div>
+          <h1>{i.name}</h1><h1>({i.count})</h1><div className='icon_wrap'><img src={config.urls.media + 'arrow-punch.png'} /></div>
         </div>)}
-        {this.props.isOpenServices && this.state.services.map(i => <div className='service' onClick={() => this.props.getServiceId(i)}>
-          <div className='add_wrap'>
-            <img src={config.urls.media + 'add.svg'} />
-          </div>
-          <div className='color' style={{backgroundColor: i.color}} />
-          <h1 className='name'>{i.name}</h1>
-          <h1 className='duration'>{i.duration + 'mm'}</h1>
-          <h1 className='price'>{i.price + config.data.currency}</h1>
-          {this.state.isCategoryVisible && <h1 style={{color: 'deepskyblue', padding: '0px 63px'}}>{i.category.name}</h1>}
+        {this.props.isOpenServices && this.state.services.map(i => <div className='service' onClick={() => this.props.getService(i)}>
+          <div className='add_wrap'><img src={config.urls.media + 'add.svg'} /></div>
+          <div className='color' style={{backgroundColor: i.color}} /><h1 className='name'>{i.name}</h1>
+          <h1 className='duration'>{i.duration + 'mm'}</h1><h1 className='price'>{i.price + config.data.currency}</h1>
+          {this.state.isCategory && <h1 style={{color: 'deepskyblue', padding: '0px 63px'}}>{i.category.name}</h1>}
         </div>)}
       </div>
     )
@@ -53,12 +45,12 @@ export default class ProceduresList extends React.Component {
 ProceduresList.propTypes = {
   toogleOpenServices: PropTypes.func,
   isOpenServices: PropTypes.bool,
-  getServiceId: PropTypes.func,
+  getService: PropTypes.func,
   data: PropTypes.arr
 }
 ProceduresList.defaultProps = {
   toogleOpenServices: () => {},
-  getServiceId: () => {},
   isOpenServices: false,
+  getService: () => {},
   data: []
 }
