@@ -1,7 +1,6 @@
 const mainRequestService = (u, o) => {
-  if (!o.headers) {
-    o.headers = {method: 'GET'}
-  }
+  if (!o.headers) o.headers = {}
+  if (!o.method) o.method = 'GET'
   o.headers['X-Requested-With'] = 'XMLHttpRequest'
   o.credentials = 'include'
   return fetch(u, o).then(r => {
