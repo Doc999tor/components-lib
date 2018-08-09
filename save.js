@@ -1,11 +1,12 @@
 export default () => {
-  let body = new FormData()
-  const checkFields = Object.keys(config.urls.fields).map(i => config.urls.fields[i])
-  checkFields.forEach(i => {
-    const bodyUpdated = config.data[i]
-    if (bodyUpdated) {
-      Array.isArray(bodyUpdated) ? bodyUpdated.length > 0 && body.append(i, JSON.stringify(bodyUpdated)) : body.append(i, bodyUpdated)
+  const body = {
+    added: moment.utc().format('YYYY-MM-DD[T]HH:mm:ss.SSS[Z]')
+  }
+  Object.keys(config.urls.fields).forEach(i => {
+    if (config.data[i]) {
+      body[i] = config.data[i]
     }
   })
-  return body
+  return encodeURI(Object.keys(body).map(i => `${i}=${body[i]}`).join('&'))
 }
+
