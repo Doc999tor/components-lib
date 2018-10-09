@@ -4,7 +4,7 @@ export default () => {
   }
   Object.keys(config.urls.fields).forEach(i => {
     if (config.data[i]) {
-      if (i === 'depts') {
+      if (i === 'debts') {
         body[i] = JSON.stringify(config.data[i])
       } else if (i === 'social') {
         body[i] = JSON.stringify(config.data[i])
