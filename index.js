@@ -1,5 +1,6 @@
 export { default as ProceduresList } from './ProceduresList/ProceduresList.jsx'
 export { default as reminderFormatDate } from './reminder-format-date.js'
+export { default as Datepicker } from './Datepicker/datepicker.jsx'
 export { default as birthdaysStatus } from './birthday-status.js'
 export { default as requestService } from './request.service.js'
 export { default as lastAppoinment } from './last-appoinment.js'
