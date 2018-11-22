@@ -19,7 +19,7 @@ export default class Menu extends React.Component {
                   <img src={config.user.business_logo} />
                 </div>
                 <p className='business_name'>{config.user.business_name}</p>
-                <p className='business_address'><img className='business_address_img' src={`${config.urls.menu_icons}calendar.jpg`} />{config.user.business_address}</p>
+                <p className='business_address'><img className='business_address_img' src={`${config.urls.menu_icons}map-pin.svg`} />{config.user.business_address}</p>
               </div>
               <nav className='menu-list'>
                 {config.menu.map(item => {
