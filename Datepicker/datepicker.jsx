@@ -21,7 +21,7 @@ export default class Datepicker extends React.Component {
             month: moment(date).format('MM'),
             year: moment(date).format('YYYY'),
             configValue: moment(date).format('YYYY-MM-DD'),
-            birthdate: moment(date).isValid() ? (moment(date).format('DD') + '-' + moment(date).format('MM')) : '',
+            birthdate: moment(date).isValid() ? (moment(date).format('MM') + '-' + moment(date).format('DD')) : '',
             birthyear: moment(date).isValid() ? moment(date).format('YYYY') : ''
           }, () => {
             !!this.props.getBirthdate && this.props.getBirthdate(this.state.birthdate)
