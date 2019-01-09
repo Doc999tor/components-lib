@@ -1,19 +1,13 @@
 export default () => {
-  const body = {
-    added: moment.utc().format('YYYY-MM-DD hh:mm:ss')
-  }
-  Object.keys(config.urls.fields).forEach(i => {
-    if (config.data[i]) {
-      if (i === 'debts') {
-        body[i] = JSON.stringify(config.data[i])
-      } else if (i === 'social') {
-        body[i] = JSON.stringify(config.data[i])
-      } else if (i === 'notes') {
-        body[i] = JSON.stringify(config.data[i])
-      } else {
-        body[i] = config.data[i]
-      }
+  let body = new FormData()
+  const d = moment().format('YYYY-MM-DD hh:mm:ss')
+  body.append('added', d)
+  const checkFields = Object.keys(config.urls.fields).map(i => config.urls.fields[i])
+  checkFields.forEach(i => {
+    const bodyUpdated = config.data[i]
+    if (bodyUpdated) {
+      Array.isArray(bodyUpdated) ? bodyUpdated.length > 0 && body.append(i, JSON.stringify(bodyUpdated)) : body.append(i, bodyUpdated)
     }
   })
-  return encodeURI(Object.keys(body).map(i => `${i}=${body[i]}`).join('&'))
+  return body
 }
