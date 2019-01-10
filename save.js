@@ -1,7 +1,8 @@
-export default () => {
+export default newPicture => {
   let body = new FormData()
   const d = moment().format('YYYY-MM-DD hh:mm:ss')
   body.append('added', d)
+  config.data[config.urls.fields.photo] = newPicture
   const checkFields = Object.keys(config.urls.fields).map(i => config.urls.fields[i])
   checkFields.forEach(i => {
     const bodyUpdated = config.data[i]
