@@ -25,10 +25,16 @@ export default class ProceduresList extends React.Component {
   render () {
     return (
       <div id='procedures_list'>
-        <div className='search-wrap'>
+       <div className='search-strip'>
+          <div className='search-wrap'>
+            <input className='search-input' value={this.state.search} onChange={e => this.search(e.target.value)} type='text' placeholder={config.translations.search_service} />
+            <img className='search-img' src={`${config.urls.media}magnifier.svg`} />
+          </div>
+        </div>
+        {/* <div className='search-wrap'>
           <span className='search-icon'><img src={config.urls.media + 'search.png'} /></span>
           <input type='text' value={this.state.search} onChange={e => this.search(e.target.value)} placeholder={config.translations.serch_proc} />
-        </div>
+        </div> */}
         {!this.props.isOpenServices && this.state.categories.map(i => <div className='category' onClick={() => this.next(i.id)}>
           <h1>{i.name}</h1><h1>({i.count})</h1><div className='icon_wrap'><img src={config.urls.media + 'arrow-punch.png'} /></div>
         </div>)}
