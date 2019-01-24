@@ -1,27 +1,17 @@
 #procedures_list
-  .search-wrap
-    float right
-    display inline-block
-    position relative
+  width 100%
+  display flex
+  flex-direction column
+  justify-content center
+  align-items center
+  .procedures-title
+    margin 0
+    padding 0.8rem 1.5rem 0
     width 100%
-    padding 20px 0
-    .search-icon
-      position absolute
-      padding 8px 8%
-      img
-        width 25px
-        height 25px
-    input
-      display block
-      width 90%
-      margin 0 auto
-      height 40px
-      border-radius 20px
-      border 2px solid deepskyblue
-      padding 10px 10px 10px 10%
-      color deepskyblue
-      &:focus
-        outline none
+    text-align end
+    font-size 16px
+    font-weight 500
+    color #ffffff
   .search-strip
     display flex
     align-items center
@@ -49,23 +39,29 @@
           border none
       .search-img
         margin-inline-end 1.5rem
-  .category
-    border-bottom 1px solid gray
-    h1
-      display inline-block
-      padding 20px 10px
-    .icon_wrap
-      padding 12px 0px
-      height 40px
-      float right
-      width 40px
-      img
-        width 40px
-        height 40px
-        transform scale(-1, -1)
+  .edditional-info
+    display flex
+  .procedure-wrap
+    padding-inline-end 0.7rem
+    border-radius 8px
+    overflow-y auto
+    height 27rem
+    width 96%
+    background-color white
+  .wrap-service:first-child
+    border-top none
+  .wrap-service
+    border-top 1px solid #dedeff
   .service
-    border-bottom 1px solid gray
-    padding 15px 10px
+    height 4rem
+    display flex
+    padding-top 1rem
+    padding-bottom 0.5rem
+    flex-direction column
+    align-items start
+    justify-content space-between
+    border-inline-start 6px solid
+    padding-inline-start 0.7rem
     h1
       font-size 18px
     .add_wrap
@@ -75,28 +71,21 @@
       img
         width 25px
         height 25px
-    .color
-      margin 6px
-      display inline-block
-      width 12px
-      height 12px
-      border-radius 50%
-    .name
-      position relative
-      top -2px
-      width 46%
-      display inline-block
-      height 20px
-      overflow hidden
-      text-overflow ellipsis
-      padding-bottom 2px
-    .duration
-      position relative
-      top -6px
-      width 17%
-      display inline-block
-    .price
-      position relative
-      top -6px
-      width 17%
-      display inline-block
+  .dur-wrap
+    margin-inline-end 0.8rem
+    img
+      opacity 0.5
+  .dur-wrap
+  .price-wrap
+    display flex
+    align-items baseline
+    font-size 12px
+    font-weight 300
+    img
+      margin-inline-end 0.3rem
+  .name
+    opacity 0.87
+    font-size 16px
+    line-height 0.75
+    color #222222
+
