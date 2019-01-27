@@ -37,10 +37,10 @@ export default class ProceduresList extends React.Component {
           <input type='text' value={this.state.search} onChange={e => this.search(e.target.value)} placeholder={config.translations.serch_proc} />
         </div> */}
         <div className='procedure-wrap'>
-          {!this.props.isOpenServices && this.state.categories.map(i => <div className='category' onClick={() => this.next(i.id)}>
+          {/* {!this.props.isOpenServices && this.state.categories.map(i => <div className='category' onClick={() => this.next(i.id)}>
             <h1>{i.name}</h1><h1>({i.count})</h1><div className='icon_wrap'><img src={config.urls.media + 'arrow-punch.png'} /></div>
-          </div>)}
-          {this.props.isOpenServices && this.state.services.map(i => <div className='wrap-service'><div className='service' style={{borderColor: i.color}} onClick={() => this.props.getService(i)}>
+          </div>)} */}
+          {this.state.services.map(i => <div className='wrap-service'><div className='service' style={{borderColor: i.color}} onClick={() => this.props.getService(i)}>
             {/* <div className='add_wrap'><img src={config.urls.media + 'add.svg'} /></div> */}
             <h1 className='name'>{i.name}</h1>
             <div className='edditional-info'>
