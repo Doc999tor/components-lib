@@ -7,7 +7,7 @@ export default class Menu extends React.Component {
 
   render () {
     const bgrImg = {
-      backgroundImage: `url('${config.urls.menu_icons}menu_bgr.png')`
+      backgroundImage: `url('${config.urls.menu_icons}photo-bgr.png')`
     }
     return (
       <div id='menu_modal' onClick={this.props.closeMenu}>
