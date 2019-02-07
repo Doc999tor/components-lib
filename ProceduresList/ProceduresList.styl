@@ -4,6 +4,34 @@
   flex-direction column
   justify-content center
   align-items center
+  .category:first-child
+    border none
+  .category
+    display flex
+    height 4rem
+    border-top 1px solid #dedeff
+    align-items center
+    -webkit-padding-start 1rem  
+    -moz-padding-start 1rem
+    padding-inline-start 1rem
+    .category_name
+    .category_count
+      font-size 16px
+    .category_count
+      -webkit-margin-start 0.6rem  
+      -moz-margin-start 0.6rem
+      margin-inline-start 0.6rem
+      flex-grow 1
+    .icon_wrap
+      display flex
+      align-items center
+      justify-content center
+      .ltr-arrow
+      .rtl-arrow
+        width 30px
+        height 30px
+      .rtl-arrow
+        transform scale(-1, -1)
   .procedures-title
     margin 0
     padding 0.8rem 1.5rem 0
@@ -28,6 +56,8 @@
       background-color #ffffff
       .search-input
         width 82%
+        -webkit-margin-start 0.5rem  
+        -moz-margin-start 0.5rem
         margin-inline-start 0.5rem
         text-indent 1rem
         border none
@@ -38,10 +68,14 @@
           outline none
           border none
       .search-img
+        -webkit-margin-end 1.5rem  
+        -moz-margin-end 1.5rem
         margin-inline-end 1.5rem
   .edditional-info
     display flex
   .procedure-wrap
+    -webkit-padding-end 0.7rem  
+    -moz-padding-end 0.7rem
     padding-inline-end 0.7rem
     border-radius 8px
     overflow-y auto
@@ -60,10 +94,21 @@
     flex-direction column
     align-items start
     justify-content space-between
+    -webkit-border-start 6px solid 
+    -moz-border-start 6px solid 
     border-inline-start 6px solid
+    -webkit-padding-start 0.7rem  
+    -moz-padding-start 0.7rem
     padding-inline-start 0.7rem
-    h1
+    h2
+      margin 0
       font-size 18px
+    .name
+      opacity 0.87
+      font-weight normal
+      font-size 16px
+      line-height 0.75
+      color #222222
     .add_wrap
       display inline-block
       width 10%
@@ -72,6 +117,8 @@
         width 25px
         height 25px
   .dur-wrap
+    -webkit-margin-end 0.8rem  
+    -moz-margin-end 0.8rem
     margin-inline-end 0.8rem
     img
       opacity 0.5
@@ -82,10 +129,6 @@
     font-size 12px
     font-weight 300
     img
+      -webkit-margin-end 0.3rem  
+      -moz-margin-end 0.3rem
       margin-inline-end 0.3rem
-  .name
-    opacity 0.87
-    font-size 16px
-    line-height 0.75
-    color #222222
-
