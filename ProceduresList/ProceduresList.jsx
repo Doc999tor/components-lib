@@ -48,8 +48,8 @@ export default class ProceduresList extends React.Component {
             {/* <div className='add_wrap'><img src={config.urls.media + 'add.svg'} /></div> */}
             <h2 className='name'>{i.name}</h2>
             <div className='edditional-info'>
-              <div className='dur-wrap'><img src={`${config.urls.media}ic_time.svg`} /><p className='duration'>{i.duration + 'mm'}</p></div>
-              <div className='price-wrap'><img src={`${config.urls.media}debt.svg`} /><p className='price'>{i.price + config.data.currency}</p></div>
+              <div className='dur-wrap'><img src={`${config.urls.media}ic_time.svg`} /><p className='duration'>{`${i.duration} ${config.translations.duration_minutes}`}</p></div>
+              <div className='price-wrap'><img src={`${config.urls.media}debt.svg`} /><p className='price'>{`${i.price} ${config.data.currency}`}</p></div>
             </div>
             {/* {this.state.isCategory && <h1 style={{color: 'deepskyblue', padding: '0px 63px'}}>{i.category.name}</h1>} */}
           </div></div>)}
