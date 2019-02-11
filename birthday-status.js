@@ -6,6 +6,6 @@ export default d => {
   if (get(d, 'month') + 1 === get(t, 'month')) { dl = -1 * (getEO(d) - get(d, 'date') + get(t, 'date')) } else
   if (get(d, 'month') - 1 === get(t, 'month')) { dl = getEO(t) - get(t, 'date') + get(d, 'date') }
   if (config.translations.dates.days[dl]) { return config.translations.dates.days[dl] } else
-  if (dl < 31 && dl > 1) { return config.translations.in_days.replace('{count}', dl) } else
-  if (dl > -8 && dl < -1) { return config.translations.was_ago.replace('{count}', -1 * dl) }
+  if (dl < 31 && dl > 1) { return config.translations.birthdate_in_days.replace('{count}', dl) } else
+  if (dl > -8 && dl < -1) { return config.translations.birthdate_was_ago.replace('{count}', -1 * dl) }
 }
