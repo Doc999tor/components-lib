@@ -41,7 +41,7 @@ export default (photo, bar) => {
       default: break
       }
       ctx.drawImage(img, 0, 0, w, h)
-      let dataURL = canvas.toDataURL()
+      let dataURL = canvas.toDataURL('image/jpeg', 0.8)
       bar(dataURL)
     }
   })
