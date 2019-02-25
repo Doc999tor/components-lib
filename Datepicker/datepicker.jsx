@@ -14,6 +14,7 @@ export default class Datepicker extends React.Component {
     return (
       <ComboDatePicker
         order='ymd'
+        months={config.translations.months}
         placeholder='Year,Month,Date'
         date={(config.data.birthyear ? moment(date).format('YYYY') : moment().format('YYYY')) + '-'
         + (config.data.birthdate ? moment(date).format('MM') : moment().format('MM')) + '-'
