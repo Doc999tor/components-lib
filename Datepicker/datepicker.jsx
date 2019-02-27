@@ -6,27 +6,27 @@ export default class Datepicker extends React.Component {
     month: '',
     year: '',
     birthyear: '',
-    configValue: this.props.defaultValue,
-    configValue1: this.props.defaultValue1
+    configValue: this.props.defaultValue
+    // configValue1: this.props.defaultValue1
   }
   render () {
-    let date = this.props.defaultValue
+    let date = this.props.newDays
     return (
       <ComboDatePicker
         order='ymd'
         months={config.translations.months}
         placeholder='Year,Month,Date'
-        date={(config.data.birthyear ? moment(date).format('YYYY') : moment().format('YYYY')) + '-'
-        + (config.data.birthdate ? moment(date).format('MM') : moment().format('MM')) + '-'
-        + (config.data.birthdate ? moment(date).format('DD') : moment().format('DD'))}
+        date={(config.data.birthyear ? moment(config.data.birthyear).format('YYYY') : moment().format('YYYY')) + '-'
+        + (config.data.birthdate ? moment(config.data.birthdate).format('MM') : moment().format('MM')) + '-'
+        + (config.data.birthdate ? moment(config.data.birthdate).format('DD') : moment().format('DD'))}
         onChange={(e, a) => {
           this.setState({
-            day: moment(date).format('DD'),
-            month: moment(date).format('MM'),
-            year: moment(date).format('YYYY'),
-            // configValue: moment(date).format('YYYY-MM-DD'),
-            birthdate: moment(date).isValid() ? (moment(date).format('MM') + '-' + moment(date).format('DD')) : '',
-            birthyear: (moment(date).isValid() && (moment(date).format('YYYY') === config.data.birthyear)) ? moment(date).format('YYYY') : '',
+            day: moment(a).format('DD'),
+            month: moment(a).format('MM'),
+            year: moment(a).format('YYYY'),
+            configValue: moment(a).format('YYYY-MM-DD'),
+            birthdate: moment(a).isValid() ? (moment(a).format('MM') + '-' + moment(a).format('DD')) : '',
+            birthyear: moment(a).isValid() && moment(a).format('YYYY')
           }, () => {
             !!this.props.getBirthdate && this.props.getBirthdate(this.state.birthdate)
             !!this.props.getBirthyear && this.props.getBirthyear(this.state.birthyear)
