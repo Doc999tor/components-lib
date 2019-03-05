@@ -8,12 +8,14 @@ const Menu = () => {
       return false
     }
     if (menuModal.classList.contains('show')) {
+      menuModal.classList.add('hide')
       menuModal.classList.remove('show')
       document.body.classList.remove('no-scroll')
     }
   }
   let topbarListener = () => {
     menuModal.classList.add('show')
+    menuModal.classList.remove('hide')
     document.body.classList.add('no-scroll')
   }
 
@@ -28,7 +30,7 @@ const Menu = () => {
   }
 
   let menu = `<div id='menu_modal' style="direction: ${config.data.isRTL ? 'rtl' : 'ltr'}">
-  <div class='menu_wrap' style="background-image: url(${config.urls.menu_icons}menu-img.svg)">
+  <div class='menu_wrap'>
     <div class='list-wrap'>
       <div class='menu'>
         <div class='menu-logo'>
