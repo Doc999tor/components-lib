@@ -16,9 +16,9 @@ export default class Datepicker extends React.Component {
         order='ymd'
         months={config.translations.months}
         placeholder='Year,Month,Date'
-        date={(config.data.birthyear ? moment(config.data.birthyear).format('YYYY') : moment().format('YYYY')) + '-'
+        date={this.props.defaultBirthday ? ((config.data.birthyear ? moment(config.data.birthyear).format('YYYY') : moment().format('YYYY')) + '-'
         + (config.data.birthdate ? moment(config.data.birthdate).format('MM') : moment().format('MM')) + '-'
-        + (config.data.birthdate ? moment(config.data.birthdate).format('DD') : moment().format('DD'))}
+        + (config.data.birthdate ? moment(config.data.birthdate).format('DD') : moment().format('DD'))) : ''}
         onChange={(e, a) => {
           this.setState({
             day: moment(a).format('DD'),
