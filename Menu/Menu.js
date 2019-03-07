@@ -9,14 +9,16 @@ const Menu = () => {
     }
     if (menuModal.classList.contains('show')) {
       menuModal.classList.add('hide')
-      menuModal.classList.remove('show')
+      setTimeout(()=>{menuModal.classList.remove('show', 'hide')}, 1500) 
       document.body.classList.remove('no-scroll')
     }
   }
   let topbarListener = () => {
-    menuModal.classList.add('show')
     menuModal.classList.remove('hide')
+    menuModal.classList.add('show')
     document.body.classList.add('no-scroll')
+    document.body.style.pointerEvents = 'none'
+    setTimeout(()=>{document.body.style.pointerEvents = ''}, 1500) 
   }
 
   // we need a listener after returning
