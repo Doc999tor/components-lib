@@ -31,7 +31,7 @@ const Menu = () => {
     menuModal && menuModal.removeEventListener('click', menuListener)
   }
 
-  let menu = `<div id='menu_modal' style="direction: ${config.data.isRTL ? 'rtl' : 'ltr'}">
+  let menu = `<div id='menu_modal' style="direction: ${config.calendar.isRTL ? 'rtl' : 'ltr'}">
   <div class='menu_wrap'>
     <div class='list-wrap'>
       <div class='menu'>
