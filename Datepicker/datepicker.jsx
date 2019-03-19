@@ -11,7 +11,9 @@ export default class Datepicker extends React.Component {
   }
   componentDidUpdate = () => {
     let option = document.querySelectorAll('option')
-    option.forEach(i => !i.value && i.disabled === true)
+    option.forEach(i => {
+      if (!i.value) i.disabled = true
+    })
   }
   render () {
     let date = this.props.newDays
