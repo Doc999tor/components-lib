@@ -1,13 +1,17 @@
 import './datepicker.styl'
 export default class Datepicker extends React.Component {
   state = {
-    birthdate: '',
+    birthdate: this.props.birthdate,
     day: '',
     month: '',
     year: '',
-    birthyear: '',
+    birthyear: this.props.birthyear,
     configValue: this.props.defaultValue
     // configValue1: this.props.defaultValue1
+  }
+  componentDidUpdate = () => {
+    let option = document.querySelectorAll('option')
+    option.forEach(i => !i.value && i.disabled === true)
   }
   render () {
     let date = this.props.newDays
@@ -15,7 +19,7 @@ export default class Datepicker extends React.Component {
       <ComboDatePicker
         order='ymd'
         months={config.translations.months}
-        placeholder='Year,Month,Date'
+        placeholder={config.translations.profile_birthdate}
         date={this.props.defaultBirthday ? ((config.data.birthyear ? moment(config.data.birthyear).format('YYYY') : moment().format('YYYY')) + '-'
         + (config.data.birthdate ? moment(config.data.birthdate).format('MM') : moment().format('MM')) + '-'
         + (config.data.birthdate ? moment(config.data.birthdate).format('DD') : moment().format('DD'))) : ''}
