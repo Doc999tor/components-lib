@@ -16,6 +16,8 @@ export default class Datepicker extends React.Component {
     })
   }
   render () {
+    console.log('state', this.state);
+    console.log('props', this.props);
     let date = this.props.newDays
     return (
       <ComboDatePicker
