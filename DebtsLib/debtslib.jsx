@@ -34,6 +34,7 @@ export default class Debts extends React.Component {
       description: i.desc,
       debt: i.sum,
       debt_id: i.id,
+      add_client_id: i.id,
       key
     })
   }
