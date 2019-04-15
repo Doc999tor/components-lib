@@ -11,16 +11,21 @@ export default class Debts extends React.Component {
     debt_step: 10
   }
   save = () => {
-    this.setState({ debtEdit: false, debtReplace: false })
-    this.props.saveDebt(this.state.debt, this.state.description)
+    let id = Math.floor(Math.random() * 100) + 1
+    this.setState({ debtEdit: false, debtReplace: false, add_client_id: id }, () =>
+      this.props.saveDebt(this.state.debt, this.state.description, this.state.add_client_id && this.state.add_client_id))
   }
   upd = () => {
     this.setState({ debtEdit: false, debtReplace: false })
-    this.props.updateDebt(this.state.debt, this.state.description, this.state.debt_id)
+    if (this.props.customersDebts) {
+      this.props.updateDebt(this.state.debt, this.state.description, this.state.debt_id)
+    } else {
+      this.props.updateDebt(this.state.debt, this.state.description, this.state.add_client_id)
+    }
   }
   del = () => {
     this.setState({ debtEdit: false, debtReplace: false })
-    this.props.deleteDebt(this.state.debt_id)
+    this.props.deleteDebt(this.props.customersDebts ? this.state.debt_id : this.state.add_client_id)
   }
   replace = (i, key) => {
     this.setState({
