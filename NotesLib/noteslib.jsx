@@ -130,7 +130,7 @@ export default class Notes extends React.Component {
     return (
       <div id='notes'>
         {(this.state.isEditNotes || this.props.notesData.length > 0) && <div className='note-header'>
-          <span>{config.translations.notes}</span>
+          <span className='head-span'>{config.translations.notes}</span>
           {this.state.isEditNotes && <button className='back' onClick={this.backButton}>
             <img src={config.urls.media + 'arrow-left.svg'} />
             {config.translations.back}
