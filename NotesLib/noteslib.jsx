@@ -1,4 +1,3 @@
-import {notesPostService, notesReplaceService, notesDeleteService} from 'project-services'
 import {formatDate, reminder} from 'project-components'
 import AddNote from './components/add-note/add-note.jsx'
 import './noteslib.styl'
@@ -126,6 +125,7 @@ export default class Notes extends React.Component {
   setDescription = value => this.setState({description: value})
   cancelSearch = () => this.setState({description: ''})
   activateSwitch = () => this.setState({switch: !this.state.switch, isReminderEdit: !this.state.isReminderEdit})
+
   render () {
     return (
       <div id='notes'>
