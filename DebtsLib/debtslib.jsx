@@ -116,7 +116,7 @@ export default class Debts extends React.Component {
             <div className='description'>
               <input className='description-input' type='text' value={this.state.description}
                 onChange={e => this.setState({ description: e.target.value }, () => this.props.getDesc(this.state.description))} 
-                placeholder={config.translations.description_debt} 
+                placeholder={config.translations.placeholder_debts} 
                 autoFocus />
               <div className='btn-desc-del' onClick={this.delDesc}>
                 <img src={config.urls.media + 'butn-not.svg'} />
