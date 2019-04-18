@@ -49,7 +49,19 @@
             -moz-margin-start 5px
             height 15px
         .notes-list-desc
-          font-size 1.3em
+          // width: 250px
+          max-height: 75px  
+          overflow: hidden;
+          line-height: 25px;   
+          font-size: 1.3em;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;  
+        .full-note
+          white-space pre-line
+          max-height: unset 
+          overflow: unset;
+          display flex
       .right-side
         display flex
         margin auto 10px

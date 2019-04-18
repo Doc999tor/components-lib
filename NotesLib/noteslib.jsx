@@ -20,7 +20,8 @@ export default class Notes extends React.Component {
     ...INITIAL_STATE,
     newEditNotes: this.props.activateNone,
     noteReplace: this.props.activateNone,
-    isEditNotes: this.props.activateNone
+    isEditNotes: this.props.activateNone,
+    show: false
   }
   static propTypes = {
     createNewNote: PropTypes.func.isRequired,
@@ -79,15 +80,15 @@ export default class Notes extends React.Component {
       time: '0'
     })
   }
-  checkLength (desc) {
-    let str = ''
-    if (desc.length > 70) {
-      str = desc.substr(0, 70) + '...'
-    } else {
-      str = desc
-    }
-    return str
-  }
+  // checkLength (desc) {
+  //   let str = ''
+  //   if (desc.length > 70) {
+  //     str = desc.substr(0, 70) + '...'
+  //   } else {
+  //     str = desc
+  //   }
+  //   return str
+  // }
   openAddForm = () => {
     this.setState({
       isEditNotes: !this.state.isEditNotes,
@@ -126,6 +127,10 @@ export default class Notes extends React.Component {
   cancelSearch = () => this.setState({description: ''})
   activateSwitch = () => this.setState({switch: !this.state.switch, isReminderEdit: !this.state.isReminderEdit})
 
+  showFullNote = (i, id) => {
+    let a = document.getElementById(id)
+    a.classList.toggle('full-note')
+  }
   render () {
     return (
       <div id='notes'>
@@ -165,8 +170,10 @@ export default class Notes extends React.Component {
                       <img src={config.urls.media + 'ic_notifications_active.svg'} />
                     </div>
                   </div>
-                  <p className={'notes-list-desc ' + (i.reminder_date ? 'rem_true' : 'rem_false')}>
-                    {this.checkLength(i.text)}
+                  <p className={'notes-list-desc ' + (i.reminder_date ? 'rem_true' : 'rem_false')}
+                    onClick={this.props.flag ? () => this.showFullNote(i, i.id) : () => {}}
+                    id={i.id}>
+                    {i.text}
                   </p>
                 </div>
                 <div className='right-side'>
