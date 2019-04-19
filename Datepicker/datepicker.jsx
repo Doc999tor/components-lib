@@ -7,8 +7,6 @@ export default class Datepicker extends React.Component {
     year: '',
     birthyear: this.props.birthyear,
     configValue: this.props.defaultValue,
-    months: moment().format('MMMM')
-    // configValue1: this.props.defaultValue1
   }
   componentDidUpdate = () => {
     let option = document.querySelectorAll('option')
@@ -17,9 +15,11 @@ export default class Datepicker extends React.Component {
     })
   }
   getMonths = () => {
+    moment.locale(config.locale)
     let arr = []
     for (let index = 0; index < 12; index++) {
-      arr.push(moment().set('month', index).format('MMMM'))
+      let months = moment().set('month', index).format('MMMM')
+      arr.push(months.charAt(0).toUpperCase() + months.slice(1))
     }
     return arr
   }
