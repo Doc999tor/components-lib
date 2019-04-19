@@ -6,7 +6,8 @@ export default class Datepicker extends React.Component {
     month: '',
     year: '',
     birthyear: this.props.birthyear,
-    configValue: this.props.defaultValue
+    configValue: this.props.defaultValue,
+    months: moment().format('MMMM')
     // configValue1: this.props.defaultValue1
   }
   componentDidUpdate = () => {
@@ -15,14 +16,22 @@ export default class Datepicker extends React.Component {
       if (!i.value) i.disabled = true
     })
   }
+  getMonths = () => {
+    let arr = []
+    for (let index = 0; index < 12; index++) {
+      arr.push(moment().set('month', index).format('MMMM'))
+    }
+    return arr
+  }
   render () {
     let stringYear = String(config.data.birthyear)
     let stringDate = String(config.data.birthdate)
     let date = this.props.newDays
+
     return (
       <ComboDatePicker
         order='ymd'
-        months={config.translations.months}
+        months={this.getMonths()}
         placeholder={config.translations.profile_birthdate}
         date={this.props.defaultBirthday ? ((config.data.birthyear ? moment(stringYear).format('YYYY') : moment().format('YYYY')) + '-'
         + (config.data.birthdate ? moment(stringDate).format('MM') : moment().format('MM')) + '-'
