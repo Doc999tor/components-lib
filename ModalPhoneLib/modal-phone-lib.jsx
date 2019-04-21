@@ -33,9 +33,13 @@ export default class PhoneModal extends React.Component {
     this.props.closeModal()
   }
   save = () => {
-    config.data[config.urls.fields.phone] = this.state.inputValue
+    if (this.props.reminders) {
+      this.props.create(this.state.inputValue)
+    } else {
+      config.data[config.urls.fields.phone] = this.state.inputValue
+      this.props.create()
+    }
     this.setState({isValidation: '', inputValue: ''})
-    this.props.create()
     this.props.closeModal()
   }
   checkPhone = e => {
@@ -80,9 +84,9 @@ export default class PhoneModal extends React.Component {
           </div>
         </div>
         <div className='phone-modal-footer'>
-          <button className={config.isRTL ? 'send' : 'skip'} onClick={this.props.cancel}>
+          <button className={config.isRTL ? 'send' : 'skip'} onClick={this.props.cancel || this.props.closeModal}>
             <div className='btns-wrap'>
-              {config.translations.skip}
+              {this.props.text.cancel_modal}
               <img src={config.urls.media + 'skip-forward.svg'} />
             </div>
           </button>
