@@ -166,7 +166,8 @@
   opacity: 0;
 }
 #menu_modal.hide .list-item {
-  transform: scale(1.15) translateY(-14.5rem) translateX(-13.5rem);
+  transform: scale(1.15) translateY(-15.5rem) translateX(-20.5rem);
+  -webkit-transform: scale(1.15) translateY(-15.5rem) translateX(-20.5rem);
 }
 #menu_modal.show .list-item .item-link {
   font-size: 0.9rem;
