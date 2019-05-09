@@ -65,8 +65,7 @@
 }
 
 #menu_modal.hide {
-  width: 0;
-  height: 0;
+  pointer-events: none;
   background-color:#ffffff00;
 }
 
