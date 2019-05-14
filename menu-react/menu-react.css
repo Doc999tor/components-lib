@@ -243,3 +243,12 @@
   background-size: 100%;
   transition: background 0s;
 }
+
+body[dir=rtl] #menu_modal.show {
+  transform: rotateY(.5turn);
+  display: flex;
+  justify-content: flex-end;
+}
+body[dir=rtl] #menu_modal p {
+  transform: rotateY(.5turn);
+}
