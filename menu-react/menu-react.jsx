@@ -30,7 +30,7 @@ const MenuReact = ({isMenuOpen, onHandleMenuClose}) => {
               return (<li className='list-item' key={key}>
                 <a className='item-link' href={item.link}>
                   <img className='menu-img' src={window.config.urls.menu_icons + item.icon} alt={item.text} />
-                  {window.config.translations.menu[item.text]}
+                  <p>{window.config.translations.menu[item.text]}</p>
                 </a></li>)
             })}
             </nav>
