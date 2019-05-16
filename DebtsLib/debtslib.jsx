@@ -11,9 +11,7 @@ export default class Debts extends React.Component {
     debt_step: 10
   }
   save = () => {
-    let id = Math.floor(Math.random() * 100) + 1
-    this.setState({ debtEdit: false, debtReplace: false, add_client_id: id }, () =>
-      this.props.saveDebt(this.state.debt, this.state.description, this.state.add_client_id && this.state.add_client_id))
+    this.setState({ debtEdit: false, debtReplace: false}, () => this.props.saveDebt())
   }
   upd = () => {
     this.setState({ debtEdit: false, debtReplace: false })
@@ -71,9 +69,9 @@ export default class Debts extends React.Component {
     }
   }
   price = () => {
-    let arrDebts = this.props.debtsData.map(i => i.sum)
+    let arrDebts = this.props.debtsData.map(i => +i.sum)
     let totalDebt = (arrDebts.length !== 0) && arrDebts.reduce((sum, item) => {
-      return sum + item
+      return +sum + item
     })
     return totalDebt
   }
@@ -103,10 +101,10 @@ export default class Debts extends React.Component {
                 <div className='currency-debt'>{config.data.currency}</div>
                 <input className='count-input'
                   type='number'
-                  value={this.state.debt} 
+                  value={this.state.debt}
                   onChange={e => this.setState({ debt: +e.target.value }, () => this.props.getDebt(this.state.debt))}
-                  onFocus={e => { if (toString(e.target.value) === '0') e.target.value = '' }}
-                  onBlur={e => { if (toString(e.target.value) === '') e.target.value = '0' }} />
+                  onFocus={e => { if (e.target.value == '0') e.target.value = '' }}
+                  onBlur={e => { if (e.target.value == '') e.target.value = 0 }} />
                 <div className='ink' onClick={this.handleIncrementDebt}>
                   <img src={config.urls.media + 'plus.svg'} />
                 </div>
@@ -124,10 +122,10 @@ export default class Debts extends React.Component {
             </div>
             <div className='actions'>
               {/* <button onClick={this.state.debtReplace ? this.update : this.submit}>{config.translations.save}</button> */}
-              <div className='del-debts' onClick={() => this.del()} >
+              {this.state.debtReplace && <div className='del-debts' onClick={() => this.del()} >
                 <img src={config.urls.media + 'trash-debts.svg'} />
                 <p>{config.translations.delete}</p>
-              </div>
+              </div>}
               <div className='button-apply' onClick={this.state.debtReplace ? this.upd : this.save}>
                 <img src={config.urls.media + 'apply.svg'} />
                 <p>{config.translations.success}</p>
