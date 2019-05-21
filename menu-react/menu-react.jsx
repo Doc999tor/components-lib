@@ -10,7 +10,6 @@ const MenuReact = ({isMenuOpen, onHandleMenuClose}) => {
   return (
     <div id='menu_modal'
       className={isMenuOpen ? 'show' : 'show hide'}
-      style={{direction: `${window.config.data.isRTL ? 'rtl' : 'ltr'}`}}
       // close menu
       onClick={() => onHandleMenuClose()}>
       <div className='menu_wrap'>
