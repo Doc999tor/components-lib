@@ -2,7 +2,7 @@ export default (newPicture, newAgreement) => {
   let body = new FormData()
   let newAgr = newAgreement
   let newPic = newPicture
-  const d = moment().format('YYYY-MM-DD hh:mm:ss')
+  const d = moment().format('YYYY-MM-DD HH:mm:ss')
   body.append('added', d)
   newPicture && body.append('photo', newPic)
   newAgreement && body.append('permit_ads', newAgr)
