@@ -82,8 +82,8 @@ export default class Debts extends React.Component {
       <div id='debts'>
         {(this.state.debtEdit || this.props.debtsData.length > 0) && <div className='debt-header'>
           <div className='header-text'>
-            <div>{config.translations.debts}</div>
-            <div className='total-debts-wrap'>{totalPrice && `${config.data.currency}${totalPrice}`}</div>
+            {config.translations.debts}
+            {totalPrice && <div className='total-debts-wrap'><span>{config.data.currency}</span>{totalPrice}</div>}
           </div>
           {this.state.debtEdit &&
           <div className='btn-header' onClick={this.backButton}>
