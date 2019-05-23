@@ -71,7 +71,7 @@ export default class Debts extends React.Component {
   price = () => {
     let arrDebts = this.props.debtsData.map(i => +i.sum)
     let totalDebt = (arrDebts.length !== 0) && arrDebts.reduce((sum, item) => {
-      return +sum + item
+      return sum + item
     })
     return totalDebt
   }
@@ -81,8 +81,9 @@ export default class Debts extends React.Component {
     return (
       <div id='debts'>
         {(this.state.debtEdit || this.props.debtsData.length > 0) && <div className='debt-header'>
-          <div className='header-text'>{config.translations.debts}
-            <div className='total-debts-wrap'>{totalPrice && `${config.data.currency} ${totalPrice}`}</div>
+          <div className='header-text'>
+            <div>{config.translations.debts}</div>
+            <div className='total-debts-wrap'>{totalPrice && `${config.data.currency}${totalPrice}`}</div>
           </div>
           {this.state.debtEdit &&
           <div className='btn-header' onClick={this.backButton}>
@@ -141,7 +142,7 @@ export default class Debts extends React.Component {
               <div className='left-side'>
                 <span className='debt-list-date'>{i.date}</span>
                 <div className='debt-list-name'>
-                  <label className='currency'>{i.sum} {config.data.currency}</label>
+                  <label className='currency'>{i.sum}{config.data.currency}</label>
                   {i.desc && <div className='debt-list-desc'>{i.desc}</div>}
                 </div>
               </div>
