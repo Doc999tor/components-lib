@@ -16,11 +16,12 @@
   input
     border none
     width 90%
+    -webkit-padding-start 10px
+    -moz-padding-start 10px
     padding-inline-start: 10px
     &:focus
       outline none
   .phone-top
-    height 193px
     padding 10px 36px 0 36px
     background-image: linear-gradient(328deg, #a784f8, #522fa9);
     .picture
@@ -38,16 +39,17 @@
         width 20px
     .text-wrap
       text-align: center
-      width 85%
-      margin 0 auto
+      // width 85%
+      // margin 0 auto
       p 
+        margin 0
         line-height: 1.56rem;
         color #fff
   .phone-bot
     .phone-bot-text
-      width 158px
+      width 100%
       text-align: center
-      margin 0 auto
+      padding 0 1rem
       color #522fa9
       font-weight: 600
     .phone-input-wrap
@@ -86,7 +88,17 @@
     justify-content center
     align-items center
     img
+      -webkit-padding-start 10px
+      -moz-padding-start 10px
       padding-inline-start: 10px
+    .right
+      -webkit-padding-start 0
+      -moz-padding-start 0
+      padding-inline-start: 0
+      -webkit-padding-end 10px
+      -moz-padding-end 10px
+      padding-inline-end: 10px
+      transform rotate(180deg)
   button
     display inline-block
     height 100%
