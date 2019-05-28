@@ -6,6 +6,19 @@
   align-items center
   .category:first-child
     border none
+  .extended-category
+    display flex
+    flex-direction column
+  .acordeon
+    visibility hidden
+    opacity 0
+    height 0
+    transition height 0.3s, visibility 0.3s, opacity 0.3s linear
+  .active
+    visibility visible
+    height 100%
+    opacity 1
+    
   .category
     display flex
     height 4rem
