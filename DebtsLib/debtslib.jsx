@@ -41,7 +41,11 @@ export default class Debts extends React.Component {
       debtEdit: !this.state.debtEdit,
       debt: '0',
       description: ''
-    }, () => this.props.editDebt(this.state.debtEdit))
+    }, () => this.callbackProps())
+  }
+  callbackProps = () => {
+    document.getElementById('input').focus()
+    this.props.editDebt(this.state.debtEdit)
   }
   backButton = () => {
     this.setState({
@@ -113,10 +117,10 @@ export default class Debts extends React.Component {
             </div>
             <label>{config.translations.description_debts}</label>
             <div className='description'>
-              <input className='description-input' type='text' value={this.state.description}
+              <input className='description-input' type='text' id='input' value={this.state.description}
                 onChange={e => this.setState({ description: e.target.value }, () => this.props.getDesc(this.state.description))} 
                 placeholder={config.translations.placeholder_debts} 
-                autoFocus />
+              />
               <div className='btn-desc-del' onClick={this.delDesc}>
                 <img src={config.urls.media + 'butn-not.svg'} />
               </div>
