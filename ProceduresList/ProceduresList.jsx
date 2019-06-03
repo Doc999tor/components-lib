@@ -32,7 +32,7 @@ export default class ProceduresList extends React.Component {
     <h2 className='name'>{item.name}</h2>
     <div className='edditional-info'>
       <div className='dur-wrap'><img src={`${config.urls.media}ic_time.svg`} /><p className='duration'>{`${item.duration} ${config.translations.duration_minutes}`}</p></div>
-      <div className='price-wrap'><img src={`${config.urls.media}debt.svg`} /><p className='price'>{`${item.price} ${config.data.currency}`}</p></div>
+      <div className='price-wrap'><p className='price'>{`${item.price} ${config.data.currency}`}</p></div>
     </div>
   </div>
   </div>
