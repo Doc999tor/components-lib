@@ -158,13 +158,10 @@ export default class Debts extends React.Component {
             </div>
           ))}
         </div>
-        <div
-          onClick={this.addDebt}
-          className={'debt-footer ' + ((this.state.debtEdit || this.props.debtsData.length > 0) && 'bot-border')}
-        >
+        {!this.state.debtEdit && <div onClick={this.addDebt} className={'debt-footer ' + ((this.state.debtEdit || this.props.debtsData.length > 0) && 'bot-border')}>
           <span className='span-edit'>{config.translations.add_debt}</span>
           <img src={config.urls.media + 'c_add_stroke.svg'} />
-        </div>
+        </div>}
       </div>
     )
   }
