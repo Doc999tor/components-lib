@@ -1,4 +1,5 @@
-import {validatePhone, Modal} from 'project-components'
+import {default as Modal} from '../Modal/Modal.jsx'
+import {default as validatePhone} from '../validate-phone.js'
 // import {clientPostService} from './node_modules/project-services'
 import './modal-phone-lib.styl'
 
