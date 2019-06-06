@@ -1,4 +1,5 @@
-import {Select, Switch} from 'project-components'
+import { default as Select } from '../../../Select/Select.jsx'
+import { default as Switch } from '../../../Switch/Switch.jsx'
 import './add-note.styl'
 
 export default class AddNote extends React.Component {

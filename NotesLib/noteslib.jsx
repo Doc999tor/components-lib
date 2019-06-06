@@ -1,4 +1,5 @@
-import {formatDate, reminder} from 'project-components'
+import { default as formatDate } from '../format-date.js'
+import { default as reminder } from '../reminder.js'
 import AddNote from './components/add-note/add-note.jsx'
 import './noteslib.styl'
 

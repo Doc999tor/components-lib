@@ -1,4 +1,4 @@
-import { Modal } from 'project-components'
+import { default as Modal } from 'project-components/Modal/Modal.jsx'
 import './emptydatamodal.styl'
 
 export default class EmptyDataModal extends React.Component {
