@@ -3,9 +3,9 @@ import AddNote from './components/add-note/add-note.jsx'
 import './noteslib.styl'
 
 const INITIAL_STATE = {
-  selectedValueLable: config.translations.notes_list[0].label,
+  selectedValueLable: config.translations.notes_list && config.translations.notes_list[0].label,
   selectedLabel: config.data.reminders_default_date_period,
-  selectedValue: config.translations.notes_list[0].value,
+  selectedValue: config.translations.notes_list && config.translations.notes_list[0].value,
   timeStart: config.data.reminders_default_period_amount,
   isReminderEdit: false,
   description: '',
