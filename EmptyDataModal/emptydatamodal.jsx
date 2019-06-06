@@ -10,10 +10,10 @@ export default class EmptyDataModal extends React.Component {
     return (
       <Modal show={this.props.show}>
         <div className='modal-empty-name'>
-          <label>{this.props.text.btn_text}</label>
+          <label>{config.translations.personal_info_editing.title}</label>
         </div>
         <div className='modal-empty-name-footer'>
-          <button onClick={this.props.onHide} className='no-btn'>{this.props.text.agree}</button>
+          <button onClick={this.props.onHide} className='no-btn'>{config.translations.personal_info_editing.agree}</button>
         </div>
       </Modal>
     )
