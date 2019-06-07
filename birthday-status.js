@@ -1,4 +1,4 @@
-import {get, getEO} from 'project-components'
+import { getD as get, getEndOf as getEO } from './get-dates.js'
 export default d => {
   const t = moment()
   let dl
