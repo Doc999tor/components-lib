@@ -144,7 +144,7 @@ export default class Debts extends React.Component {
           {sortDebts.map((i, k) => (
             <div key={k} className={this.state.debtReplace ? 'debt-list' : 'debt-list'}>
               <div className='left-side'>
-                <span className={'debt-list-date ' + (config.isRTL || config.data.isRTL && 'rtl-side')}>{i.date}</span>
+                <span className={'debt-list-date ' + ((config.isRTL || config.data.isRTL) && 'rtl-side')}>{i.date}</span>
                 <div className='debt-list-name'>
                   <label className='currency'>{i.sum}{config.data.currency}</label>
                   {i.desc && <div className='debt-list-desc'>{i.desc}</div>}
