@@ -61,7 +61,7 @@ export default class ProceduresList extends React.Component {
                 <p className='category_count'>({i.count})</p>
                 <div className='icon_wrap'>
                   <img className={config.isRTL
-                    ? 'rtl-arrow ' + (showServices && clickId === i.id && 'rotate-arrow')
+                    ? 'rtl-arrow ' + (showServices && clickId === i.id && 'rotate-active')
                     : 'ltr-arrow ' + (showServices && clickId === i.id && 'rotate-arrow')} src={config.urls.media + 'chevron-right.svg'} />
                 </div>
               </div>
