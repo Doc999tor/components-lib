@@ -38,7 +38,7 @@
   top: 0;
   background-size: cover;
   content: "";
-  background-image: linear-gradient(rgba(94, 54, 177, 0.8), rgba(94, 54, 177, 0.8)), url(/public/menu/menu-img.svg);
+  background-image: linear-gradient(rgba(94, 54, 177, 0.8), rgba(94, 54, 177, 0.8)), url(/public/menu/menu-img.jpg);
   z-index: -1;
   background-repeat: no-repeat;
   will-change: clip-path;
