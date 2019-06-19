@@ -12,36 +12,36 @@ export default class PhoneModal extends React.Component {
   state = {
     inputValue: ''
   }
-  // create = () => {
-  //   clientPostService(Save(this.props.newPicture)).then(r => {
-  //     if (r.status === 201) {
-  //       r.json().then(id => {
-  //         config.data.id = id
-  //         window.location = config.urls.new_client.replace('{id}', id)
-  //       })
-  //     }
-  //   })
-  // }
-  // cancel = () => {
-  //   this.props.sendlink ? this.props.sendlink() : this.props.create()
-  //   this.props.sendlink && this.setState({isValidation: '', inputValue: ''})
-  // }
   delInfo = () => {
     this.setState({isValidation: '', inputValue: ''})
   }
   back = () => {
     this.setState({isValidation: '', inputValue: ''})
-    this.props.closeModal()
+    this.props.closeModal ? this.props.closeModal() : this.props.cancelEmpty()
+  }
+  normalizePhones = phones => {
+    if (phones && phones.length) {
+      let normalizeArray = phones.map((phone, index) => ({ id: index, number: phone.number || phone }))
+      return this.props.getPhone(normalizeArray)
+    } else {
+      return []
+    }
   }
   save = () => {
-    if (this.props.saveNumber) { this.props.saveNumber(this.state.inputValue) }
-    else if (this.props.reminders) { this.props.create(this.state.inputValue) } 
+    if (this.props.getPhone) {
+      let arrPhones = []
+      arrPhones.push(this.state.inputValue)
+      this.normalizePhones(arrPhones)
+    }
+    else if (this.props.reminders) this.props.create(this.state.inputValue)
     else {
       config.data[config.urls.fields.phone] = this.state.inputValue
       this.props.create()
     }
     this.setState({isValidation: '', inputValue: ''})
-    this.props.closeModal()
+    if (this.state.isValidation) {
+      this.props.cancel()
+    } else this.props.cancelEmpty()
   }
   checkPhone = e => {
     this.setState({inputValue: e, isValidation: ''})
@@ -85,7 +85,7 @@ export default class PhoneModal extends React.Component {
           </div>
         </div>
         <div className='phone-modal-footer'>
-          <button className={config.isRTL ? 'send' : 'skip'} onClick={this.props.cancel || this.props.closeModal}>
+          <button className={config.isRTL ? 'send' : 'skip'} onClick={this.props.cancelEmpty || this.props.closeModal}>
             <div className='btns-wrap'>
               {this.props.text.cancel_modal}
               <img className={(config.isRTL || config.data.isRTL) && 'right'} src={config.urls.media + 'skip-forward.svg'} />
