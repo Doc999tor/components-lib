@@ -7,7 +7,7 @@ const mainRequestService = (u, o) => {
     if (r.status === 401) {
       window.location.href = window.location.origin + config.urls.login
     } else if (r.status === 503) {
-      return new Promise(resolve => setTimeout(() => resolve(mainRequestService(u, o)), r.headers.get('Retry-After')))
+      return new Promise(resolve => setTimeout(() => resolve(mainRequestService(u, o)), r.headers.get('Retry-After') * 1000))
     } else {
       return r
     }
