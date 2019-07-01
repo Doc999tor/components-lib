@@ -10,13 +10,18 @@ export default class PhoneModal extends React.Component {
     sendlink: PropTypes.func
   }
   state = {
-    inputValue: ''
+    inputValue: '',
+    deniedPhone: false
   }
   delInfo = () => {
     this.setState({isValidation: '', inputValue: ''})
   }
   back = () => {
     this.setState({isValidation: '', inputValue: ''})
+    if (this.props.blur) {
+      this.props.deniedPhone()
+      this.props.closeModalBlur()
+    }
     this.props.closeModal ? this.props.closeModal() : this.props.cancelEmpty()
   }
   normalizePhones = phones => {
@@ -34,18 +39,27 @@ export default class PhoneModal extends React.Component {
       this.normalizePhones(arrPhones)
     }
     else if (this.props.reminders) this.props.create(this.state.inputValue)
-    else {
+    else if (this.props.blur) {
+      config.data[config.urls.fields.phone] = this.state.inputValue
+      this.props.getPhoneNumber(this.state.inputValue)
+      this.props.closeModalBlur()
+    } else {
       config.data[config.urls.fields.phone] = this.state.inputValue
       this.props.create()
     }
     this.setState({isValidation: '', inputValue: ''})
     if (this.state.isValidation) {
-      this.props.cancel()
+      this.props.cancel && this.props.cancel()
     } else this.props.cancelEmpty()
   }
   checkPhone = e => {
     this.setState({inputValue: e, isValidation: ''})
     if (e !== '' && e.length >= 3) validatePhone(e) ? this.setState({isValidation: true}) : this.setState({isValidation: false})
+  }
+  skip = () => {
+    if (this.props.blur) this.props.closeModalBlur()
+    if (this.props.addClient && !this.props.blur) this.save()
+    this.props.cancelEmpty || this.props.closeModal
   }
   componentDidUpdate = () => this.props.isVisibleModalPhone && this.refs.modal_phone.focus()
   render () {
@@ -85,14 +99,14 @@ export default class PhoneModal extends React.Component {
           </div>
         </div>
         <div className='phone-modal-footer'>
-          <button className={config.isRTL ? 'send' : 'skip'} onClick={this.props.cancelEmpty || this.props.closeModal}>
+          <button className={config.isRTL ? 'send' : 'skip'} onClick={this.skip}>
             <div className='btns-wrap'>
               {this.props.text.cancel_modal}
               <img className={(config.isRTL || config.data.isRTL) && 'right'} src={config.urls.media + 'skip-forward.svg'} />
             </div>
           </button>
           <button className={config.isRTL ? 'skip' : 'send'}
-            disabled={!validatePhone(this.state.inputValue)}
+            // disabled={!validatePhone(this.state.inputValue)}
             onClick={this.save}>
             <div className='btns-wrap'>
               {this.props.text.save}
