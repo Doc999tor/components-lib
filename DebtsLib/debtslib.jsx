@@ -86,19 +86,19 @@ export default class Debts extends React.Component {
       <div id='debts'>
         {(this.state.debtEdit || this.props.debtsData.length > 0) && <div className='debt-header'>
           <div className='header-text'>
-            {config.translations.debts}
+            {config.translations.debts.title}
             {totalPrice && <div className='total-debts-wrap'><span>{config.data.currency}</span>{totalPrice}</div>}
           </div>
           {this.state.debtEdit &&
           <div className='btn-header' onClick={this.backButton}>
             <div className='btn-header-wrap'><img src={config.urls.media + 'arrow-left.svg'} /></div>
-            <p>{config.translations.back}</p>
+            <p>{config.translations.debts.back_label_btn}</p>
           </div>}
         </div>}
         <div className={this.state.debtEdit ? 'debt-active' : 'hidden'}>
           <div className='edit'>
             <div className='edit-debt-head'>
-              <label>{config.translations.add_new_debt}</label>
+              <label>{config.translations.notes.edit_sum_title}</label>
               <div className='count'>
                 <div className='ink' onClick={this.handleDecrementTime}>
                   <img src={config.urls.media + 'minus.svg'} />
@@ -115,25 +115,24 @@ export default class Debts extends React.Component {
                 </div>
               </div>
             </div>
-            <label>{config.translations.description_debts}</label>
+            <label>{config.translations.debts.subtitle}</label>
             <div className='description'>
               <input className='description-input' type='text' id='input' value={this.state.description}
                 onChange={e => this.setState({ description: e.target.value }, () => this.props.getDesc(this.state.description))} 
-                placeholder={config.translations.placeholder_debts} 
+                placeholder={config.translations.debts.placeholder} 
               />
               <div className='btn-desc-del' onClick={this.delDesc}>
                 <img src={config.urls.media + 'butn-not.svg'} />
               </div>
             </div>
             <div className='actions'>
-              {/* <button onClick={this.state.debtReplace ? this.update : this.submit}>{config.translations.save}</button> */}
               {this.state.debtReplace && <div className='del-debts' onClick={() => this.del()} >
                 <img src={config.urls.media + 'trash-debts.svg'} />
-                <p>{config.translations.delete}</p>
+                <p>{config.translations.debts.del_btn}</p>
               </div>}
               <div className='button-apply' onClick={this.state.debtReplace ? this.upd : this.save}>
                 <img src={config.urls.media + 'apply.svg'} />
-                <p>{config.translations.success}</p>
+                <p>{config.translations.debts.success_btn}</p>
               </div>
               {/* {this.props.rights.debts.delete &&
               <img className='debt-list-delete' src={config.urls.media + 'add.svg'} onClick={() => this.delete(i.id, k)} />} */}
@@ -159,7 +158,7 @@ export default class Debts extends React.Component {
           ))}
         </div>
         {!this.state.debtEdit && <div onClick={this.addDebt} className={'debt-footer ' + ((this.state.debtEdit || this.props.debtsData.length > 0) && 'bot-border')}>
-          <span className='span-edit'>{config.translations.add_debt}</span>
+          <span className='span-edit'>{config.translations.debts.add_debt_label}</span>
           <img src={config.urls.media + 'c_add_stroke.svg'} />
         </div>}
       </div>

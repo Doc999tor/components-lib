@@ -32,7 +32,7 @@ export default class ProceduresList extends React.Component {
     <div className='common-wrap'>
       <h2 className='name'>{item.name}</h2>
       <div className='edditional-info'>
-        <div className='dur-wrap'><img src={`${config.urls.media}ic_time.svg`} /><p className='duration'>{`${item.duration} ${config.translations.duration_minutes}`}</p></div>
+        <div className='dur-wrap'><img src={`${config.urls.media}ic_time.svg`} /><p className='duration'>{`${item.duration} ${config.translations.punch_cards.procedures_list.duration_minutes}`}</p></div>
         <div className='price-wrap'><p className='price'>{`${item.price} ${config.data.currency}`}</p></div>
       </div>
     </div>
@@ -46,10 +46,10 @@ export default class ProceduresList extends React.Component {
     const visibleServices = getVisibleServices(services, filter)
     return (
       <div id='procedures_list'>
-        <h2 className='procedures-title'>{config.translations.choose_service}</h2>
+        <h2 className='procedures-title'>{config.translations.punch_cards.procedures_list.choose_service}</h2>
         <div className='search-strip'>
           <div className='search-wrap'>
-            <input className='search-input' value={this.state.filter} onChange={this.handleFilterChange} type='text' placeholder={config.translations.search_service} />
+            <input className='search-input' value={this.state.filter} onChange={this.handleFilterChange} type='text' placeholder={config.translations.punch_cards.procedures_list.search_service} />
             <img className='search-img' src={`${config.urls.media}magnifier.svg`} />
           </div>
         </div>

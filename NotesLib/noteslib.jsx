@@ -136,10 +136,10 @@ export default class Notes extends React.Component {
     return (
       <div id='notes'>
         {(this.state.isEditNotes || this.props.notesData.length > 0) && <div className='note-header'>
-          <span className='head-span'>{config.translations.notes}</span>
+          <span className='head-span'>{config.translations.notes.title}</span>
           {this.state.isEditNotes && <button className='back' onClick={this.backButton}>
             <img src={config.urls.media + 'arrow-left.svg'} />
-            {config.translations.back}
+            {config.translations.notes.back_label_btn}
           </button>}
         </div>}
         <div className='note-body' style={{'max-height': (config.notes_height_limit * 56)}}>
@@ -204,7 +204,7 @@ export default class Notes extends React.Component {
           submit={this.save}
         />}
         <div className={'note-footer ' + ((this.state.isEditNotes || this.state.noteReplace || this.props.notesData.length > 0) ? 'bot-border' : 'top-border')} onClick={this.openAddForm}>
-          <label>{config.translations.add_note}</label>
+          <label>{config.translations.notes.add_note_label}</label>
           <img src={config.urls.media + 'c_add_stroke.svg'} />
         </div>
       </div>
