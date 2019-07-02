@@ -59,7 +59,7 @@ export default class PhoneModal extends React.Component {
   skip = () => {
     if (this.props.blur) this.props.closeModalBlur()
     if (this.props.addClient && !this.props.blur) this.save()
-    this.props.cancelEmpty || this.props.closeModal
+    this.props.cancelEmpty() || this.props.closeModal()
   }
   componentDidUpdate = () => this.props.isVisibleModalPhone && this.refs.modal_phone.focus()
   render () {
