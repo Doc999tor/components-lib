@@ -7,6 +7,7 @@ const MenuReact = ({isMenuOpen, onHandleMenuClose}) => {
   } else {
     document.body.classList.remove('no-scroll')
   }
+
   return (
     <div id='menu_modal'
       className={isMenuOpen ? 'show' : 'show hide'}
@@ -20,10 +21,10 @@ const MenuReact = ({isMenuOpen, onHandleMenuClose}) => {
                 <img className='business_logo' src={window.config.user.business_logo} />
               </div>
               <p className='business_name'>{window.config.user.business_name}</p>
-              <p className='business_address'>
+              {window.config.user.business_address && <p className='business_address'>
                 <img className='business_address_img' src={`${window.config.urls.menu_icons}map-pin.svg`} />
                 {window.config.user.business_address}
-              </p>
+              </p>}
             </div>
             <nav className='menu-list'>{window.config.menu.map((item, key) => {
               return (<li className='list-item' key={key}>
