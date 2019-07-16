@@ -237,7 +237,11 @@
 }
 .list-item {
   background-position: center;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
+  /* transition: all 0.5s; */
 }
 .list-item:hover {
   background: #5e36b1c7 radial-gradient(circle, transparent 1%, #5e36b1 1%) center/15000%;
