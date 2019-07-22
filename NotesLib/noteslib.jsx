@@ -159,7 +159,7 @@ export default class Notes extends React.Component {
           {this.props.notesData.map(i => (
             this.state.note_id === i.id
               ? <AddNote
-                customers
+                customers={this.props.customers}
                 deleteNoteReminder={this.deleteNoteReminder}
                 setDescription={this.setDescription}
                 description={this.state.description}
@@ -202,7 +202,7 @@ export default class Notes extends React.Component {
         </div>
         {this.state.newEditNotes && this.state.isEditNotes && 
         <AddNote
-          customers
+          customers={this.props.customers}
           deleteNoteReminder={this.deleteNoteReminder}
           setDescription={this.setDescription}
           description={this.state.description}
