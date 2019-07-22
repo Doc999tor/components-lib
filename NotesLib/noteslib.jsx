@@ -104,6 +104,7 @@ export default class Notes extends React.Component {
       isEditNotes: !this.state.isEditNotes,
       isReminderEdit: false,
       description: '',
+      switch: false,
       note_id: 0,
       time: '0',
       key: 0
@@ -116,6 +117,7 @@ export default class Notes extends React.Component {
       isEditNotes: !this.state.isEditNotes,
       isReminderEdit: false,
       description: '',
+      switch: false,
       note_id: 0,
       time: '0',
       key: 0
@@ -146,6 +148,7 @@ export default class Notes extends React.Component {
     a.classList.toggle('full-note')
   }
   render () {
+    console.log(this.state.switch);
     return (
       <div id='notes'>
         {(this.state.isEditNotes || this.props.notesData.length > 0) && <div className='note-header'>
