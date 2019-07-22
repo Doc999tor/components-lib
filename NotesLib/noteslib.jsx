@@ -22,7 +22,7 @@ export default class Notes extends React.Component {
     newEditNotes: this.props.activateNone,
     noteReplace: this.props.activateNone,
     isEditNotes: this.props.activateNone,
-    show: false
+    show: false,
   }
   static propTypes = {
     createNewNote: PropTypes.func.isRequired,
@@ -159,6 +159,7 @@ export default class Notes extends React.Component {
           {this.props.notesData.map(i => (
             this.state.note_id === i.id
               ? <AddNote
+                customers
                 deleteNoteReminder={this.deleteNoteReminder}
                 setDescription={this.setDescription}
                 description={this.state.description}
@@ -201,6 +202,7 @@ export default class Notes extends React.Component {
         </div>
         {this.state.newEditNotes && this.state.isEditNotes && 
         <AddNote
+          customers
           deleteNoteReminder={this.deleteNoteReminder}
           setDescription={this.setDescription}
           description={this.state.description}
