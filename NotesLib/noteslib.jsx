@@ -69,7 +69,7 @@ export default class Notes extends React.Component {
     })
   }
   update = () => {
-    let rem = this.state.switch ? reminder(this.state.time, this.state.selectedValue) : ''
+    let rem = this.state.switch ? reminder(this.state.time, this.state.selectedValue) : false
     this.props.editNote(rem, this.state.key, this.state.description)
     this.setState({
       noteReplace: !this.state.noteReplace,
@@ -97,9 +97,20 @@ export default class Notes extends React.Component {
       noteReplace: !this.state.noteReplace
     }, () => this.props.hiddenNotes())
   }
-
   deleteNote = () => {
     this.props.deleteNote(this.state.note_id)
+    this.setState(state => ({
+      noteReplace: !this.state.noteReplace,
+      isEditNotes: !this.state.isEditNotes,
+      isReminderEdit: false,
+      description: '',
+      note_id: 0,
+      time: '0',
+      key: 0
+    }))
+  }
+  deleteNoteReminder = () => {
+    this.props.deleteNoteReminder(this.state.note_id)
     this.setState(state => ({
       noteReplace: !this.state.noteReplace,
       isEditNotes: !this.state.isEditNotes,
@@ -115,7 +126,9 @@ export default class Notes extends React.Component {
       noteReplace: !this.state.noteReplace,
       isEditNotes: !this.state.isEditNotes,
       description: i.text,
+      isReminderEdit: i.reminder_date && true,
       note_id: i.id,
+      switch: i.reminder_date && true,
       add_client_id: i.id,
       key
     })
@@ -146,6 +159,7 @@ export default class Notes extends React.Component {
           {this.props.notesData.map(i => (
             this.state.note_id === i.id
               ? <AddNote
+                deleteNoteReminder={this.deleteNoteReminder}
                 setDescription={this.setDescription}
                 description={this.state.description}
                 handleIncrementTime={this.handleIncrementTime}
@@ -187,6 +201,7 @@ export default class Notes extends React.Component {
         </div>
         {this.state.newEditNotes && this.state.isEditNotes && 
         <AddNote
+          deleteNoteReminder={this.deleteNoteReminder}
           setDescription={this.setDescription}
           description={this.state.description}
           handleIncrementTime={this.handleIncrementTime}
