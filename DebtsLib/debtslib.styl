@@ -47,6 +47,7 @@
       background-color #fff
       .left-side
         display flex
+        width 70%
         margin auto 10px
         flex-direction column
         .debt-list-date
@@ -64,6 +65,9 @@
           .debt-list-desc
             -webkit-margin-start 10px
             -moz-margin-start 10px
+            white-space nowrap
+            overflow hidden
+            text-overflow ellipsis
       .right-side
         display flex
         align-items center

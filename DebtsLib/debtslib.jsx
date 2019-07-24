@@ -194,7 +194,9 @@ export default class Debts extends React.Component {
                   <span className={'debt-list-date ' + ((config.isRTL || config.data.isRTL) ? 'rtl-side' : '')}>{i.date}</span>
                   <div className='debt-list-name'>
                     <label className='currency'>{i.sum}{config.data.currency}</label>
-                    {i.desc && <div className='debt-list-desc'>{i.desc}</div>}
+                    {i.desc && <div className='debt-list-desc'>
+                      <span>{i.desc}</span>
+                    </div>}
                   </div>
                 </div>
                 <div className='right-side'>
