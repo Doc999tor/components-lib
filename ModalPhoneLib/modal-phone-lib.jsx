@@ -20,9 +20,10 @@ export default class PhoneModal extends React.Component {
     this.setState({isValidation: '', inputValue: ''})
     if (this.props.blur) {
       this.props.deniedPhone()
-      this.props.closeModalBlur()
+      this.props.hideModal()
+    } else {
+      this.props.closeModal ? this.props.closeModal() : this.props.cancelEmpty()
     }
-    this.props.closeModal ? this.props.closeModal() : this.props.cancelEmpty()
   }
   normalizePhones = phones => {
     if (phones && phones.length) {
@@ -40,11 +41,11 @@ export default class PhoneModal extends React.Component {
     }
     else if (this.props.reminders) this.props.create(this.state.inputValue)
     else if (this.props.blur) {
-      config.data[config.urls.fields.phone] = this.state.inputValue
+      config.data[config.urls.fields.phone] = `[${JSON.stringify(this.state.inputValue)}]`
       this.props.getPhoneNumber(this.state.inputValue)
-      this.props.closeModalBlur()
+      this.props.hideModal()
     } else {
-      config.data[config.urls.fields.phone] = this.state.inputValue
+      config.data[config.urls.fields.phone] = `[${JSON.stringify(this.state.inputValue)}]`
       this.props.create()
     }
     this.setState({isValidation: '', inputValue: ''})
@@ -57,9 +58,13 @@ export default class PhoneModal extends React.Component {
     if (e !== '' && e.length >= 3) validatePhone(e) ? this.setState({isValidation: true}) : this.setState({isValidation: false})
   }
   skip = () => {
-    if (this.props.blur) this.props.closeModalBlur()
-    if (this.props.addClient && !this.props.blur) this.save()
-    this.props.cancelEmpty() || this.props.closeModal()
+    if (this.props.blur) {
+      this.props.hideModal()
+    } else if (this.props.addClient && !this.props.blur) {
+      this.save()
+    } else {
+      this.props.cancelEmpty() || this.props.closeModal()
+    }
   }
   componentDidUpdate = () => this.props.isVisibleModalPhone && this.refs.modal_phone.focus()
   render () {
