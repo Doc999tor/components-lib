@@ -41,11 +41,11 @@ export default class PhoneModal extends React.Component {
     }
     else if (this.props.reminders) this.props.create(this.state.inputValue)
     else if (this.props.blur) {
-      config.data[config.urls.fields.phone] = `[${JSON.stringify(this.state.inputValue)}]`
+      config.data[config.urls.fields.phone] = this.state.inputValue ? `[${JSON.stringify(this.state.inputValue)}]` : null
       this.props.getPhoneNumber(this.state.inputValue)
       this.props.hideModal()
     } else {
-      config.data[config.urls.fields.phone] = `[${JSON.stringify(this.state.inputValue)}]`
+      config.data[config.urls.fields.phone] = this.state.inputValue ? `[${JSON.stringify(this.state.inputValue)}]` : null
       this.props.create()
     }
     this.setState({isValidation: '', inputValue: ''})
@@ -65,6 +65,7 @@ export default class PhoneModal extends React.Component {
     } else {
       this.props.cancelEmpty() || this.props.closeModal()
     }
+    this.setState({ inputValue: '' })
   }
   componentDidUpdate = () => this.props.isVisibleModalPhone && this.refs.modal_phone.focus()
   render () {
