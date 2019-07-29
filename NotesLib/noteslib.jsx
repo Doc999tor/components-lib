@@ -148,7 +148,6 @@ export default class Notes extends React.Component {
     a.classList.toggle('full-note')
   }
   render () {
-    console.log(this.state.switch);
     return (
       <div id='notes'>
         {(this.state.isEditNotes || this.props.notesData.length > 0) && <div className='note-header'>

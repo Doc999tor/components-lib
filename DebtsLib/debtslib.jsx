@@ -3,6 +3,7 @@ import './debtslib.styl'
 export default class Debts extends React.Component {
   state = {
     flag: false,
+    flag_debt: true,
     debtReplace: this.props.customersDebts ? this.props.activateDebt : false,
     newEditDebt: this.props.customersDebts ? this.props.activateDebt : false,
     description: '',
@@ -11,9 +12,11 @@ export default class Debts extends React.Component {
     debt: 0,
     debt_step: 10
   }
+
   save = () => {
     this.setState({ debtEdit: false, debtReplace: false, debt_id: 0, newEditDebt: false }, () => this.props.saveDebt())
   }
+
   upd = () => {
     this.setState({ debtEdit: false, debtReplace: false, debt_id: 0 })
     if (this.props.customersDebts) {
@@ -22,10 +25,12 @@ export default class Debts extends React.Component {
       this.props.updateDebt(this.state.debt, this.state.description, this.state.add_client_id)
     }
   }
+
   del = () => {
     this.setState({ debtEdit: false, debtReplace: false })
     this.props.deleteDebt(this.props.customersDebts ? this.state.debt_id : this.state.add_client_id)
   }
+
   replace = (i, key) => {
     this.setState({
       newEditDebt: false,
@@ -36,8 +41,9 @@ export default class Debts extends React.Component {
       debt_id: i.id,
       add_client_id: i.id,
       key
-    })
+    }, () => this.handleWidth())
   }
+
   addDebt = () => {
     this.setState({
       newEditDebt: !this.state.newEditDebt,
@@ -46,10 +52,12 @@ export default class Debts extends React.Component {
       description: ''
     }, () => this.props.hiddenEmptyDepts && this.props.hiddenEmptyDepts())
   }
+
   callbackProps = () => {
     document.getElementById('input').focus()
     this.props.editDebt(this.state.debtEdit)
   }
+
   backButton = () => {
     this.setState({
       newEditDebt: false,
@@ -60,23 +68,29 @@ export default class Debts extends React.Component {
       debtReplace: false
     }, () => this.props.hiddenEmptyDepts ? this.props.hiddenEmptyDepts() : this.props.editDebt(this.state.debtEdit))
   }
+
   delDesc = () => {
     this.setState({
       description: ''
     })
   }
+
   handleIncrementDebt = () => {
     this.setState(prevState => ({
       debt: +prevState.debt + this.state.debt_step
     }), () => this.props.getDebt(this.state.debt))
+    this.handleWidth()
   }
+
   handleDecrementTime = () => {
     if (+this.state.debt > 0) {
       this.setState(prevState => ({
         debt: +prevState.debt - this.state.debt_step
       }), () => this.props.getDebt(this.state.debt))
     }
+    this.handleWidth()
   }
+
   price = () => {
     let arrDebts = this.props.debtsData.map(i => +i.sum)
     let totalDebt = (arrDebts.length !== 0) && arrDebts.reduce((sum, item) => {
@@ -84,8 +98,23 @@ export default class Debts extends React.Component {
     })
     return totalDebt
   }
+
+  handleWidth = () => {
+    let width = document.getElementById('count-input').scrollWidth
+    document.getElementById('count-input').setAttribute('style', 'width:' + width + 'px')
+  }
+
+  changeInput = e => {
+    this.setState({ debt: +e.target.value }, () => this.props.getDebt(this.state.debt))
+    this.handleWidth()
+  }
+
+  showFullDebt = (i, id) => {
+    let a = document.getElementById(id)
+    a.classList.toggle('full-debt')
+  }
+
   render () {
-    // console.log(this.props.debtsData);
     let totalPrice = this.price()
     const sortDebts = this.props.debtsData.sort((a, b) => moment(b.date) - moment(a.date))
     return (
@@ -112,9 +141,10 @@ export default class Debts extends React.Component {
                   </div>
                   <div className='currency-debt'>{config.data.currency}</div>
                   <input className='count-input'
+                    id='count-input'
                     type='number'
                     value={this.state.debt}
-                    onChange={e => this.setState({ debt: +e.target.value }, () => this.props.getDebt(this.state.debt))}
+                    onChange={e => this.changeInput(e)}
                     onFocus={e => { if (e.target.value == '0') e.target.value = '' }}
                     onBlur={e => { if (e.target.value == '') e.target.value = 0 }} />
                   <div className='ink' onClick={this.handleIncrementDebt}>
@@ -158,8 +188,9 @@ export default class Debts extends React.Component {
                       <div className='currency-debt'>{config.data.currency}</div>
                       <input className='count-input'
                         type='number'
+                        id='count-input'
                         value={this.state.debt}
-                        onChange={e => this.setState({ debt: +e.target.value }, () => this.props.getDebt(this.state.debt))}
+                        onChange={e => this.changeInput(e)}
                         onFocus={e => { if (e.target.value == '0') e.target.value = '' }}
                         onBlur={e => { if (e.target.value == '') e.target.value = 0 }} />
                       <div className='ink' onClick={this.handleIncrementDebt}>
@@ -195,7 +226,7 @@ export default class Debts extends React.Component {
                   <div className='debt-list-name'>
                     <label className='currency'>{i.sum}{config.data.currency}</label>
                     {i.desc && <div className='debt-list-desc'>
-                      <span>{i.desc}</span>
+                      <span onClick={this.state.flag_debt ? () => this.showFullDebt(i, i.id) : () => { }} id={i.id}>{i.desc}</span>
                     </div>}
                   </div>
                 </div>

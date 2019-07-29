@@ -41,7 +41,7 @@
     // background-color #fff
     .debt-list
       border-top 1px solid #dedeff
-      height 4em
+      min-height 4em
       display flex
       justify-content space-between
       background-color #fff
@@ -68,6 +68,11 @@
             white-space nowrap
             overflow hidden
             text-overflow ellipsis
+          .full-debt
+            white-space pre-line
+            max-height: unset 
+            overflow: unset;
+            display flex
       .right-side
         display flex
         align-items center
@@ -133,13 +138,14 @@
             border none
             font-size 16px
             text-align center
+            padding 0 10px
             -webkit-padding-end 10px
             -moz-padding-end 10px
             &:focus
               outline none
           .currency-debt
-            -webkit-padding-start 15px
-            -moz-padding-start 15px
+            -webkit-padding-start 10px
+            -moz-padding-start 10px
       .actions
         display flex
         justify-content flex-end
