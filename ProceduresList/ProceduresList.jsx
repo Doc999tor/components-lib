@@ -55,7 +55,7 @@ export default class ProceduresList extends React.Component {
         </div>
         <div className='procedure-wrap'>
           {!this.props.isOpenServices && filter === ''
-            ? this.state.categories.map(i => <div key={i.id} data_id={i.id} className={'extended-category' + (showServices && clickId === i.id && ' active_category')} onClick={() => this.handleclickCategory(i.id)}><div className=''>
+            ? this.state.categories.map(i => <div key={i.id} data_id={i.id} className={'extended-category ' + (showServices && clickId === i.id && 'active_category')} onClick={() => this.handleclickCategory(i.id)}><div className=''>
               <div className='category'>
                 <p className='category_name'>{i.name}</p>
                 <p className='category_count'>({i.count})</p>
