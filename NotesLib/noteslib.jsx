@@ -9,6 +9,8 @@ const INITIAL_STATE = {
   selectedValue: config.translations.notes_list[0].value,
   timeStart: config.data.reminders_default_period_amount,
   isReminderEdit: false,
+  reminderDate: '',
+  startReminder: '',
   description: '',
   switch: false,
   note_id: 0,
@@ -44,13 +46,14 @@ export default class Notes extends React.Component {
   handleIncrementTime = () => {
     this.setState(prevState => ({
       time: +prevState.time + 1
-    }))
+    }), () => this.setState({reminderDate: reminder(this.state.time, this.state.selectedValue)})
+    )
   }
   handleDecrementTime = () => {
     if (+this.state.time > 0) {
       this.setState(prevState => ({
         time: +prevState.time - 1
-      }))
+      }), () => this.setState({reminderDate: reminder(this.state.time, this.state.selectedValue)}))
     }
   }
   save = () => {
@@ -65,18 +68,25 @@ export default class Notes extends React.Component {
       switch: false,
       time: '0',
       add_client_id: id,
-      description: ''
+      description: '',
+      startReminder: '',
+      reminderDate: ''
     })
   }
   update = () => {
-    let rem = this.state.switch ? reminder(this.state.time, this.state.selectedValue) : false
-    this.props.editNote(rem, this.state.key, this.state.description)
+    let rem = this.state.switch
+      ? this.state.reminderDate ? moment(this.state.reminderDate).format('YYYY-MM-DD HH:mm:ss') : reminder(this.state.time, this.state.selectedValue)
+      : false
+    let startReminder = this.state.startReminder ? this.state.startReminder : false
+    this.props.editNote(rem, this.state.key, this.state.description, startReminder)
     this.setState({
       noteReplace: !this.state.noteReplace,
       isEditNotes: !this.state.isEditNotes,
       isReminderEdit: false,
       switch: false,
       description: '',
+      reminderDate: '',
+      startReminder: '',
       note_id: 0,
       time: '0'
     })
@@ -104,6 +114,8 @@ export default class Notes extends React.Component {
       isEditNotes: !this.state.isEditNotes,
       isReminderEdit: false,
       description: '',
+      reminderDate: '',
+      startReminder: '',
       switch: false,
       note_id: 0,
       time: '0',
@@ -116,6 +128,8 @@ export default class Notes extends React.Component {
       noteReplace: !this.state.noteReplace,
       isEditNotes: !this.state.isEditNotes,
       isReminderEdit: false,
+      reminderDate: '',
+      startReminder: '',
       description: '',
       switch: false,
       note_id: 0,
@@ -126,8 +140,13 @@ export default class Notes extends React.Component {
   replace = (i, key) => {
     this.setState({
       noteReplace: !this.state.noteReplace,
-      isEditNotes: !this.state.isEditNotes,
+      isEditNotes: true,
+      selectedValue: config.translations.notes_list[0].value,
+      selectedValueLable: config.translations.notes_list[0].label,
       description: i.text,
+      time: '0',
+      reminderDate: i.reminder_date,
+      startReminder: i.reminder_date,
       isReminderEdit: i.reminder_date && true,
       note_id: i.id,
       switch: i.reminder_date && true,
@@ -138,7 +157,15 @@ export default class Notes extends React.Component {
 
   componentWillMount = () => { if (!Array.isArray(config.data.notes)) config.data.notes = [] }
 
-  setSelectValues = (value, label) => this.setState({selectedValue: value, selectedValueLable: label})
+  setSelectValues = (value, label) => {
+    this.setState({
+      selectedValue: value,
+      selectedValueLable: label
+    }, () => this.setState({
+      reminderDate: reminder(this.state.time, this.state.selectedValue)
+    })
+    )
+  }
   setDescription = value => this.setState({description: value})
   cancelSearch = () => this.setState({description: ''})
   activateSwitch = () => this.setState({switch: !this.state.switch, isReminderEdit: !this.state.isReminderEdit})
@@ -171,6 +198,7 @@ export default class Notes extends React.Component {
                 selectedValue={this.state.selectedValue}
                 selectedValueLable={this.state.selectedValueLable}
                 switch={this.state.switch}
+                reminderDate={this.state.reminderDate}
                 time={this.state.time}
                 setSelectValues={this.setSelectValues}
                 isReminderEdit={this.state.isReminderEdit}
@@ -184,9 +212,9 @@ export default class Notes extends React.Component {
                 <div className='left-side'>
                   <div className='date'>
                     <span className='notes-list-date'>{formatDate(i.date)}</span>
-                    <div className={i.reminder_date ? 'notes-list-reminder' : 'hidden'}>
+                    {i.reminder_date && <div className='notes-list-reminder'>
                       <img src={config.urls.media + 'ic_notifications_active.svg'} />
-                    </div>
+                    </div>}
                   </div>
                   <p className={'notes-list-desc ' + (i.reminder_date ? 'rem_true' : 'rem_false')}
                     onClick={this.props.flag ? () => this.showFullNote(i, i.id) : () => {}}
