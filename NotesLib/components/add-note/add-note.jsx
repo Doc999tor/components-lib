@@ -1,6 +1,5 @@
 import { default as Select } from '../../../Select/Select.jsx'
 import { default as Switch } from '../../../Switch/Switch.jsx'
-import { default as reminder } from '../../../reminder.js'
 import './add-note.styl'
 
 export default class AddNote extends React.Component {
@@ -9,6 +8,7 @@ export default class AddNote extends React.Component {
     setDescription: PropTypes.func.isRequired,
     handleIncrementTime: PropTypes.func.isRequired,
     handleDecrementTime: PropTypes.func.isRequired,
+    setDurationValues: PropTypes.func.isRequired,
     deleteNote: PropTypes.func.isRequired,
     activateSwitch: PropTypes.func.isRequired,
     cancelSearch: PropTypes.func.isRequired,
@@ -22,8 +22,25 @@ export default class AddNote extends React.Component {
     noteReplace: PropTypes.bool.isRequired,
     switch: PropTypes.bool.isRequired
   }
+
+  componentDidMount = () => {
+    if (this.props.reminderDate && this.props.switch) {
+      const now = moment().format('YYYY-MM-DD HH:mm')
+      const end = moment(this.props.reminderDate).format('YYYY-MM-DD HH:mm')
+      const diff = moment(end).diff(moment(now), 'day')
+      if (diff === 0) {
+        return this.props.setDurationValues(moment(end).diff(moment(now), 'hours'), 'hours')
+      } else if (diff >= 7 && diff <= 30) {
+        return this.props.setDurationValues(moment(end).diff(moment(now), 'weeks'), 'weeks')
+      } else if (diff > 30 && diff <= 365) {
+        return this.props.setDurationValues(moment(end).diff(moment(now), 'months'), 'months')
+      } else {
+        return this.props.setDurationValues(moment(end).diff(moment(now), 'days'), 'days')
+      }
+    }
+  }
+
   render () {
-    const { reminderDate, time } = this.props
     return (
       <div className='edit-note'>
         <div className='edit-note-dody'>
@@ -50,31 +67,20 @@ export default class AddNote extends React.Component {
                 </div>
                 <Switch on={this.props.switch} onClick={this.props.activateSwitch} />
               </div>
-              {this.props.isReminderEdit && <div>
-                <div className='reminder-left'>
-                  <p>
-                    <span className='reminder-date'>{config.translations.notes.reminder_date_label}</span>
-                    {reminderDate ? moment(reminderDate).format('YYYY-MM-DD HH:mm') : reminder(this.props.time, this.props.selectedValue)}
-                  </p>
-                  {reminderDate && <p>
-                    <span className='time-left'>{config.translations.notes.left_to_reminder_day}</span>
-                    {moment(reminderDate).fromNow()}</p>}
+              {this.props.isReminderEdit && <div className='reminder-time'>
+                <div className='input-wrap'>
+                  <span className='reminder-in'>{config.translations.notes.in_label}</span>
+                  <div className='ink' onClick={this.props.handleIncrementTime}><img src={`${config.urls.media}plus.svg`} /></div>
+                  <input className='count-input total-input' type='text' value={this.props.time} disabled />
+                  <div className='ink' onClick={this.props.handleDecrementTime}><img src={`${config.urls.media}minus.svg`} /></div>
                 </div>
-                <div className='reminder-time'>
-                  <div className='input-wrap'>
-                    <span className='reminder-in'>{config.translations.notes.in_label}</span>
-                    <div className='ink' onClick={this.props.handleIncrementTime}><img src={`${config.urls.media}plus.svg`} /></div>
-                    <input className='count-input total-input' type='text' value={this.props.time} disabled />
-                    <div className='ink' onClick={this.props.handleDecrementTime}><img src={`${config.urls.media}minus.svg`} /></div>
-                  </div>
-                  <div className='select-wrap'>
-                    <Select
-                      value={this.props.selectedValue} 
-                      name={this.props.selectedValueLable} 
-                      onChange={e => this.props.setSelectValues(e.value, e.label)}
-                      options={config.translations.notes_list}
-                    />
-                  </div>
+                <div className='select-wrap'>
+                  <Select
+                    value={this.props.selectedValue}
+                    name={this.props.selectedValueLable}
+                    onChange={e => this.props.setSelectValues(e.value, e.label)}
+                    options={config.translations.notes_list}
+                  />
                 </div>
               </div>}
             </div>

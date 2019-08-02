@@ -35,6 +35,7 @@ export default class Notes extends React.Component {
     editNote: PropTypes.func.isRequired,
     rights: PropTypes.object.isRequired
   }
+  componentDidMount = () => { if (!Array.isArray(config.data.notes)) config.data.notes = [] }
   backButton = () => {
     this.setState({
       ...INITIAL_STATE,
@@ -101,11 +102,15 @@ export default class Notes extends React.Component {
   //   return str
   // }
   openAddForm = () => {
-    this.setState({
-      isEditNotes: !this.state.isEditNotes,
-      newEditNotes: !this.state.newEditNotes,
-      noteReplace: !this.state.noteReplace
-    }, () => this.props.hiddenNotes())
+    if (this.state.isEditNotes && !this.state.newEditNotes && this.state.noteReplace) {
+      this.backButton()
+    } else {
+      this.setState({
+        isEditNotes: true,
+        newEditNotes: true,
+        noteReplace: true
+      }, () => this.props.hiddenNotes())
+    }
   }
   deleteNote = () => {
     this.props.deleteNote(this.state.note_id)
@@ -138,24 +143,26 @@ export default class Notes extends React.Component {
     }))
   }
   replace = (i, key) => {
-    this.setState({
-      noteReplace: !this.state.noteReplace,
-      isEditNotes: true,
-      selectedValue: config.translations.notes_list[0].value,
-      selectedValueLable: config.translations.notes_list[0].label,
-      description: i.text,
-      time: '0',
-      reminderDate: i.reminder_date,
-      startReminder: i.reminder_date,
-      isReminderEdit: i.reminder_date && true,
-      note_id: i.id,
-      switch: i.reminder_date && true,
-      add_client_id: i.id,
-      key
-    })
+    if (this.state.isEditNotes && this.state.newEditNotes && this.state.noteReplace) {
+      this.backButton()
+    } else {
+      this.setState({
+        noteReplace: true,
+        isEditNotes: true,
+        selectedValue: config.translations.notes_list[0].value,
+        selectedValueLable: config.translations.notes_list[0].label,
+        description: i.text,
+        time: '0',
+        reminderDate: i.reminder_date,
+        startReminder: i.reminder_date,
+        isReminderEdit: i.reminder_date && true,
+        note_id: i.id,
+        switch: i.reminder_date && true,
+        add_client_id: i.id,
+        key
+      })
+    }
   }
-
-  componentWillMount = () => { if (!Array.isArray(config.data.notes)) config.data.notes = [] }
 
   setSelectValues = (value, label) => {
     this.setState({
@@ -165,6 +172,10 @@ export default class Notes extends React.Component {
       reminderDate: reminder(this.state.time, this.state.selectedValue)
     })
     )
+  }
+  setDurationValues = (time, selectedValue) => {
+    let obj = config.translations.notes_list.find(i => i.value === selectedValue)
+    this.setState({time, selectedValue: obj.value, selectedValueLable: obj.label})
   }
   setDescription = value => this.setState({description: value})
   cancelSearch = () => this.setState({description: ''})
@@ -196,6 +207,7 @@ export default class Notes extends React.Component {
                 handleDecrementTime={this.handleDecrementTime}
                 cancelSearch={this.cancelSearch}
                 selectedValue={this.state.selectedValue}
+                setDurationValues={this.setDurationValues}
                 selectedValueLable={this.state.selectedValueLable}
                 switch={this.state.switch}
                 reminderDate={this.state.reminderDate}
