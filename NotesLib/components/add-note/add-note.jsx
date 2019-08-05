@@ -89,7 +89,7 @@ export default class AddNote extends React.Component {
         <div className='actions-note'>
           {this.props.delete && <button
             className='delete'
-            onClick={(this.props.isReminderEdit && this.props.customers) ? this.props.deleteNoteReminder : this.props.deleteNote}>
+            onClick={this.props.deleteNote}>
             <img src={`${config.urls.media}delete.svg`} />
             {config.translations.notes.del_btn}
           </button>}
