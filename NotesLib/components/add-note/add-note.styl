@@ -87,6 +87,9 @@
       font-size: 14px;
       font-weight: 500;
       color: var(--sec-bgcolor)
+      img
+        width 18px
+        height 18px
     .save
       font-size: 14px;
       font-weight: 500;
@@ -95,16 +98,33 @@
       align-items center
       padding 0
       border none
+      outline none
       background-color transparent
       webkit-margin-start 1rem
       -moz-margin-start 1rem
       margin-inline-start 1rem
-    img
+    .img_apply
+      fill: var(--aquamarine)
+      width 18px
+      height 18px
+    .img_refresh
+      fill: var(--aquamarine)
+      width 18px
+      height 18px
+    .img-wrap
+      display flex
+      align-items center
+      justify-content center
       webkit-margin-end 0.4rem
       -moz-margin-end 0.4rem
       margin-inline-end 0.4rem
-      width 18px
-      height 18px
+    .spin
+      animation 1s spin infinite linear
+      @keyframes spin
+        from
+          transform rotate(0deg)
+        to
+          transform rotate(360deg)
   // .hidden
   //   display none
   .input-wrap

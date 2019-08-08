@@ -21,9 +21,6 @@ const INITIAL_STATE = {
 export default class Notes extends React.Component {
   state = {
     ...INITIAL_STATE,
-    newEditNotes: this.props.activateNone,
-    noteReplace: this.props.activateNone,
-    isEditNotes: this.props.activateNone,
     show: false,
   }
   static propTypes = {
@@ -36,13 +33,14 @@ export default class Notes extends React.Component {
     rights: PropTypes.object.isRequired
   }
   componentDidMount = () => { if (!Array.isArray(config.data.notes)) config.data.notes = [] }
+
   backButton = () => {
     this.setState({
-      ...INITIAL_STATE,
-      isEditNotes: false,
-      newEditNotes: false,
-      noteReplace: false
-    }, () => this.props.hiddenNotes())
+      ...INITIAL_STATE
+    }, () => {
+      this.props.cancelActions()
+      this.props.hiddenNotes()
+    })
   }
   handleIncrementTime = () => {
     this.setState(prevState => ({
@@ -61,18 +59,6 @@ export default class Notes extends React.Component {
     let id = Math.floor(Math.random() * 100) + 1
     let rem = this.state.switch ? reminder(this.state.time, this.state.selectedValue) : ''
     this.props.saveNote(rem, this.state.description, id && id)
-    this.setState({
-      isEditNotes: !this.state.isEditNotes,
-      newEditNotes: !this.state.newEditNotes,
-      noteReplace: !this.state.noteReplace,
-      isReminderEdit: false,
-      switch: false,
-      time: '0',
-      add_client_id: id,
-      description: '',
-      startReminder: '',
-      reminderDate: ''
-    })
   }
   update = () => {
     let rem = this.state.switch
@@ -80,17 +66,6 @@ export default class Notes extends React.Component {
       : false
     let startReminder = this.state.startReminder ? this.state.startReminder : false
     this.props.editNote(rem, this.state.key, this.state.description, startReminder)
-    this.setState({
-      noteReplace: !this.state.noteReplace,
-      isEditNotes: !this.state.isEditNotes,
-      isReminderEdit: false,
-      switch: false,
-      description: '',
-      reminderDate: '',
-      startReminder: '',
-      note_id: 0,
-      time: '0'
-    })
   }
   // checkLength (desc) {
   //   let str = ''
@@ -102,53 +77,23 @@ export default class Notes extends React.Component {
   //   return str
   // }
   openAddForm = () => {
-    if (this.state.isEditNotes && !this.state.newEditNotes && this.state.noteReplace) {
+    if (this.props.isEditNotes && !this.props.newEditNotes && this.props.noteReplace) {
       this.backButton()
     } else {
-      this.setState({
-        isEditNotes: true,
-        newEditNotes: true,
-        noteReplace: true
-      }, () => this.props.hiddenNotes())
+      this.setState({...INITIAL_STATE})
+      this.props.allowActions()
+      this.props.hiddenNotes()
     }
   }
   deleteNote = () => {
     this.props.deleteNote(this.state.note_id)
-    this.setState(state => ({
-      noteReplace: !this.state.noteReplace,
-      isEditNotes: !this.state.isEditNotes,
-      isReminderEdit: false,
-      description: '',
-      reminderDate: '',
-      startReminder: '',
-      switch: false,
-      note_id: 0,
-      time: '0',
-      key: 0
-    }))
-  }
-  deleteNoteReminder = () => {
-    this.props.deleteNoteReminder(this.state.note_id)
-    this.setState(state => ({
-      noteReplace: !this.state.noteReplace,
-      isEditNotes: !this.state.isEditNotes,
-      isReminderEdit: false,
-      reminderDate: '',
-      startReminder: '',
-      description: '',
-      switch: false,
-      note_id: 0,
-      time: '0',
-      key: 0
-    }))
   }
   replace = (i, key) => {
-    if (this.state.isEditNotes && this.state.newEditNotes && this.state.noteReplace) {
+    if (this.props.isEditNotes && this.props.newEditNotes && this.props.noteReplace) {
       this.backButton()
     } else {
+      this.props.editAction(i.id)
       this.setState({
-        noteReplace: true,
-        isEditNotes: true,
         selectedValue: config.translations.notes_list[0].value,
         selectedValueLable: config.translations.notes_list[0].label,
         description: i.text,
@@ -188,24 +133,24 @@ export default class Notes extends React.Component {
   render () {
     return (
       <div id='notes'>
-        {(this.state.isEditNotes || this.props.notesData.length > 0) && <div className='note-header'>
+        {(this.props.isEditNotes || this.props.notesData.length > 0) && <div className='note-header'>
           <span className='head-span'>{config.translations.notes.title}</span>
-          {this.state.isEditNotes && <button className='back' onClick={this.backButton}>
+          {this.props.isEditNotes && <button className='back' onClick={this.backButton}>
             <img src={config.urls.media + 'arrow-left.svg'} />
             {config.translations.notes.back_label_btn}
           </button>}
         </div>}
         <div className='note-body' style={{'max-height': (config.notes_height_limit * 56)}}>
           {this.props.notesData.map(i => (
-            this.state.note_id === i.id
+            this.props.editNoteId === i.id
               ? <AddNote
                 customers={this.props.customers}
-                deleteNoteReminder={this.deleteNoteReminder}
                 setDescription={this.setDescription}
                 description={this.state.description}
                 handleIncrementTime={this.handleIncrementTime}
                 handleDecrementTime={this.handleDecrementTime}
                 cancelSearch={this.cancelSearch}
+                loader={this.props.loader}
                 selectedValue={this.state.selectedValue}
                 setDurationValues={this.setDurationValues}
                 selectedValueLable={this.state.selectedValueLable}
@@ -215,7 +160,7 @@ export default class Notes extends React.Component {
                 setSelectValues={this.setSelectValues}
                 isReminderEdit={this.state.isReminderEdit}
                 activateSwitch={this.activateSwitch}
-                noteReplace={this.state.noteReplace}
+                noteReplace={this.props.noteReplace}
                 delete
                 deleteNote={this.deleteNote}
                 submit={this.update}
@@ -242,10 +187,10 @@ export default class Notes extends React.Component {
               </div>
           ))}
         </div>
-        {this.state.newEditNotes && this.state.isEditNotes && 
+        {this.props.newEditNotes && this.props.isEditNotes && 
         <AddNote
           customers={this.props.customers}
-          deleteNoteReminder={this.deleteNoteReminder}
+          loader={this.props.loader}
           setDescription={this.setDescription}
           description={this.state.description}
           handleIncrementTime={this.handleIncrementTime}
@@ -258,11 +203,11 @@ export default class Notes extends React.Component {
           setSelectValues={this.setSelectValues}
           isReminderEdit={this.state.isReminderEdit}
           activateSwitch={this.activateSwitch}
-          noteReplace={this.state.noteReplace}
+          noteReplace={this.props.noteReplace}
           note_id={this.state.note_id}
           submit={this.save}
         />}
-        <div className={'note-footer ' + ((this.state.isEditNotes || this.state.noteReplace || this.props.notesData.length > 0) ? 'bot-border' : 'top-border')} onClick={this.openAddForm}>
+        <div className={'note-footer ' + ((this.props.isEditNotes || this.props.noteReplace || this.props.notesData.length > 0) ? 'bot-border' : 'top-border')} onClick={this.openAddForm}>
           <label>{config.translations.notes.add_note_label}</label>
           <img src={config.urls.media + 'c_add_stroke.svg'} />
         </div>
