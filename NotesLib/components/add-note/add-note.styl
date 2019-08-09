@@ -2,6 +2,32 @@
   border-top 1px solid #dedeff
   border-bottom 1px solid #dedeff
   background-color: #fff
+  .img_apply
+    fill: var(--aquamarine)
+    width 18px
+    height 18px
+  .img_refresh
+    fill: var(--aquamarine)
+    width 18px
+    height 18px
+  .img_delete
+    fill: var(--sec-bgcolor)
+    width 18px
+    height 18px
+  .img-wrap
+    display flex
+    align-items center
+    justify-content center
+    webkit-margin-end 0.4rem
+    -moz-margin-end 0.4rem
+    margin-inline-end 0.4rem
+  .spin
+    animation 1s spin infinite linear
+    @keyframes spin
+      from
+        transform rotate(0deg)
+      to
+        transform rotate(360deg)
   .edit-note-dody
     padding 0 0.8rem
   .one-note
@@ -82,17 +108,18 @@
     .delete
       display flex
       align-items center
+      outline none
       background-color transparent
       border none
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--sec-bgcolor)
+      font-size 14px
+      font-weight 500
+      color var(--sec-bgcolor)
       img
         width 18px
         height 18px
     .save
-      font-size: 14px;
-      font-weight: 500;
+      font-size 14px
+      font-weight 500
       color: var(--aquamarine)
       display flex
       align-items center
@@ -103,28 +130,6 @@
       webkit-margin-start 1rem
       -moz-margin-start 1rem
       margin-inline-start 1rem
-    .img_apply
-      fill: var(--aquamarine)
-      width 18px
-      height 18px
-    .img_refresh
-      fill: var(--aquamarine)
-      width 18px
-      height 18px
-    .img-wrap
-      display flex
-      align-items center
-      justify-content center
-      webkit-margin-end 0.4rem
-      -moz-margin-end 0.4rem
-      margin-inline-end 0.4rem
-    .spin
-      animation 1s spin infinite linear
-      @keyframes spin
-        from
-          transform rotate(0deg)
-        to
-          transform rotate(360deg)
   // .hidden
   //   display none
   .input-wrap
@@ -209,5 +214,3 @@
         width 85%
       div:not(:last-child)
         border-bottom 1px solid var(--sec-color)
-
-

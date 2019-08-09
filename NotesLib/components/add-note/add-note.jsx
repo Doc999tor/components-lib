@@ -90,8 +90,11 @@ export default class AddNote extends React.Component {
           {this.props.delete && <button
             className='delete'
             onClick={this.props.deleteNote}>
-            <div className='img-wrap'>
-              <img src={`${config.urls.media}delete.svg`} />
+            <div className={'img-wrap' + (!this.props.loaderDel ? '' : ' spin')}>{!this.props.loaderDel
+              ? <img src={config.urls.media + 'trash-debts.svg'} />
+              : <svg className='img_delete'>
+                <use xlinkHref={config.urls.media + 'sprite.svg#refresh'} />
+              </svg>}
             </div>
             {config.translations.notes.del_btn}
           </button>}

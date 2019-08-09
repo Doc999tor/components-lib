@@ -145,6 +145,7 @@ export default class Notes extends React.Component {
             this.props.editNoteId === i.id
               ? <AddNote
                 customers={this.props.customers}
+                loaderDel={this.props.loaderDel}
                 setDescription={this.setDescription}
                 description={this.state.description}
                 handleIncrementTime={this.handleIncrementTime}
