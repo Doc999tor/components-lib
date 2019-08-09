@@ -1,6 +1,32 @@
 #debts
   border-radius 7px
   margin 7px 7px
+  .img_apply
+    fill: var(--aquamarine)
+    width 18px
+    height 18px
+  .img_refresh
+    fill: var(--aquamarine)
+    width 18px
+    height 18px
+  .img_delete
+    fill: var(--sec-bgcolor)
+    width 18px
+    height 18px
+  .img-wrap
+    display flex
+    align-items center
+    justify-content center
+    webkit-margin-end 0.4rem
+    -moz-margin-end 0.4rem
+    margin-inline-end 0.4rem
+  .spin
+    animation 1s spin infinite linear
+    @keyframes spin
+      from
+        transform rotate(0deg)
+      to
+        transform rotate(360deg)
   .debt-header
     background-color #fff
     border-top-left-radius 8px
@@ -153,22 +179,15 @@
         .button-apply
           display flex
           align-items center
-          color #50e3c1
-          img 
-            -webkit-padding-end 5px
-            -moz-padding-end 5px
-            width 23px
-            height 23px
+          color var(--aquamarine)
         .del-debts
           display flex
           -webkit-margin-end 26px
           -moz-margin-end 26px
           align-items center
-          color #bfafe0
+          color var(--sec-bgcolor)
           img
             width 18px
-            -webkit-margin-end 5px
-            -moz-margin-end 5px
   .debt-footer
     background-color #fff
     width 100%
