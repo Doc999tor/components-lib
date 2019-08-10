@@ -130,6 +130,7 @@ export default class Notes extends React.Component {
     let a = document.getElementById(id)
     a.classList.toggle('full-note')
   }
+  letsScroll = () => setTimeout(() => { this.noteRef.scrollTop += 200 }, 0)
   render () {
     return (
       <div id='notes'>
@@ -140,13 +141,14 @@ export default class Notes extends React.Component {
             {config.translations.notes.back_label_btn}
           </button>}
         </div>}
-        <div className='note-body' style={{'max-height': (config.notes_height_limit * 56)}}>
+        <div className='note-body' ref={noteBody => (this.noteRef = noteBody)} style={{'max-height': (config.notes_height_limit * 56)}}>
           {this.props.notesData.map(i => (
             this.props.editNoteId === i.id
               ? <AddNote
                 customers={this.props.customers}
                 loaderDel={this.props.loaderDel}
                 setDescription={this.setDescription}
+                letsScroll={this.letsScroll}
                 description={this.state.description}
                 handleIncrementTime={this.handleIncrementTime}
                 handleDecrementTime={this.handleDecrementTime}

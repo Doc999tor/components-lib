@@ -74,7 +74,7 @@ export default class AddNote extends React.Component {
                   <input className='count-input total-input' type='text' value={this.props.time} disabled />
                   <div className='ink' onClick={this.props.handleDecrementTime}><img src={`${config.urls.media}minus.svg`} /></div>
                 </div>
-                <div className='select-wrap'>
+                <div className='select-wrap' onClick={this.props.letsScroll}>
                   <Select
                     value={this.props.selectedValue}
                     name={this.props.selectedValueLable}
