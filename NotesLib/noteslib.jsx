@@ -210,10 +210,10 @@ export default class Notes extends React.Component {
           note_id={this.state.note_id}
           submit={this.save}
         />}
-        <div className={'note-footer ' + ((this.props.isEditNotes || this.props.noteReplace || this.props.notesData.length > 0) ? 'bot-border' : 'top-border')} onClick={this.openAddForm}>
+        {!this.props.newEditNotes && <div className={'note-footer ' + ((this.props.isEditNotes || this.props.noteReplace || this.props.notesData.length > 0) ? 'bot-border' : 'top-border')} onClick={this.openAddForm}>
           <label>{config.translations.notes.add_note_label}</label>
           <img src={config.urls.media + 'c_add_stroke.svg'} />
-        </div>
+        </div>}
       </div>
     )
   }
