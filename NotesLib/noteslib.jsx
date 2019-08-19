@@ -86,7 +86,7 @@ export default class Notes extends React.Component {
     }
   }
   deleteNote = () => {
-    this.props.deleteNote(this.state.note_id)
+    this.props.deleteNote(this.state.note_id, this.state.reminderDate)
   }
   replace = (i, key) => {
     if (this.props.isEditNotes && this.props.newEditNotes && this.props.noteReplace) {
