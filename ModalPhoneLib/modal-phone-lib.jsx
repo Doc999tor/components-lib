@@ -105,14 +105,15 @@ export default class PhoneModal extends React.Component {
           </div>
         </div>
         <div className='phone-modal-footer'>
-          <button className={config.isRTL ? 'send' : 'skip'} onClick={this.skip}>
+          <button className='skip'
+            onClick={this.skip}>
             <div className='btns-wrap'>
               <p>{this.props.text.cancel_modal}</p>
               <img className={(config.isRTL || config.data.isRTL) && 'right'} src={config.urls.media + 'skip-forward.svg'} />
             </div>
           </button>
-          <button className={config.isRTL ? 'skip' : 'send'}
-            // disabled={!validatePhone(this.state.inputValue)}
+          <button className='send'
+            disabled={!validatePhone(this.state.inputValue)}
             onClick={this.save}>
             <div className='btns-wrap'>
               <p>{this.props.text.save}</p>
