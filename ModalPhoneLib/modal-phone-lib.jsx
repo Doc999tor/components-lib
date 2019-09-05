@@ -4,20 +4,17 @@ import {default as validatePhone} from '../validate-phone.js'
 import './modal-phone-lib.styl'
 
 export default class PhoneModal extends React.Component {
-  static propTypes = {
-    isVisibleModalPhone: PropTypes.bool.isRequired,
-    toglePhoneModal: PropTypes.func.isRequired,
-    sendlink: PropTypes.func
-  }
   state = {
     inputValue: '',
     deniedPhone: false
   }
+
   delInfo = () => {
-    this.setState({isValidation: '', inputValue: ''})
+    this.setState({ isValidation: '', inputValue: '' })
   }
+
   back = () => {
-    this.setState({isValidation: '', inputValue: ''})
+    this.setState({ isValidation: '', inputValue: '' })
     if (this.props.blur) {
       this.props.deniedPhone()
       this.props.hideModal()
@@ -25,6 +22,7 @@ export default class PhoneModal extends React.Component {
       this.props.closeModal ? this.props.closeModal() : this.props.cancelEmpty()
     }
   }
+
   normalizePhones = phones => {
     if (phones && phones.length) {
       let normalizeArray = phones.map((phone, index) => ({ id: index, number: phone.number || phone }))
@@ -33,6 +31,7 @@ export default class PhoneModal extends React.Component {
       return []
     }
   }
+
   save = () => {
     if (this.props.getPhone) {
       let arrPhones = []
@@ -41,22 +40,24 @@ export default class PhoneModal extends React.Component {
     }
     else if (this.props.reminders) this.props.create(this.state.inputValue)
     else if (this.props.blur) {
-      config.data[config.urls.fields.phone] = this.state.inputValue ? `[${JSON.stringify(this.state.inputValue)}]` : null
+      config.data[config.urls.fields.phone] = validatePhone(this.state.inputValue) ? `[${JSON.stringify(this.state.inputValue)}]` : null
       this.props.getPhoneNumber(this.state.inputValue)
       this.props.hideModal()
     } else {
-      config.data[config.urls.fields.phone] = this.state.inputValue ? `[${JSON.stringify(this.state.inputValue)}]` : null
+      config.data[config.urls.fields.phone] = validatePhone(this.state.inputValue) ? `[${JSON.stringify(this.state.inputValue)}]` : null
       this.props.create()
     }
-    this.setState({isValidation: '', inputValue: ''})
+    this.setState({ isValidation: '', inputValue: '' })
     if (this.state.isValidation) {
       this.props.cancel && this.props.cancel()
     } else this.props.cancelEmpty()
   }
+
   checkPhone = e => {
-    this.setState({inputValue: e, isValidation: ''})
+    this.setState({ inputValue: e, isValidation: '' })
     if (e !== '' && e.length >= 3) validatePhone(e) ? this.setState({isValidation: true}) : this.setState({isValidation: false})
   }
+
   skip = () => {
     if (this.props.blur) {
       this.props.hideModal()
@@ -67,6 +68,7 @@ export default class PhoneModal extends React.Component {
     }
     this.setState({ inputValue: '' })
   }
+
   componentDidUpdate = () => this.props.isVisibleModalPhone && this.refs.modal_phone.focus()
   render () {
     return (
