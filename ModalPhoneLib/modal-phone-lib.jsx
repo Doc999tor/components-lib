@@ -64,7 +64,7 @@ export default class PhoneModal extends React.Component {
     } else if (this.props.addClient && !this.props.blur) {
       this.save()
     } else {
-      this.props.cancelEmpty() || this.props.closeModal()
+      this.props.cancelEmpty ? this.props.cancelEmpty() : this.props.closeModal()
     }
     this.setState({ inputValue: '' })
   }
