@@ -114,12 +114,12 @@ export default class PhoneModal extends React.Component {
               <img className={(config.isRTL || config.data.isRTL) && 'right'} src={config.urls.media + 'skip-forward.svg'} />
             </div>
           </button>
-          <button className='send'
+          <button className={'send ' + (!validatePhone(this.state.inputValue) || this.state.inputValue?.length < 3 ? 'disabled' : '')}
             disabled={!validatePhone(this.state.inputValue) || this.state.inputValue?.length < 3}
             onClick={this.save}>
             <div className='btns-wrap'>
               <p>{this.props.text.save}</p>
-              <img src={config.urls.media + 'save.svg'} />
+              <img src={config.urls.media + (!validatePhone(this.state.inputValue) || this.state.inputValue ?.length < 3 ? 'save-disabled.svg' : 'save.svg')} />
             </div>
           </button>
         </div>
