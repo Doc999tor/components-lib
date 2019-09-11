@@ -50,7 +50,7 @@ export default class PhoneModal extends React.Component {
     this.setState({ isValidation: '', inputValue: '' })
     if (this.state.isValidation) {
       this.props.cancel && this.props.cancel()
-    } else this.props.cancelEmpty()
+    } else this.props.cancelEmpty ? this.props.cancelEmpty() : this.props.closeModal()
   }
 
   checkPhone = e => {
@@ -66,7 +66,7 @@ export default class PhoneModal extends React.Component {
     } else {
       this.props.cancelEmpty ? this.props.cancelEmpty() : this.props.closeModal()
     }
-    this.setState({ inputValue: '' })
+    this.setState({ inputValue: '', isValidation: '' })
   }
 
   componentDidUpdate = () => this.props.isVisibleModalPhone && this.refs.modal_phone.focus()
@@ -115,7 +115,7 @@ export default class PhoneModal extends React.Component {
             </div>
           </button>
           <button className='send'
-            disabled={!validatePhone(this.state.inputValue)}
+            disabled={!validatePhone(this.state.inputValue) || this.state.inputValue?.length < 3}
             onClick={this.save}>
             <div className='btns-wrap'>
               <p>{this.props.text.save}</p>
