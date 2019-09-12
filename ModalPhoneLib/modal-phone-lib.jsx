@@ -109,18 +109,18 @@ export default class PhoneModal extends React.Component {
         <div className='phone-modal-footer'>
           <button className='skip'
             onClick={this.skip}>
-            <div className='btns-wrap'>
-              <p>{this.props.text.cancel_modal}</p>
-              <img className={(config.isRTL || config.data.isRTL) && 'right'} src={config.urls.media + 'skip-forward.svg'} />
-            </div>
+            <p>{this.props.text.cancel_modal}</p>
+            <svg className={`img_skip ${(config.isRTL || config.data.isRTL) && 'right'}`}>
+              <use xlinkHref={config.urls.media + 'sprite-reminders.svg#skip'} />
+            </svg>
           </button>
-          <button className={'send ' + (!validatePhone(this.state.inputValue) || this.state.inputValue?.length < 3 ? 'disabled' : '')}
+          <button className={(!validatePhone(this.state.inputValue) || this.state.inputValue?.length < 3 ? 'send_disabled' : 'send_active')}
             disabled={!validatePhone(this.state.inputValue) || this.state.inputValue?.length < 3}
             onClick={this.save}>
-            <div className='btns-wrap'>
-              <p>{this.props.text.save}</p>
-              <img clasName={'save_icon ' + (!validatePhone(this.state.inputValue) || this.state.inputValue ?.length < 3 ? 'disabled' : '')} src={config.urls.media + 'save.svg'} />
-            </div>
+            <p>{this.props.text.save}</p>
+            <svg className={!validatePhone(this.state.inputValue) || this.state.inputValue ?.length < 3 ? 'img_save_disabled' : 'img_save_active'}>
+              <use xlinkHref={config.urls.media + 'sprite-reminders.svg#save'} />
+            </svg>
           </button>
         </div>
       </Modal>
