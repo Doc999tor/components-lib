@@ -111,7 +111,7 @@ export default class PhoneModal extends React.Component {
             onClick={this.skip}>
             <p>{this.props.text.cancel_modal}</p>
             <svg className={`img_skip ${(config.isRTL || config.data.isRTL) && 'right'}`}>
-              <use xlinkHref={config.urls.media + 'sprite-reminders.svg#skip'} />
+              <use xlinkHref={config.urls.media + 'sprite.svg#skip'} />
             </svg>
           </button>
           <button className={(!validatePhone(this.state.inputValue) || this.state.inputValue?.length < 3 ? 'send_disabled' : 'send_active')}
@@ -119,7 +119,7 @@ export default class PhoneModal extends React.Component {
             onClick={this.save}>
             <p>{this.props.text.save}</p>
             <svg className={!validatePhone(this.state.inputValue) || this.state.inputValue ?.length < 3 ? 'img_save_disabled' : 'img_save_active'}>
-              <use xlinkHref={config.urls.media + 'sprite-reminders.svg#save'} />
+              <use xlinkHref={config.urls.media + 'sprite.svg#save'} />
             </svg>
           </button>
         </div>
