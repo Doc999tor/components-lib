@@ -119,7 +119,7 @@ export default class PhoneModal extends React.Component {
             onClick={this.save}>
             <div className='btns-wrap'>
               <p>{this.props.text.save}</p>
-              <img src={config.urls.media + (!validatePhone(this.state.inputValue) || this.state.inputValue ?.length < 3 ? 'save-disabled.svg' : 'save.svg')} />
+              <img clasName={'save_icon ' + (!validatePhone(this.state.inputValue) || this.state.inputValue ?.length < 3 ? 'disabled' : '')} src={config.urls.media + 'save.svg'} />
             </div>
           </button>
         </div>
