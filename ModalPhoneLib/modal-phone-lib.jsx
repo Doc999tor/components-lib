@@ -19,7 +19,7 @@ export default class PhoneModal extends React.Component {
       this.props.deniedPhone()
       this.props.hideModal()
     } else {
-      this.props.closeModal ? this.props.closeModal() : this.props.cancelEmpty()
+      this.props.closeModal ? this.props.closeModal() : this.props.cancelSave()
     }
   }
 
@@ -37,6 +37,7 @@ export default class PhoneModal extends React.Component {
       let arrPhones = []
       arrPhones.push(this.state.inputValue)
       this.normalizePhones(arrPhones)
+      this.props.cancelSave()
     }
     else if (this.props.reminders) this.props.create(this.state.inputValue)
     else if (this.props.blur) {
@@ -50,7 +51,7 @@ export default class PhoneModal extends React.Component {
     this.setState({ isValidation: '', inputValue: '' })
     if (this.state.isValidation) {
       this.props.cancel && this.props.cancel()
-    } else this.props.cancelEmpty ? this.props.cancelEmpty() : this.props.closeModal()
+    } else this.props.cancelSave ? this.props.cancelSave() : this.props.closeModal()
   }
 
   checkPhone = e => {
@@ -64,7 +65,7 @@ export default class PhoneModal extends React.Component {
     } else if (this.props.addClient && !this.props.blur) {
       this.save()
     } else {
-      this.props.cancelEmpty ? this.props.cancelEmpty() : this.props.closeModal()
+      this.props.cancelSave ? this.props.cancelSave() : this.props.closeModal()
     }
     this.setState({ inputValue: '', isValidation: '' })
   }
