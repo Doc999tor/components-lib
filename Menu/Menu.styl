@@ -26,13 +26,18 @@
     height 100%
   .menu
     .menu-logo
-      height 25%
+      min-height 25%
+      word-break break-all
       display flex
       flex-direction column
       justify-content center
       align-items center
       padding .6rem 1rem
       color #fff
+      .business_container
+        display flex
+        flex-direction column
+        text-align center
       .logo
           display flex
           justify-content center
@@ -40,7 +45,6 @@
           width 77px
           height 77px
           border-radius 50%
-          // background-color #fff
           object-fit cover
           .business_logo
             width 77px
@@ -53,7 +57,6 @@
           margin .6rem 0 .5rem
       .business_address
         font-size .75rem
-        text-align center
         .business_address_img
           width .7rem
           height .7rem
@@ -86,3 +89,18 @@
     margin-inline-end 1.4rem
     height 25px
     width 25px
+    
+@media (orientation: landscape)
+  #menu_modal
+    .menu-logo
+      flex-direction row
+      justify-content space-between
+      .business_container
+        flex-grow 1
+        -moz-padding-start 1rem
+        -webkit-padding-start 1rem
+        padding-inline-start 1rem
+    .menu_container
+      height auto
+    .list-item
+      min-height 4rem

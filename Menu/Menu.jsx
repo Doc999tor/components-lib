@@ -12,7 +12,6 @@ export default class Menu extends React.Component {
     return (
       <div id='menu_modal' onClick={this.props.closeMenu}>
         <div className='menu_container'>
-
           <div className='menu_wrap' style={bgrImg}>
             <div className='list-wrap' onClick={e => e.stopPropagation()}>
               <div className='menu'>
@@ -20,8 +19,10 @@ export default class Menu extends React.Component {
                   <div className='logo'>
                     <img className='business_logo' src={config.user.business_logo} />
                   </div>
-                  <p className='business_name'>{config.user.business_name}</p>
-                  <p className='business_address'><img className='business_address_img' src={`${config.urls.menu_icons}map-pin.svg`} />{config.user.business_address}</p>
+                  <div className='business_container'>
+                    <p className='business_name'>{config.user.business_name}</p>
+                    <p className='business_address'><img className='business_address_img' src={`${config.urls.menu_icons}map-pin.svg`} />{config.user.business_address}</p>
+                  </div>
                 </div>
                 <nav className='menu-list'>
                   {config.menu.map(item => {
