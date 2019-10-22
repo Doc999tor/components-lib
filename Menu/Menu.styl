@@ -22,11 +22,11 @@
     background-size cover
     color #fff
   .list-wrap
-    background-color rgba(79, 45, 167, 0.7)
     height 100%
   .menu
     .menu-logo
       min-height 25%
+      background-color rgba(79, 45, 167, 0.7)
       word-break break-all
       display flex
       flex-direction column
@@ -69,17 +69,26 @@
     display flex
     flex-direction column
     flex-grow 1
+    background-color rgba(79, 45, 167, 0.7)
   .list-item
+    min-height 4rem
+    -moz-padding-start 1.4rem
+    -webkit-padding-start 1.4rem
     padding-inline-start 1.4rem
+    -moz-padding-end 0.3rem
+    -webkit-padding-end 0.3rem
+    padding-inline-end 0.3rem
     box-sizing border-box
     list-style none
-    flex-grow 1
     display flex
     border-top 1px solid #B7ACCF
+    &:last-child
+      border-bottom 1px solid #B7ACCF
   .item-link
     display flex
     align-items center
     text-decoration none
+    word-break break-all
     width 100%
     font-weight 500
     font-size .9rem
