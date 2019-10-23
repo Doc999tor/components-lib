@@ -29,7 +29,7 @@ export default class Menu extends React.Component {
                     return (
                       <li className='list-item'>
                         <a className='item-link' href={item.link}>
-                          <img className='menu-img' src={config.urls.menu_icons + item.icon} alt={item.text} />
+                          <span className='img-wrap'><img className='menu-img' src={config.urls.menu_icons + item.icon} alt={item.text} /></span>
                           {config.translations.menu[item.text]}
                         </a>
                       </li>
