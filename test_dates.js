@@ -67,17 +67,33 @@ export default date => {
   // return ctx
   if (date) {
     if (diff <= -14 && diff >= -30 ) {
-      return config.translations.last_appointment_week_future.replace('{date_string}', Math.abs(newDate.diff(defaultDate, 'weeks'))) + diff
+      return config.translations.last_appointment_week.replace('{date_string}', Math.abs(newDate.diff(defaultDate, 'weeks')))
     } else if (diff === -1 && diff < 0) {
-      return 'yesterday'
+      return config.translations.last_appointment_yesterday + moment(date).format('HH:mm')
     } else if (diff >= -7 && diff < -1) {
       return config.translations.was_ago + moment(date).format('dddd HH:mm')
     } else if (diff >= -14 && diff < 0) {
-      return config.translations.last_appointment_last_days.replace('{date_string}', Math.abs(newDate.diff(defaultDate, 'days'))) + diff
+      return config.translations.last_appointment_last_days.replace('{date_string}', Math.abs(newDate.diff(defaultDate, 'days')))
     } else if (diff < -30 && diff >= -365) {
-      return config.translations.last_appointment_month_future.replace('{date_string}', Math.abs(newDate.diff(defaultDate, 'month'))) + diff
+      if (Math.abs(newDate.diff(defaultDate, 'month')) > 1) {
+        return config.translations.last_appointment_months.replace('{date_string}', Math.abs(newDate.diff(defaultDate, 'month')))
+      } else return config.translations.last_appointment_month.replace('{date_string}', Math.abs(newDate.diff(defaultDate, 'month')))
     } else if (diff <= -365) {
-      return config.translations.last_appointment_year_future.replace('{date_string}', Math.abs(newDate.diff(defaultDate, 'years'))) + diff
+      return config.translations.last_appointment_year.replace('{date_string}', Math.abs(newDate.diff(defaultDate, 'years')))
+    } else if (diff >= 14 && diff <= 30 ) {
+      return config.translations.next_appointment_week.replace('{date_string}', Math.abs(newDate.diff(defaultDate, 'weeks')))
+    } else if (diff === 1 && diff > 0) {
+      return config.translations.next_appointment_tomorrow + moment(date).format('HH:mm')
+    } else if (diff <= 7 && diff > 1) {
+      return config.translations.next_appointment + moment(date).format('dddd HH:mm')
+    } else if (diff <= 14 && diff > 0) {
+      return config.translations.next_appointment_next_days.replace('{date_string}', Math.abs(newDate.diff(defaultDate, 'days')))
+    } else if (diff > 30 && diff <= 365) {
+      if (Math.abs(newDate.diff(defaultDate, 'month')) > 1) {
+        return config.translations.next_appointment_months.replace('{date_string}', Math.abs(newDate.diff(defaultDate, 'month')))
+      } else return config.translations.next_appointment_month.replace('{date_string}', Math.abs(newDate.diff(defaultDate, 'month')))
+    } else if (diff >= 365) {
+      return config.translations.next_appointment_year.replace('{date_string}', Math.abs(newDate.diff(defaultDate, 'years')))
     }
   } else {
     return false
