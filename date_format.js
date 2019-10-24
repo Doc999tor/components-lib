@@ -15,7 +15,7 @@ export default date => {
     } else if (diff >= -7 && diff < -1) {
       return config.translations.last_appointment.replace('{weekday}', weekday).replace('{time}', time)
     } else if (diff >= -14 && diff < 0) {
-      return config.translations.last_appointment_last_days.replace('{date_string}', Math.abs(newDate.diff(defaultDate, 'days')))
+      return config.translations.last_appointment_days.replace('{date_string}', Math.abs(newDate.diff(defaultDate, 'days')))
     } else if (diff < -30 && diff >= -364) {
       if (Math.abs(newDate.diff(defaultDate, 'month')) > 1) {
         return config.translations.last_appointment_months.replace('{date_string}', Math.abs(newDate.diff(defaultDate, 'month')))
@@ -31,7 +31,7 @@ export default date => {
     } else if (diff <= 7 && diff > 1) {
       return config.translations.next_appointment.replace('{weekday}', weekday).replace('{time}', time)
     } else if (diff <= 14 && diff > 0) {
-      return config.translations.next_appointment_next_days.replace('{date_string}', Math.abs(newDate.diff(defaultDate, 'days')))
+      return config.translations.next_appointment_days.replace('{date_string}', Math.abs(newDate.diff(defaultDate, 'days')))
     } else if (diff > 30 && diff <= 364) {
       if (Math.abs(newDate.diff(defaultDate, 'month')) > 1) {
         return config.translations.next_appointment_months.replace('{date_string}', Math.abs(newDate.diff(defaultDate, 'month')))
