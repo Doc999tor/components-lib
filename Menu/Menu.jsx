@@ -1,6 +1,6 @@
 import './Menu.styl'
 
-if (config.preact) {
+if (config.is_preact) {
   try {
     const { h } = require('preact')
   } catch (error) {
