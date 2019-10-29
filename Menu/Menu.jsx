@@ -1,19 +1,26 @@
 import './Menu.styl'
 
-if (config.is_preact) {
+if (config.preact) {
   try {
     const { h } = require('preact')
+  } catch (error) {
+    console.log(error)
+  }
+} else if (config.is_vanilla) {
+  try {
+    const jsxRender = require('jsx-render')
+    const dom = jsxRender.default
   } catch (error) {
     console.log(error)
   }
 }
 export default ({ closeMenu }) => {
   const bgrImg = {
-    backgroundImage: `url('${config.urls.menu_icons}photo-bgr.png')`
+    backgroundImage: `url('${config.urls.menu_icons}photo-bgr.jpg')`
   }
   const cancelPropagation = e => e.stopPropagation()
   return (
-    <div id='menu_modal' onClick={closeMenu}>
+    <div id='menu_modal' className='jsx-menu' onClick={closeMenu}>
       <div className='menu_container'>
         <div className='menu_wrap' style={bgrImg}>
           <div className='list-wrap' onClick={cancelPropagation}>
