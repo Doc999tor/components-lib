@@ -1,12 +1,12 @@
 import './Menu.styl'
 
-if (config.is_preact) {
+if (config.js_framework === 'preact') {
   try {
     const { h } = require('preact')
   } catch (error) {
     console.log(error)
   }
-} else if (config.is_vanilla) {
+} else if (config.js_framework === 'vanilla') {
   try {
     const jsxRender = require('jsx-render')
     const dom = jsxRender.default
@@ -16,7 +16,7 @@ if (config.is_preact) {
 }
 export default ({ closeMenu }) => {
   const bgrImg = {
-    backgroundImage: `url('${config.urls.menu_icons}photo-bgr.jpg')`
+    'background-image': `url('${config.urls.menu_icons}photo-bgr.jpg')`
   }
   const cancelPropagation = e => e.stopPropagation()
   return (
