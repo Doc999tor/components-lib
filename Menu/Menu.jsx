@@ -37,12 +37,19 @@ export default ({ closeMenu }) => {
               <nav className='menu-list'>
                 {config.menu.map(item => {
                   return (
-                    <li className='list-item'>
-                      <a className='item-link' href={item.link}>
-                        <span className='menu-img-wrap'><img className='menu-img' src={config.urls.menu_icons + item.icon} alt={item.text} /></span>
-                        {config.translations.menu[item.text]}
-                      </a>
-                    </li>
+                    item.text === 'download'
+                      ? <li className='list-item install installed' onClick={closeMenu}>
+                        <p className='item-link'>
+                          <span className='menu-img-wrap'><img className='menu-img' src={config.urls.menu_icons + 'download.svg'} alt='download' /></span>
+                          {config.translations.install_btn_label}
+                        </p>
+                      </li>
+                      : <li className='list-item'>
+                        <a className='item-link' href={item.link}>
+                          <span className='menu-img-wrap'><img className='menu-img' src={config.urls.menu_icons + item.icon} alt={item.text} /></span>
+                          {config.translations.menu[item.text]}
+                        </a>
+                      </li>
                   )
                 })}
               </nav>
