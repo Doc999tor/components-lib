@@ -14,13 +14,13 @@ if (config.js_framework === 'preact') {
     console.log(error)
   }
 }
-export default ({ closeMenu }) => {
+export default ({ closeMenu, isActive }) => {
   const bgrImg = {
     'background-image': `url('${config.urls.menu_icons}photo-bgr.jpg')`
   }
   const cancelPropagation = e => e.stopPropagation()
   return (
-    <div id='menu_modal' className='jsx-menu' onClick={closeMenu}>
+    <div id='menu_modal' className={isActive ? '' : 'jsx-menu'} onClick={closeMenu}>
       <div className='menu_container'>
         <div className='menu_wrap' style={bgrImg}>
           <div className='list-wrap' onClick={cancelPropagation}>
@@ -41,7 +41,7 @@ export default ({ closeMenu }) => {
                       ? <li className='list-item install installed' onClick={closeMenu}>
                         <p className='item-link'>
                           <span className='menu-img-wrap'><img className='menu-img' src={config.urls.menu_icons + 'download.svg'} alt='download' /></span>
-                          {config.translations.install_btn_label}
+                          {config.translations.menu[item.text]}
                         </p>
                       </li>
                       : <li className='list-item'>
