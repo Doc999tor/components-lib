@@ -6,16 +6,17 @@
     left 0
     z-index 9999
     width 100%
-    height 100%
+    height 100vh
     overflow auto
     background-color rgba(255, 255, 255, 0.88)
   .menu_container
+    display flex
     margin 0 auto
-    height 100%
+    min-height 100%
     max-width 640px
   .menu_wrap
     width 60%
-    height 100%
+    min-height 100%
     background-color #fff
     background-position -300px 0px
     background-repeat no-repeat
@@ -25,7 +26,6 @@
     height 100%
   .menu
     .menu-logo
-      min-height 25%
       background-color rgba(79, 45, 167, 0.7)
       word-break break-all
       display flex
@@ -84,6 +84,8 @@
     border-top 1px solid #B7ACCF
     &:last-child
       border-bottom 1px solid #B7ACCF
+  .installed
+    display none
   .item-link
     display flex
     align-items center
