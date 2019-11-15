@@ -24,5 +24,7 @@ export default (file, callback) => {
     }
     return callback(new Error('-1'))
   }
-  reader.readAsArrayBuffer(file)
+  if(file) {
+	  reader.readAsArrayBuffer(file)
+  }
 }
