@@ -14,6 +14,12 @@ if (config.js_framework === 'preact') {
     console.log(error)
   }
 }
+let vh = window.innerHeight * 0.01
+document.documentElement.style.setProperty('--vh', `${vh}px`)
+window.addEventListener('resize', () => {
+  let vh = window.innerHeight * 0.01
+  document.documentElement.style.setProperty('--vh', `${vh}px`)
+})
 export default ({ closeMenu }) => {
   const bgrImg = {
     'background-image': `url('${config.urls.menu_icons}photo-bgr.jpg')`
