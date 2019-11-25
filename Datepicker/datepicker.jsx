@@ -63,6 +63,12 @@ export default class Datepicker extends React.Component {
   render () {
     return (
       <div className='picker-wrap'>
+        <select className='year' value={this.props.year} onChange={this.props.handleChangeYear}>
+          <option value={config.translations.datepicker.placeholder.year} disabled>{config.translations.datepicker.placeholder.year}</option>
+          {
+            this.renderOptionsYear()
+          }
+        </select>
         <select className='month' value={this.props.month} onChange={this.props.handleChangeMonth}>
           <option value={config.translations.datepicker.placeholder.month} disabled>{config.translations.datepicker.placeholder.month}</option>
           {
@@ -73,12 +79,6 @@ export default class Datepicker extends React.Component {
           <option value={config.translations.datepicker.placeholder.day} disabled>{config.translations.datepicker.placeholder.day}</option>
           {
             this.renderOptionsDay()
-          }
-        </select>
-        <select className='year' value={this.props.year} onChange={this.props.handleChangeYear}>
-          <option value={config.translations.datepicker.placeholder.year} disabled>{config.translations.datepicker.placeholder.year}</option>
-          {
-            this.renderOptionsYear()
           }
         </select>
       </div>
