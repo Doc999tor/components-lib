@@ -5,7 +5,7 @@ export default (newPicture, newAgreement) => {
   const d = moment().format('YYYY-MM-DD HH:mm:ss')
   body.append('added', d)
   newPicture && body.append('photo', newPic)
-  newAgreement && body.append('permit_ads', newAgr)
+  body.append('permit_ads', 'false')
   const checkFields = Object.keys(config.urls.fields).map(i => config.urls.fields[i])
   checkFields.forEach(i => {
     const bodyUpdated = config.data[i]
