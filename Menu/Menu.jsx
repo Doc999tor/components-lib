@@ -24,7 +24,7 @@ if (typeof window !== 'undefined' && typeof config !== 'undefined') {
 	}
 } else if (typeof window !== 'undefined' && typeof window.config === 'undefined' && typeof config === 'undefined') {
 	try {
-		const { config } = require('../Home_website/config.js')
+		const { config } = require('../../components-lib/Home_website/config_ssr.js')
 		temp = config
 		let vh = window.innerHeight * 0.01
 		document.documentElement.style.setProperty('--vh', `${vh}px`)
