@@ -47,7 +47,7 @@ const config = {
 	modules: {
 		hero: {
 			features: ['business', 'reminders', 'notifications'],
-			gallery: ['pic_iphone.png', 'pic_iphone1.png', 'pic_iphone2.png', 'pic_iphone3.png', 'pic_iphone4.png'],
+			gallery: ['black_phone', 'pic_iphone', 'pic_iphone1', 'pic_iphone2', 'pic_iphone3', 'pic_iphone4'],
 			gallery_speed: 2000
 		},
 		features: {
