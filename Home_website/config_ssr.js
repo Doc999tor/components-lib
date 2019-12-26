@@ -46,7 +46,9 @@ export const config = {
 	],
 	modules: {
 		hero: {
-			features: ['business', 'reminders', 'notifications']
+			features: ['business', 'reminders', 'notifications'],
+			gallery: ['black_phone', 'pic_iphone', 'pic_iphone1', 'pic_iphone2', 'pic_iphone3', 'pic_iphone4'],
+			gallery_speed: 2000
 		},
 		features: {
 			data: [
@@ -194,6 +196,7 @@ export const config = {
 		login: `/${ lang }/login`,
 		signup: `/${ lang }/signup`,
 		old_website: '/text_website.html',
+		hero_gallery: './components-lib/Home_website/gallery/',
 		media: './assets/media/',
 		media_clients: './assets/clients/',
 		media_logo: './components-lib/Home_website/logo/',
