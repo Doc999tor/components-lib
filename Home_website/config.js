@@ -183,6 +183,9 @@ const config = {
 				{ name: 'ultimate', icon: 'ultimate.svg', price_monthly: 19, price_yearly: 190 }
 			]
 		},
+		contact_us: {
+			phone_number: '+972 55 966 5243'
+		},
 		footer: {}
 	},
 	urls: {
@@ -195,6 +198,7 @@ const config = {
 		support: `/${ lang }/support`,
 		login: `/${ lang }/login`,
 		signup: `/${ lang }/signup`,
+		contact_us: `/${ lang }/contact_us`,
 		old_website: '/text_website.html',
 		hero_gallery: './components-lib/Home_website/gallery/',
 		media: './assets/media/',
@@ -284,6 +288,11 @@ const config = {
 			description1: 'Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua',
 			description2: 'Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua',
 			icon_alt_text: 'Iphone icon'
+		},
+		contact_us: {
+			main_title: 'Contact Us',
+			preview_text: 'FAQ & Tutorials',
+			subtitle: 'Choose a messaging app or just call us'
 		},
 		business_types: {
 			internal_link_name: 'BUSINESS TYPES',
