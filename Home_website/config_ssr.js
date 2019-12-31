@@ -300,6 +300,13 @@ export const config = {
 			preview_text: 'FAQ & Tutorials',
 			subtitle: 'Choose a messaging app or just call us',
 			send_mail_label: 'Send Email',
+			send_form: {
+				main_title: 'Your Message',
+				phone_mail_label: 'Email or Phone',
+				message_label: 'Message',
+				cancel_btn_label: 'Cancel',
+				send_btn_label: 'Send'
+			},
 			data: {
 				viber: { name: 'Viber' },
 				whatsapp: { name: 'Whatsapp' },
