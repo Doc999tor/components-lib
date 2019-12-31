@@ -184,7 +184,13 @@ export const config = {
 			]
 		},
 		contact_us: {
-			phone_number: '+972 55 966 5243'
+			phone_number: '+972 55 966 5243',
+			data: [
+				{ name: 'telegram', icon: 'ic_telegram.svg', url: 'https://web.telegram.org' },
+				{ name: 'messenger', icon: 'ic_messenger.svg', url: 'https://messenger.com' },
+				{ name: 'whatsapp', icon: 'ic_whatsapp.svg', url: 'https://whatsapp.com' },
+				{ name: 'viber', icon: 'ic_viber.svg', url: 'https://viber.com' }
+			]
 		},
 		footer: {}
 	},
@@ -292,7 +298,14 @@ export const config = {
 		contact_us: {
 			main_title: 'Contact Us',
 			preview_text: 'FAQ & Tutorials',
-			subtitle: 'Choose a messaging app or just call us'
+			subtitle: 'Choose a messaging app or just call us',
+			send_mail_label: 'Send Email',
+			data: {
+				viber: { name: 'Viber' },
+				whatsapp: { name: 'Whatsapp' },
+				messenger: { name: 'Messenger' },
+				telegram: { name: 'Telegram' }
+			}
 		},
 		business_types: {
 			internal_link_name: 'BUSINESS TYPES',
