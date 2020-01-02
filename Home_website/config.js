@@ -307,6 +307,10 @@ const config = {
 				cancel_btn_label: 'Cancel',
 				send_btn_label: 'Send'
 			},
+			send_popup: {
+				sending: 'Sending',
+				success: 'Your message was successfully sent!'
+			},
 			data: {
 				viber: { name: 'Viber' },
 				whatsapp: { name: 'Whatsapp' },
