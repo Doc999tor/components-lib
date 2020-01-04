@@ -205,6 +205,8 @@ export const config = {
 		login: `/${ lang }/login`,
 		signup: `/${ lang }/signup`,
 		contact_us: `/${ lang }/contact_us`,
+		send_mail: 'https://api.bewebmaster.co.il/home/contact_us',
+		error_page: `/${ lang }/home?page=error`,
 		old_website: '/text_website.html',
 		hero_gallery: './components-lib/Home_website/gallery/',
 		media: './assets/media/',
