@@ -185,6 +185,7 @@ const config = {
 		},
 		contact_us: {
 			phone_number: '+972 55 966 5243',
+			email: 'client@lista.com',
 			data: [
 				{ name: 'telegram', icon: 'ic_telegram.svg', url: 'https://web.telegram.org' },
 				{ name: 'messenger', icon: 'ic_messenger.svg', url: 'https://messenger.com' },
@@ -192,13 +193,21 @@ const config = {
 				{ name: 'viber', icon: 'ic_viber.svg', url: 'https://viber.com' }
 			]
 		},
-		footer: {}
+		footer: {
+			data: [
+				{ name: 'about_us', link: `/${lang}/about_us` },
+				{ name: 'contact_us', link: `/${lang}/contact_us` },
+				{ name: 'support', link: `/${lang}/support` },
+				{ name: 'terms_of_use', link: `/${lang}/terms_of_use` }
+			]
+		}
 	},
 	urls: {
 		social_networks: [
 			{ name: 'twitter', url: 'https://twitter.com', icon: 'ic_twitter.svg' },
 			{ name: 'facebook', url: 'https://facebook.com', icon: 'ic_facebook.svg' },
-			{ name: 'instagram', url: 'https://instagram.com', icon: 'ic_instagram.svg' }
+			{ name: 'instagram', url: 'https://instagram.com', icon: 'ic_instagram.svg' },
+			{ name: 'youtube', url: 'https://youtube.com', icon: 'ic_youtube.svg' }
 		],
 		menu_icons: './assets/menu/',
 		support: `/${ lang }/support`,
@@ -238,6 +247,16 @@ const config = {
 			faq: 'FAQ',
 			terms_of_use: 'Terms of Use'
 		},
+		button_contact_us: {
+			contact_us: 'Contact Us',
+			questions: 'Do you have any questions or suggestions? Let\'s discuss it!'
+		},
+		menu_footer: {
+			about_us: 'About Us',
+			contact_us: 'Contact Us',
+			support: 'Support',
+			terms_of_use: 'Terms of Use'
+		},
 		hero_page: {
 			title: 'Calendar App for Business',
 			button_text: 'Try for Free!'
@@ -264,7 +283,7 @@ const config = {
 		},
 		hero: {
 			internal_link_name: 'HERO',
-			main_logo: 'ATZMAIM',
+			main_logo: 'LISTA',
 			main_logo_label: 'ATZMAIM Logo',
 			main_title: 'Manage Business Easily',
 			log_in: 'Log in',
@@ -299,15 +318,21 @@ const config = {
 		},
 		contact_us: {
 			main_title: 'Contact Us',
+			suggestions: 'Do you have any questions or suggestions? Let’s discuss it!',
 			preview_text: 'FAQ & Tutorials',
 			subtitle: 'Choose a messaging app or just call us',
 			send_mail_label: 'Send Email',
+			email: 'Email: ',
+			phone: 'Phone: ',
+			send_btn: 'Send message',
+			choose_messenger: 'We communicate in convenient for you messaging apps. Choose your',
 			send_form: {
 				main_title: 'Your Message',
 				phone_mail_label: 'Email or Phone',
 				message_label: 'Message',
 				cancel_btn_label: 'Cancel',
-				send_btn_label: 'Send'
+				send_btn_label: 'Send',
+				placeholder_contact: 'Contact details'
 			},
 			send_popup: {
 				sending: 'Sending',
@@ -424,12 +449,13 @@ const config = {
 			}
 		},
 		footer: {
-			copy_right: new Date().getFullYear() + ' Atzmaim | All right reserved',
+			copy_right: '© ' + new Date().getFullYear() + ' Lista. All right reserved',
 			old_website: 'old_website',
 			social_networks: {
 				facebook: 'https://atzma.im/facebook',
 				twitter: 'https://atzma.im/twitter',
-				instagram: 'https://atzma.im/instagram'
+				instagram: 'https://atzma.im/instagram',
+				youtube: 'https://atzma.im/youtube'
 			}
 		}
 	}
