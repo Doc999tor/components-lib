@@ -290,6 +290,7 @@ const config = {
 			sign_up: 'Sign Up',
 			description: 'We’ve created for you an application with calendar,clients appointments, automated text reminders andother useful tools for managing your business easy',
 			join_us: 'Join Now for Free',
+			try_free: 'Try for Free!',
 			calendar_icon: 'Calendar picture'
 		},
 		features: {
@@ -319,6 +320,8 @@ const config = {
 		contact_us: {
 			main_title: 'Contact Us',
 			suggestions: 'Do you have any questions or suggestions? Let’s discuss it!',
+			enter_vadil_value: 'Please enter a valid email or phone number.',
+			enter_all_fields: 'Please note that all fields are required.',
 			preview_text: 'FAQ & Tutorials',
 			subtitle: 'Choose a messaging app or just call us',
 			send_mail_label: 'Send Email',
