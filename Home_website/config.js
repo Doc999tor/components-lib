@@ -187,10 +187,10 @@ const config = {
 			phone_number: '+972 55 966 5243',
 			email: 'client@lista.com',
 			data: [
-				{ name: 'telegram', icon: 'ic_telegram.svg', url: 'https://web.telegram.org' },
-				{ name: 'messenger', icon: 'ic_messenger.svg', url: 'https://messenger.com' },
-				{ name: 'whatsapp', icon: 'ic_whatsapp.svg', url: 'https://whatsapp.com' },
-				{ name: 'viber', icon: 'ic_viber.svg', url: 'https://viber.com' }
+				{ name: 'whatsapp', icon: 'ic_whatsapp.svg', url: 'https://whatsapp.com', color: '#e5f8e9', color_text: '#55cd6c' },
+				{ name: 'viber', icon: 'ic_viber.svg', url: 'https://viber.com', color: '#ede7ff', color_text: '#845ffa' },
+				{ name: 'messenger', icon: 'ic_messenger.svg', url: 'https://messenger.com', color: '#e7f7ff', color_text: '#2998ff' },
+				{ name: 'telegram', icon: 'ic_telegram.svg', url: 'https://web.telegram.org', color: '#e7f7ff', color_text: '#12aef1' }
 			]
 		},
 		footer: {
@@ -271,7 +271,8 @@ const config = {
 		head: {
 			title: 'title',
 			description: 'description',
-			keywords: 'keywords'
+			keywords: 'keywords',
+			language: 'en'
 		},
 		navigation: {
 			hero: { name: 'App info' },
