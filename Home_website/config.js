@@ -48,7 +48,8 @@ const config = {
 		hero: {
 			features: ['business', 'reminders', 'notifications'],
 			gallery: ['black_phone', 'pic_iphone', 'pic_iphone1', 'pic_iphone2', 'pic_iphone3', 'pic_iphone4'],
-			gallery_speed: 2000
+			gallery_speed: 2000,
+			carousel_time: 2000,
 		},
 		features: {
 			data: [
@@ -77,6 +78,47 @@ const config = {
 					name: 'notifications',
 					preview_pic: 'pic_iphone.png',
 					icon: 'ic_sms.svg'
+				},
+				{
+					name: 'reminders',
+					preview_pic: 'pic_iphone.png',
+					icon: 'ic_client_classify.svg'
+				},
+				{
+					name: 'business',
+					preview_pic: 'pic_iphone.png',
+					icon: 'ic_calendar.svg'
+					// icon: 'pic_iphone.png'
+				},
+				{
+					name: 'subscriptions',
+					preview_pic: 'pic_iphone.png',
+					icon: 'ic_bell.svg'
+				},
+				{
+					name: 'appointments',
+					preview_pic: 'pic_iphone.png',
+					icon: 'ic_client.svg'
+				},
+				{
+					name: 'management',
+					preview_pic: 'pic_iphone.png',
+					icon: 'ic_gallery.svg'
+				},
+				{
+					name: 'notifications',
+					preview_pic: 'pic_iphone.png',
+					icon: 'ic_sms.svg'
+				},
+				{
+					name: 'reminders',
+					preview_pic: 'pic_iphone.png',
+					icon: 'ic_client_classify.svg'
+				},
+				{
+					name: 'reminders',
+					preview_pic: 'pic_iphone.png',
+					icon: 'ic_client_classify.svg'
 				},
 				{
 					name: 'reminders',
@@ -283,6 +325,27 @@ const config = {
 			feedback: { name: 'Feedback' }
 		},
 		hero: {
+			carousel_text: [
+				{ title: 'Manage Business Easily', 
+					description: 'We’ve created for you an application with calendar,clients appointments, automated text reminders andother useful tools for managing your business easy' 
+				},
+				{
+					title: 'ATZMAIM Logo',
+					description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
+				},
+				{
+					title: 'Join Now for Free',
+					description: 'Voluptate inventore quia necessitatibus. Vitae et quae quae. Doloribus tenetur sunt et ut. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
+				},
+				{
+					title: 'Calendar picture',
+					description: 'Delectus fugiat voluptatem explicabo atque harum. Quis quae alias consequuntur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
+				},
+				{
+					title: 'LISTA',
+					description: 'Et voluptate sapiente. Ratione ror praesentium.'
+				}
+			],
 			internal_link_name: 'HERO',
 			main_logo: 'LISTA',
 			main_logo_label: 'ATZMAIM Logo',
