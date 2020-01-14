@@ -1,4 +1,4 @@
-const lang = 'en'
+export const lang = 'en'
 export const config = {
 	baseUrl: '',
 	js_framework: 'preact',
