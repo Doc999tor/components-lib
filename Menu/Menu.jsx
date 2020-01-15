@@ -50,12 +50,19 @@ export default ({ closeMenu, commonConfig, translations }) => {
 							<nav className='menu-list'>
 								{finalConfig.menu.map(item => {
 									return (
-										<li className='list-item'>
-											<a className='item-link' href={item.link}>
-												{finalConfig.translations.menu[item.text]}
-												<span className='menu-img-wrap'><img className='menu-img' src={finalConfig.urls.menu_icons + item.icon} alt={item.text} /></span>
-											</a>
-										</li>
+										item.text === 'install'
+											? <li id='install' className='list-item installed'>
+												<p className='item-link'>
+													<span className='menu-img-wrap'><img className='menu-img' src={temp.urls.menu_icons + item.icon} alt={item.text} /></span>
+													{temp.translations.menu[item.text]}
+												</p>
+											</li>
+											: <li className='list-item'>
+												<a className='item-link' href={item.link}>
+													<span className='menu-img-wrap'><img className='menu-img' src={temp.urls.menu_icons + item.icon} alt={item.text} /></span>
+													{temp.translations.menu[item.text]}
+												</a>
+											</li>
 									)
 								})}
 							</nav>
