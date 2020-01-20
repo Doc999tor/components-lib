@@ -129,6 +129,7 @@ const config = {
 			]
 		},
 		showcases: {
+			data: ['iphone_1', 'iphone_1', 'iphone_1', 'iphone_1']
 		},
 		business_types: {
 			internal_link: {
