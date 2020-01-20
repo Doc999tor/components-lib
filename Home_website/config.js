@@ -330,27 +330,27 @@ const config = {
 		hero: {
 			carousel_text: [
 				{ title: 'Manage Business Easily', 
-					icon: 'showcases_pic1.png',
+					icon: 'iphone1',
 					description: 'We’ve created for you an application with calendar,clients appointments, automated text reminders andother useful tools for managing your business easy' 
 				},
 				{
 					title: 'ATZMAIM Logo',
-					icon: 'showcases_pic2.png',
+					icon: 'iphone2',
 					description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
 				},
 				{
 					title: 'Join Now for Free',
-					icon: 'showcases_pic3.png',
+					icon: 'iphone3',
 					description: 'Voluptate inventore quia necessitatibus. Vitae et quae quae. Doloribus tenetur sunt et ut. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
 				},
 				{
 					title: 'Calendar picture',
-					icon: 'showcases_pic4.png',
+					icon: 'iphone4',
 					description: 'Delectus fugiat voluptatem explicabo atque harum. Quis quae alias consequuntur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
 				},
 				{
 					title: 'LISTA',
-					icon: 'showcases_pic3.png',
+					icon: 'iphone2',
 					description: 'Et voluptate sapiente. Ratione ror praesentium.'
 				}
 			],
