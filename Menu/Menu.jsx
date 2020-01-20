@@ -69,8 +69,8 @@ export default ({ closeMenu }) => {
 									return (
 										<li className='list-item'>
 											<a className='item-link' href={item.link}>
-												<span className='menu-img-wrap'><img className='menu-img' src={temp.urls.menu_icons + item.icon} alt={item.text} /></span>
 												{temp.translations.menu[item.text]}
+												<span className='menu-img-wrap'><img className='menu-img' src={temp.urls.menu_icons + item.icon} alt={item.text} /></span>
 											</a>
 										</li>
 									)
