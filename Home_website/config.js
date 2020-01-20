@@ -48,6 +48,7 @@ const config = {
 		hero: {
 			features: ['business', 'reminders', 'notifications'],
 			gallery: ['black_phone', 'pic_iphone', 'pic_iphone1', 'pic_iphone2', 'pic_iphone3', 'pic_iphone4'],
+			gallery_desktop: ['iphone1', 'iphone2', 'iphone3', 'iphone4'],
 			gallery_speed: 2000,
 			carousel_time: 2000,
 		},
@@ -268,14 +269,11 @@ const config = {
 		media_navigation: './assets/navigation/',
 		default_path_to_avatar: './assets/clients/',
 		default_avatar: 'default_avatar.jpg',
+		media_showcases: './assets/media/showcases/',
+		hero_carousel: './assets/media/hero_carousel/',
 		media_business_types: './components-lib/Home_website/business_types/'
 	},
 	translations: {
-		languages: {
-			en: 'EN - English',
-			ua: 'UA - Ukraine',
-			he: 'HE - Hebrew'
-		},
 		menu: {
 			calendar: 'Calendar',
 			clients_list: 'Clients list',
@@ -332,22 +330,27 @@ const config = {
 		hero: {
 			carousel_text: [
 				{ title: 'Manage Business Easily', 
+					icon: 'showcases_pic1.png',
 					description: 'We’ve created for you an application with calendar,clients appointments, automated text reminders andother useful tools for managing your business easy' 
 				},
 				{
 					title: 'ATZMAIM Logo',
+					icon: 'showcases_pic2.png',
 					description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
 				},
 				{
 					title: 'Join Now for Free',
+					icon: 'showcases_pic3.png',
 					description: 'Voluptate inventore quia necessitatibus. Vitae et quae quae. Doloribus tenetur sunt et ut. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
 				},
 				{
 					title: 'Calendar picture',
+					icon: 'showcases_pic4.png',
 					description: 'Delectus fugiat voluptatem explicabo atque harum. Quis quae alias consequuntur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
 				},
 				{
 					title: 'LISTA',
+					icon: 'showcases_pic3.png',
 					description: 'Et voluptate sapiente. Ratione ror praesentium.'
 				}
 			],
@@ -380,10 +383,14 @@ const config = {
 		},
 		showcases: {
 			internal_link_name: 'SHOWCASES',
-			main_title: 'App that makes business easy',
+			main_title: 'Simply the Best Business Calendar',
 			learn_more: 'Learn More',
-			description1: 'Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua',
-			description2: 'Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua',
+			description: `Control your day, week and month with 
+				calendar events and tasks in a simple 
+				view.Lista was carefully designed to meet 
+				your needs every single time.It's simple 
+				and powerful, just like it should be. 
+				Created for business people.`,
 			icon_alt_text: 'Iphone icon'
 		},
 		contact_us: {
@@ -425,27 +432,27 @@ const config = {
 			content: {   // * 6 items
 				hair_salons: {
 					title: 'Hair Stylists and Salons',
-					text: 'Hair Salons Text Hair Salons Text',
+					text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et',
 					alt: 'Hair Salons Alt'
 				},
 				nail_and_makeup_artists: {
-					title: 'nail and makeup artists Title',
-					text: 'nail and makeup artists Text nail and makeup artists Text',
+					title: 'Makeup Artists',
+					text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et',
 					alt: 'nail and makeup artists Alt'
 				},
 				installers_and_technicians: {
-					title: 'installers and technicians',
-					text: 'installers and technicians',
+					title: 'Tanning Centers and Spas',
+					text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et',
 					alt: 'nail and makeup artists Alt'
 				},
 				massage_centers: {
-					title: 'Massage Centers',
-					text: 'Installers and technicians Text Installers and technicians Text',
+					title: 'Sports and Fitness Instructors',
+					text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et',
 					alt: 'Massage Centers'
 				},
 				cosmetics: {
 					title: 'Cosmetics and Beauty Therapists',
-					text: 'Installers and technicians Text Installers and technicians Text',
+					text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et',
 					alt: 'Massage Centers'
 				}
 			}
