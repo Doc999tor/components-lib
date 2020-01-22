@@ -275,6 +275,11 @@ const config = {
 		media_business_types: './components-lib/Home_website/business_types/'
 	},
 	translations: {
+		languages: {
+			en: 'EN - English',
+			ua: 'UA - Ukraine',
+			he: 'HE - Hebrew'
+		},
 		menu: {
 			calendar: 'Calendar',
 			clients_list: 'Clients list',
