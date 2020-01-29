@@ -1,7 +1,5 @@
 import './Menu.styl'
-let temp
 if (typeof window !== 'undefined' && typeof config !== 'undefined') {
-	temp = config
 	let vh = window.innerHeight * 0.01
 	document.documentElement.style.setProperty('--vh', `${vh}px`)
 	window.addEventListener('resize', () => {
@@ -22,31 +20,15 @@ if (typeof window !== 'undefined' && typeof config !== 'undefined') {
 			console.log(error)
 		}
 	}
-} else if (typeof window !== 'undefined' && typeof window.config === 'undefined' && typeof config === 'undefined') {
-	try {
-		const { config } = require('../../components-lib/Home_website/config_ssr.js')
-		temp = config
-		let vh = window.innerHeight * 0.01
-		document.documentElement.style.setProperty('--vh', `${vh}px`)
-		window.addEventListener('resize', () => {
-			let vh = window.innerHeight * 0.01
-			document.documentElement.style.setProperty('--vh', `${vh}px`)
-		})
-		if (config.js_framework === 'preact') {
-			try {
-				var { h } = require('preact')
-			} catch (error) {
-				console.log(error)
-			}
-		}
-
-	} catch (error) {
-		console.log(error)
-	}
 }
-export default ({ closeMenu }) => {
+
+export default ({ closeMenu, commonConfig, translations }) => {
+	let finalConfig = commonConfig || config
+	if (Object.entries(finalConfig.translations).length === 0 && finalConfig.translations.constructor === Object) {
+		finalConfig.translations = translations
+	}
 	const bgrImg = {
-		'background-image': `url('${temp.urls.menu_icons}photo-bgr.jpg')`
+		'background-image': `url('${finalConfig.urls.menu_icons}photo-bgr.jpg')`
 	}
 	const cancelPropagation = e => e.stopPropagation()
 	return (
@@ -57,20 +39,20 @@ export default ({ closeMenu }) => {
 						<div className='menu'>
 							<div className='menu-logo'>
 								<div className='logo'>
-									<img className='business_logo' src={temp.user.business_logo} />
+									<img className='business_logo' src={finalConfig.user.business_logo} />
 								</div>
 								<div className='business_container'>
-									<p className='business_name'>{temp.user.business_name}</p>
-									<p className='business_address'><img className='business_address_img' src={`${temp.urls.menu_icons}map-pin.svg`} />{temp.user.business_address}</p>
+									<p className='business_name'>{finalConfig.user.business_name}</p>
+									<p className='business_address'><img className='business_address_img' src={`${finalConfig.urls.menu_icons}map-pin.svg`} />{finalConfig.user.business_address}</p>
 								</div>
 							</div>
 							<nav className='menu-list'>
-								{temp.menu.map(item => {
+								{finalConfig.menu.map(item => {
 									return (
 										<li className='list-item'>
 											<a className='item-link' href={item.link}>
-												{temp.translations.menu[item.text]}
-												<span className='menu-img-wrap'><img className='menu-img' src={temp.urls.menu_icons + item.icon} alt={item.text} /></span>
+												{finalConfig.translations.menu[item.text]}
+												<span className='menu-img-wrap'><img className='menu-img' src={finalConfig.urls.menu_icons + item.icon} alt={item.text} /></span>
 											</a>
 										</li>
 									)
