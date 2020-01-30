@@ -259,6 +259,7 @@ const config = {
 		signup: `/${ lang }/signup`,
 		contact_us: `/${ lang }/contact_us`,
 		error_page: `/${ lang }/home?page=error`,
+		home_page: '/{lang}/home',
 		send_mail: 'https://api.bewebmaster.co.il/home/contact_us',
 		old_website: '/text_website.html',
 		hero_gallery: './components-lib/Home_website/gallery/',

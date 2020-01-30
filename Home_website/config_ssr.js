@@ -206,6 +206,7 @@ export const configFn = (lang = 'en') => {
 			signup: `/${ lang }/signup`,
 			contact_us: `/${ lang }/contact_us`,
 			send_mail: 'https://api.bewebmaster.co.il/home/contact_us',
+			home_page: '/{lang}/home',
 			error_page: `/${ lang }/home?page=error`,
 			old_website: '/text_website.html',
 			hero_gallery: './components-lib/Home_website/gallery/',
