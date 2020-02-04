@@ -129,7 +129,7 @@ const config = {
 			]
 		},
 		showcases: {
-			data: ['iphone_1', 'iphone_1', 'iphone_1', 'iphone_1']
+			phones_pics: ['1111', 'IMG_0923', 'IMG_0923', '1111']
 		},
 		business_types: {
 			internal_link: {
