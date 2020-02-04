@@ -389,6 +389,7 @@ const config = {
 			}
 		},
 		showcases: {
+			phones_pics_alt: ['1111 alt', 'IMG_0923 alt', 'IMG_0923 alt', '1111 alt'],
 			internal_link_name: 'SHOWCASES',
 			main_title: 'Simply the Best Business Calendar',
 			learn_more: 'Learn More',

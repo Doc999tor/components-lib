@@ -75,6 +75,7 @@ export const all_translations = {
 			}
 		},
 		showcases: {
+			phones_pics_alt: ['1111 alt', 'IMG_0923 alt', 'IMG_0923 alt', '1111 alt'],
 			internal_link_name: 'SHOWCASES',
 			main_title: 'App that makes business easy',
 			learn_more: 'Learn More',
@@ -294,6 +295,7 @@ export const all_translations = {
 			}
 		},
 		showcases: {
+			phones_pics_alt: ['1111 alt', 'IMG_0923 alt', 'IMG_0923 alt', '1111 alt'],
 			internal_link_name: 'RUSHOWCASES',
 			main_title: 'RUApp that makes business easy',
 			learn_more: 'RULearn More',
@@ -513,6 +515,7 @@ export const all_translations = {
 			}
 		},
 		showcases: {
+			phones_pics_alt: ['1111 alt', 'IMG_0923 alt', 'IMG_0923 alt', '1111 alt'],
 			internal_link_name: 'HESHOWCASES',
 			main_title: 'HEApp that makes business easy',
 			learn_more: 'HELearn More',
