@@ -48,8 +48,6 @@ const config = {
 		hero: {
 			features: ['business', 'reminders', 'notifications'],
 			gallery: ['black_phone', 'pic_iphone', 'pic_iphone1', 'pic_iphone2', 'pic_iphone3', 'pic_iphone4'],
-			gallery_desktop: ['iphone1', 'iphone2', 'iphone3', 'iphone4'],
-			gallery_speed: 2000,
 			carousel_time: 2000,
 		},
 		features: {
@@ -309,10 +307,6 @@ const config = {
 			support: 'Support',
 			terms_of_use: 'Terms of Use'
 		},
-		hero_page: {
-			title: 'Calendar App for Business',
-			button_text: 'Try for Free!'
-		},
 		error_page: {
 			title: 'Oops!',
 			text: 'Something went wrong, but we\'re going to fix it! Sorry about that',
@@ -337,28 +331,27 @@ const config = {
 		hero: {
 			carousel_text: [
 				{ title: 'Manage Business Easily', 
-					icon: 'iphone1',
 					description: 'We’ve created for you an application with calendar,clients appointments, automated text reminders andother useful tools for managing your business easy' 
 				},
 				{
 					title: 'ATZMAIM Logo',
-					icon: 'iphone2',
 					description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
 				},
 				{
 					title: 'Join Now for Free',
-					icon: 'iphone3',
 					description: 'Voluptate inventore quia necessitatibus. Vitae et quae quae. Doloribus tenetur sunt et ut. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
 				},
 				{
 					title: 'Calendar picture',
-					icon: 'iphone4',
 					description: 'Delectus fugiat voluptatem explicabo atque harum. Quis quae alias consequuntur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
 				},
 				{
 					title: 'LISTA',
-					icon: 'iphone2',
 					description: 'Et voluptate sapiente. Ratione ror praesentium.'
+				},
+				{
+					title: 'Powerful Features & Simple to Use',
+					description: 'Et voluptate sapiente. Ratione ror praesentium. Et voluptate sapiente. Ratione ror praesentium'
 				}
 			],
 			internal_link_name: 'HERO',
@@ -369,7 +362,7 @@ const config = {
 			sign_up: 'Sign Up',
 			description: 'We’ve created for you an application with calendar,clients appointments, automated text reminders andother useful tools for managing your business easy',
 			join_us: 'Join Now for Free',
-			try_free: 'Try for Free!',
+			button_label: 'Try for Free!',
 			calendar_icon: 'Calendar picture'
 		},
 		features: {

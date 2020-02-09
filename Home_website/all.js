@@ -23,10 +23,6 @@ export const all_translations = {
 			faq: 'FAQ',
 			terms_of_use: 'Terms of Use'
 		},
-		hero_page: {
-			title: 'Calendar App for Business',
-			button_text: 'Try for Free!'
-		},
 		error_page: {
 			title: 'Oops!',
 			text: 'Something went wrong, but we\'re going to fix it! Sorry about that',
@@ -48,6 +44,31 @@ export const all_translations = {
 			feedback: { name: 'Feedback' }
 		},
 		hero: {
+			carousel_text: [
+				{ title: 'Manage Business Easily', 
+					description: 'We’ve created for you an application with calendar,clients appointments, automated text reminders andother useful tools for managing your business easy' 
+				},
+				{
+					title: 'ATZMAIM Logo',
+					description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
+				},
+				{
+					title: 'Join Now for Free',
+					description: 'Voluptate inventore quia necessitatibus. Vitae et quae quae. Doloribus tenetur sunt et ut. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
+				},
+				{
+					title: 'Calendar picture',
+					description: 'Delectus fugiat voluptatem explicabo atque harum. Quis quae alias consequuntur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
+				},
+				{
+					title: 'LISTA',
+					description: 'Et voluptate sapiente. Ratione ror praesentium.'
+				},
+				{
+					title: 'Powerful Features & Simple to Use',
+					description: 'Et voluptate sapiente. Ratione ror praesentium. Et voluptate sapiente. Ratione ror praesentium'
+				}
+			],
 			internal_link_name: 'HERO',
 			main_logo: 'ATZMAIM',
 			main_logo_label: 'ATZMAIM Logo',
@@ -56,6 +77,7 @@ export const all_translations = {
 			sign_up: 'Sign Up',
 			description: 'We’ve created for you an application with calendar,clients appointments, automated text reminders andother useful tools for managing your business easy',
 			join_us: 'Join Now for Free',
+			button_label: 'Try for Free!',
 			calendar_icon: 'Calendar picture'
 		},
 		features: {
@@ -243,10 +265,6 @@ export const all_translations = {
 			faq: 'RUFAQ',
 			terms_of_use: 'RUTerms of Use'
 		},
-		hero_page: {
-			title: 'Управлять бизнесом из телефона',
-			button_text: 'Попробовать for Free!'
-		},
 		error_page: {
 			title: 'RU Oops!',
 			text: 'RU Something went wrong, but we\'re going to fix it! Sorry about that',
@@ -268,6 +286,31 @@ export const all_translations = {
 			feedback: { name: 'Отзывы' }
 		},
 		hero: {
+			carousel_text: [
+				{ title: 'RuManage Business Easily', 
+					description: 'RuWe’ve created for you an application with calendar,clients appointments, automated text reminders andother useful tools for managing your business easy' 
+				},
+				{
+					title: 'RUATZMAIM Logo',
+					description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
+				},
+				{
+					title: 'RU Join Now for Free',
+					description: ' RuVoluptate inventore quia necessitatibus. Vitae et quae quae. Doloribus tenetur sunt et ut. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
+				},
+				{
+					title: ' RuCalendar picture',
+					description: 'RU Delectus fugiat voluptatem explicabo atque harum. Quis quae alias consequuntur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
+				},
+				{
+					title: 'Ru LISTA',
+					description: ' Ru Et voluptate sapiente. Ratione ror praesentium.'
+				},
+				{
+					title: 'RUPowerful Features & Simple to Use',
+					description: 'Ru Et voluptate sapiente. Ratione ror praesentium. Et voluptate sapiente. Ratione ror praesentium'
+				}
+			],
 			internal_link_name: 'RUHERO',
 			main_logo: 'RUATZMAIM',
 			main_logo_label: 'RUATZMAIM Logo',
@@ -276,6 +319,7 @@ export const all_translations = {
 			sign_up: 'RUSign Up',
 			description: 'RUWe’ve created for you an application with calendar,clients appointments, automated text reminders andother useful tools for managing your business easy',
 			join_us: 'RUJoin Now for Free',
+			button_label: 'Try for Free!',
 			calendar_icon: 'RUCalendar picture'
 		},
 		features: {
@@ -463,10 +507,6 @@ export const all_translations = {
 			faq: 'HE FAQ',
 			terms_of_use: 'HE Terms of Use'
 		},
-		hero_page: {
-			title: 'לנהל את העסק שלך מהכיס',
-			button_text: 'להרשם בחינם'
-		},
 		error_page: {
 			title: 'HEOops!',
 			text: 'HESomething went wrong, but we\'re going to fix it! Sorry about that',
@@ -488,6 +528,31 @@ export const all_translations = {
 			feedback: { name: 'HEFeedback' }
 		},
 		hero: {
+			carousel_text: [
+				{ title: 'He Manage Business Easily', 
+					description: 'He We’ve created for you an application with calendar,clients appointments, automated text reminders andother useful tools for managing your business easy' 
+				},
+				{
+					title: 'He ATZMAIM Logo',
+					description: 'He Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
+				},
+				{
+					title: 'He Join Now for Free',
+					description: 'He Voluptate inventore quia necessitatibus. Vitae et quae quae. Doloribus tenetur sunt et ut. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
+				},
+				{
+					title: 'He Calendar picture',
+					description: 'He Delectus fugiat voluptatem explicabo atque harum. Quis quae alias consequuntur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
+				},
+				{
+					title: 'He LISTA',
+					description: 'He Et voluptate sapiente. Ratione ror praesentium.'
+				},
+				{
+					title: 'He Powerful Features & Simple to Use',
+					description: 'He Et voluptate sapiente. Ratione ror praesentium. Et voluptate sapiente. Ratione ror praesentium'
+				}
+			],
 			internal_link_name: 'HEHERO',
 			main_logo: 'HEATZMAIM',
 			main_logo_label: 'HEATZMAIM Logo',
@@ -496,6 +561,7 @@ export const all_translations = {
 			sign_up: 'HESign Up',
 			description: 'HEWe’ve created for you an application with calendar,clients appointments, automated text reminders andother useful tools for managing your business easy',
 			join_us: 'HEJoin Now for Free',
+			button_label: 'Try for Free!',
 			calendar_icon: 'HECalendar picture'
 		},
 		features: {

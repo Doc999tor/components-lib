@@ -48,7 +48,7 @@ export const configFn = (lang = 'en') => {
 			hero: {
 				features: ['business', 'reminders', 'notifications'],
 				gallery: ['black_phone', 'pic_iphone', 'pic_iphone1', 'pic_iphone2', 'pic_iphone3', 'pic_iphone4'],
-				gallery_speed: 2000
+				carousel_time: 2000,
 			},
 			features: {
 				data: [
@@ -77,6 +77,47 @@ export const configFn = (lang = 'en') => {
 						name: 'notifications',
 						preview_pic: 'pic_iphone.png',
 						icon: 'ic_sms.svg'
+					},
+					{
+						name: 'reminders',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_client_classify.svg'
+					},
+					{
+						name: 'business',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_calendar.svg'
+						// icon: 'pic_iphone.png'
+					},
+					{
+						name: 'subscriptions',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_bell.svg'
+					},
+					{
+						name: 'appointments',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_client.svg'
+					},
+					{
+						name: 'management',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_gallery.svg'
+					},
+					{
+						name: 'notifications',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_sms.svg'
+					},
+					{
+						name: 'reminders',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_client_classify.svg'
+					},
+					{
+						name: 'reminders',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_client_classify.svg'
 					},
 					{
 						name: 'reminders',
@@ -186,29 +227,38 @@ export const configFn = (lang = 'en') => {
 			},
 			contact_us: {
 				phone_number: '+972 55 966 5243',
+				email: 'client@lista.com',
 				data: [
-					{ name: 'telegram', icon: 'ic_telegram.svg', url: 'https://web.telegram.org' },
-					{ name: 'messenger', icon: 'ic_messenger.svg', url: 'https://messenger.com' },
-					{ name: 'whatsapp', icon: 'ic_whatsapp.svg', url: 'https://whatsapp.com' },
-					{ name: 'viber', icon: 'ic_viber.svg', url: 'https://viber.com' }
+					{ name: 'whatsapp', icon: 'ic_whatsapp.svg', url: 'https://whatsapp.com', color: '#e5f8e9', color_text: '#55cd6c' },
+					{ name: 'viber', icon: 'ic_viber.svg', url: 'https://viber.com', color: '#ede7ff', color_text: '#845ffa' },
+					{ name: 'messenger', icon: 'ic_messenger.svg', url: 'https://messenger.com', color: '#e7f7ff', color_text: '#2998ff' },
+					{ name: 'telegram', icon: 'ic_telegram.svg', url: 'https://web.telegram.org', color: '#e7f7ff', color_text: '#12aef1' }
 				]
 			},
-			footer: {}
+			footer: {
+				data: [
+					{ name: 'about_us', link: `/${lang}/about_us` },
+					{ name: 'contact_us', link: `/${lang}/contact_us` },
+					{ name: 'support', link: `/${lang}/support` },
+					{ name: 'terms_of_use', link: `/${lang}/terms_of_use` }
+				]
+			}
 		},
 		urls: {
 			social_networks: [
 				{ name: 'twitter', url: 'https://twitter.com', icon: 'ic_twitter.svg' },
 				{ name: 'facebook', url: 'https://facebook.com', icon: 'ic_facebook.svg' },
-				{ name: 'instagram', url: 'https://instagram.com', icon: 'ic_instagram.svg' }
+				{ name: 'instagram', url: 'https://instagram.com', icon: 'ic_instagram.svg' },
+				{ name: 'youtube', url: 'https://youtube.com', icon: 'ic_youtube.svg' }
 			],
 			menu_icons: './assets/menu/',
 			support: `/${ lang }/support`,
 			login: `/${ lang }/login`,
 			signup: `/${ lang }/signup`,
 			contact_us: `/${ lang }/contact_us`,
-			send_mail: 'https://api.bewebmaster.co.il/home/contact_us',
-			home_page: '/{lang}/home',
 			error_page: `/${ lang }/home?page=error`,
+			home_page: '/{lang}/home',
+			send_mail: 'https://api.bewebmaster.co.il/home/contact_us',
 			old_website: '/text_website.html',
 			hero_gallery: './components-lib/Home_website/gallery/',
 			media: './assets/media/',
@@ -219,8 +269,10 @@ export const configFn = (lang = 'en') => {
 			media_navigation: './assets/navigation/',
 			default_path_to_avatar: './assets/clients/',
 			default_avatar: 'default_avatar.jpg',
+			media_showcases: './assets/media/showcases/',
+			hero_carousel: './assets/media/hero_carousel/',
 			media_business_types: './components-lib/Home_website/business_types/'
 		},
 		translations: {}
-	}
+		}
 };
