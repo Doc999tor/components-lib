@@ -52,78 +52,92 @@ const config = {
 		},
 		features: {
 			data: [
-				{
-					name: 'business',
-					preview_pic: 'pic_iphone.png',
-					icon: 'ic_calendar.svg'
-					// icon: 'pic_iphone.png'
-				},
-				{
-					name: 'subscriptions',
-					preview_pic: 'pic_iphone.png',
-					icon: 'ic_bell.svg'
-				},
-				{
-					name: 'appointments',
-					preview_pic: 'pic_iphone.png',
-					icon: 'ic_client.svg'
-				},
-				{
-					name: 'management',
-					preview_pic: 'pic_iphone.png',
-					icon: 'ic_gallery.svg'
-				},
-				{
-					name: 'notifications',
-					preview_pic: 'pic_iphone.png',
-					icon: 'ic_sms.svg'
-				},
-				{
-					name: 'reminders',
-					preview_pic: 'pic_iphone.png',
-					icon: 'ic_client_classify.svg'
-				},
-				{
-					name: 'business',
-					preview_pic: 'pic_iphone.png',
-					icon: 'ic_calendar.svg'
-					// icon: 'pic_iphone.png'
-				},
-				{
-					name: 'subscriptions',
-					preview_pic: 'pic_iphone.png',
-					icon: 'ic_bell.svg'
-				},
-				{
-					name: 'appointments',
-					preview_pic: 'pic_iphone.png',
-					icon: 'ic_client.svg'
-				},
-				{
-					name: 'management',
-					preview_pic: 'pic_iphone.png',
-					icon: 'ic_gallery.svg'
-				},
-				{
-					name: 'notifications',
-					preview_pic: 'pic_iphone.png',
-					icon: 'ic_sms.svg'
-				},
-				{
-					name: 'reminders',
-					preview_pic: 'pic_iphone.png',
-					icon: 'ic_client_classify.svg'
-				},
-				{
-					name: 'reminders',
-					preview_pic: 'pic_iphone.png',
-					icon: 'ic_client_classify.svg'
-				},
-				{
-					name: 'reminders',
-					preview_pic: 'pic_iphone.png',
-					icon: 'ic_client_classify.svg'
-				}
+				[
+					{
+						name: 'business',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_calendar.svg'
+					},
+					{
+						name: 'subscriptions',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_bell.svg'
+					},
+					{
+						name: 'appointments',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_client.svg'
+					},
+					{
+						name: 'management',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_gallery.svg'
+					},
+					{
+						name: 'notifications',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_sms.svg'
+					},
+					{
+						name: 'reminders',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_client_classify.svg'
+					}
+				],
+				[
+					{
+						name: 'business',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_calendar.svg'
+					},
+					{
+						name: 'business',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_calendar.svg'
+					},
+					{
+						name: 'business',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_calendar.svg'
+					},
+					{
+						name: 'business',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_calendar.svg'
+					},
+					{
+						name: 'business',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_calendar.svg'
+					},
+					{
+						name: 'business',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_calendar.svg'
+					}
+				],
+				[
+					{
+						name: 'business',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_gallery.svg'
+					},
+					{
+						name: 'business',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_gallery.svg'
+					},
+					{
+						name: 'business',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_gallery.svg'
+					},
+					{
+						name: 'business',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_gallery.svg'
+					}
+				]
 			]
 		},
 		showcases: {
