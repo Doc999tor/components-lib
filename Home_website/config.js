@@ -46,13 +46,12 @@ const config = {
 	],
 	modules: {
 		hero: {
-			features: ['business', 'reminders', 'notifications'],
+			features: ['management', 'reminders', 'notifications'],
 			gallery: ['black_phone', 'pic_iphone', 'pic_iphone1', 'pic_iphone2', 'pic_iphone3', 'pic_iphone4'],
 			carousel_time: 2000,
 		},
 		features: {
 			data: [
-				[
 					{
 						name: 'business',
 						preview_pic: 'pic_iphone.png',
@@ -82,13 +81,6 @@ const config = {
 						name: 'reminders',
 						preview_pic: 'pic_iphone.png',
 						icon: 'ic_client_classify.svg'
-					}
-				],
-				[
-					{
-						name: 'business',
-						preview_pic: 'pic_iphone.png',
-						icon: 'ic_calendar.svg'
 					},
 					{
 						name: 'business',
@@ -114,9 +106,12 @@ const config = {
 						name: 'business',
 						preview_pic: 'pic_iphone.png',
 						icon: 'ic_calendar.svg'
-					}
-				],
-				[
+					},
+					{
+						name: 'business',
+						preview_pic: 'pic_iphone.png',
+						icon: 'ic_calendar.svg'
+					},
 					{
 						name: 'business',
 						preview_pic: 'pic_iphone.png',
@@ -137,7 +132,6 @@ const config = {
 						preview_pic: 'pic_iphone.png',
 						icon: 'ic_gallery.svg'
 					}
-				]
 			]
 		},
 		showcases: {
