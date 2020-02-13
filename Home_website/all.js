@@ -103,7 +103,8 @@ export const all_translations = {
 			learn_more: 'Learn More',
 			description1: 'Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua',
 			description2: 'Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua',
-			icon_alt_text: 'Iphone icon'
+			icon_alt_text: 'Iphone icon',
+			button_label: 'Try for Free!'
 		},
 		contact_us: {
 			main_title: 'Contact Us',
@@ -345,7 +346,8 @@ export const all_translations = {
 			learn_more: 'RULearn More',
 			description1: 'RULorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua',
 			description2: 'RULorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua',
-			icon_alt_text: 'RUIphone icon'
+			icon_alt_text: 'RUIphone icon',
+			button_label: 'Try for Free!'
 		},
 		contact_us: {
 			main_title: 'RUContact Us',
@@ -587,7 +589,8 @@ export const all_translations = {
 			learn_more: 'HELearn More',
 			description1: 'HELorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua',
 			description2: 'HELorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua',
-			icon_alt_text: 'HEIphone icon'
+			icon_alt_text: 'HEIphone icon',
+			button_label: 'Try for Free!'
 		},
 		contact_us: {
 			main_title: 'Contact Us',

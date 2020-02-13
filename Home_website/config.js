@@ -400,6 +400,7 @@ const config = {
 				your needs every single time.It's simple 
 				and powerful, just like it should be. 
 				Created for business people.`,
+			button_label: 'Try for Free!',
 			icon_alt_text: 'Iphone icon'
 		},
 		contact_us: {
