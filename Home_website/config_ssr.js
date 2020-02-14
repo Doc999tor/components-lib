@@ -47,8 +47,8 @@ export const configFn = (lang = 'en') => {
 		modules: {
 			hero: {
 				features: ['management', 'reminders', 'notifications'],
-				gallery: ['black_phone', 'pic_iphone', 'pic_iphone1', 'pic_iphone2', 'pic_iphone3', 'pic_iphone4'],
-				carousel_time: 2000,
+				gallery: ['screen', 'screen1', 'screen2', 'screen3', 'screen4'],
+				carousel_time: 3000,
 			},
 			features: {
 				data: [
