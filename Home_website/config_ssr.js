@@ -135,7 +135,7 @@ export const configFn = (lang = 'en') => {
 				]
 			},
 			showcases: {
-				phones_pics: ['1111', 'IMG_0923', 'IMG_0923', '1111']
+				phones_pics: ['screen', 'screen1', 'screen3', 'screen4']
 			},
 			business_types: {
 				internal_link: {
