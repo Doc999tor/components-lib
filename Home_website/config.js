@@ -237,10 +237,10 @@ const config = {
 			phone_number: '+972 55 966 5243',
 			email: 'client@lista.com',
 			data: [
-				{ name: 'whatsapp', icon: 'ic_whatsapp.svg', url: 'https://whatsapp.com', color: '#e5f8e9', color_text: '#55cd6c' },
-				{ name: 'viber', icon: 'ic_viber.svg', url: 'https://viber.com', color: '#ede7ff', color_text: '#845ffa' },
-				{ name: 'messenger', icon: 'ic_messenger.svg', url: 'https://messenger.com', color: '#e7f7ff', color_text: '#2998ff' },
-				{ name: 'telegram', icon: 'ic_telegram.svg', url: 'https://web.telegram.org', color: '#e7f7ff', color_text: '#12aef1' }
+				{ name: 'whatsapp', icon: 'ic_whatsapp.svg', url: 'https://chat.whatsapp.com/JvjzpJsamYmE65m95lkmGz', color: '#e5f8e9', color_text: '#55cd6c' },
+				{ name: 'viber', icon: 'ic_viber.svg', url: 'https://invite.viber.com/?g2=AQAaEITkv4zPmUsWCDPJdalyyNyjPJD7M4IGjUWirJBlGgOrzsgVMWB6Q1gw3jHx', color: '#ede7ff', color_text: '#845ffa' },
+				{ name: 'messenger', icon: 'ic_messenger.svg', url: 'https://m.me/join/AbbDIHCbzcIo2u-R', color: '#e7f7ff', color_text: '#2998ff' },
+				{ name: 'telegram', icon: 'ic_telegram.svg', url: 'https://t.me/TestAtzmaim', color: '#e7f7ff', color_text: '#12aef1' }
 			]
 		},
 		footer: {
