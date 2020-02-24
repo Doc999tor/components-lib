@@ -24,7 +24,6 @@ export const configFn = (lang = 'en') => {
 		menu_mobile: [
 			{ name: 'about_us', link: `/${lang}/about_us` },
 			{ name: 'contact_us', link: `/${lang}/contact_us` },
-			{ name: 'support', link: `/${lang}/support`},
 			{ name: 'faq', link: `/${lang}/faq`},
 			{ name: 'terms_of_use', link: `/${lang}/terms_of_use` }
 		],
@@ -247,7 +246,6 @@ export const configFn = (lang = 'en') => {
 				data: [
 					{ name: 'about_us', link: `/${lang}/about_us` },
 					{ name: 'contact_us', link: `/${lang}/contact_us` },
-					{ name: 'support', link: `/${lang}/support` },
 					{ name: 'terms_of_use', link: `/${lang}/terms_of_use` }
 				]
 			}
@@ -260,10 +258,9 @@ export const configFn = (lang = 'en') => {
 				{ name: 'youtube', url: 'https://youtube.com', icon: 'ic_youtube.svg' }
 			],
 			menu_icons: './assets/menu/',
-			support: `/${ lang }/support`,
 			login: `/${ lang }/login`,
 			signup: `/${ lang }/signup`,
-			contact_us: `/${ lang }/contact_us`,
+			contact_us: `/${ lang }/home?page=contact_us`,
 			error_page: `/${ lang }/home?page=error`,
 			home_page: '/{lang}/home',
 			send_mail: 'https://api.bewebmaster.co.il/home/contact_us',

@@ -19,7 +19,6 @@ export const all_translations = {
 		menu_mobile: {
 			about_us: 'About Us',
 			contact_us: 'Contact Us',
-			support: 'Support',
 			faq: 'FAQ',
 			terms_of_use: 'Terms of Use'
 		},
@@ -262,7 +261,6 @@ export const all_translations = {
 		menu_mobile: {
 			about_us: 'О нас',
 			contact_us: 'Контакты',
-			support: 'Поддержка',
 			faq: 'RUFAQ',
 			terms_of_use: 'RUTerms of Use'
 		},
@@ -505,7 +503,6 @@ export const all_translations = {
 		menu_mobile: {
 			about_us: 'עלינו',
 			contact_us: 'קשר צרו',
-			support: 'תמיכה',
 			faq: 'HE FAQ',
 			terms_of_use: 'HE Terms of Use'
 		},

@@ -31,7 +31,7 @@ export default ({ referer, commonConfig, translations }) => {
 				</div>
 				<div class='error_background_bottom'>
 					<a class={`error_button to_home`} href={finalConfig.baseUrl}><span><img src={finalConfig.urls.media + 'ic_home.svg'} alt={finalConfig.translations.error_page.home_btn} /></span>{finalConfig.translations.error_page.home_btn}</a>
-					<a class='error_button' href={finalConfig.urls.support}><span><img src={finalConfig.urls.media + 'ic_support.svg'} alt={finalConfig.translations.error_page.support_btn} /></span>{finalConfig.translations.error_page.support_btn}</a>
+					<a class='error_button' href={finalConfig.urls.contact_us}><span><img src={finalConfig.urls.media + 'ic_support.svg'} alt={finalConfig.translations.error_page.support_btn} /></span>{finalConfig.translations.error_page.support_btn}</a>
 					<a class='error_button' href={finalConfig.urls.signup}><span><img src={finalConfig.urls.media + 'ic_join.svg'} alt={finalConfig.translations.error_page.join_btn} /></span>{finalConfig.translations.error_page.join_btn}</a>
 				</div>
 			</div>
