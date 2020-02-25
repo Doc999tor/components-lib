@@ -8,8 +8,13 @@ export default class Switch extends React.Component {
   handleClick = e => {
     e.preventDefault()
     if (this.props.enabled) {
-      this.props.onClick()
-      this.setState({on: !this.state.on})
+      if (this.props.on !== undefined) {
+        this.props.onClick()
+        this.setState({on: this.props.on})
+      } else {
+        this.props.onClick()
+        this.setState({on: !this.state.on})
+      }
     }
   }
   componentWillReceiveProps = nextProps => this.setState({on: nextProps.on})
