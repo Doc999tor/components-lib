@@ -93,11 +93,6 @@
     -webkit-padding-start 10px
     -moz-padding-start 10px
     padding-inline-start: 10px
-  .right
-    -webkit-padding-start 0
-    -moz-padding-start 0
-    padding-inline-start 0
-    transform rotate(180deg)
   button
     display display flex
     height 100%
@@ -132,3 +127,10 @@
     fill var(--dark-color)
     width 22px
     height 22px
+body[style='direction: rtl;']
+  .skip
+    .img_skip
+      -webkit-padding-start 0
+      -moz-padding-start 0
+      padding-inline-start 0
+      transform rotate(180deg)

@@ -111,7 +111,7 @@ export default class PhoneModal extends React.Component {
           <button className='skip'
             onClick={this.skip}>
             <p>{this.props.text.cancel_modal}</p>
-            <svg className={`img_skip ${(config.isRTL || config.data.isRTL) && 'right'}`}>
+            <svg className='img_skip'>
               <use xlinkHref={config.urls.media + 'sprite.svg#skip'} />
             </svg>
           </button>
