@@ -30,6 +30,7 @@ export default ({ closeMenu, commonConfig, translations }) => {
 	const bgrImg = {
 		'background-image': `url('${finalConfig.urls.menu_icons}photo-bgr.jpg')`
 	}
+	const isSvg = finalConfig.user.business_logo.includes('.svg')
 	const cancelPropagation = e => e.stopPropagation()
 	return (
 		<div id='menu_modal' className='jsx-menu' onClick={closeMenu}>
@@ -38,7 +39,7 @@ export default ({ closeMenu, commonConfig, translations }) => {
 					<div className='list-wrap' onClick={cancelPropagation}>
 						<div className='menu'>
 							<div className='menu-logo'>
-								<div className='logo'>
+								<div className={'logo' + (isSvg ? ' svg-logo' : '')}>
 									<img className='business_logo' src={finalConfig.user.business_logo} />
 								</div>
 								<div className='business_container'>
