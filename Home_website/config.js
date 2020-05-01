@@ -232,6 +232,9 @@ const config = {
 				{ name: 'ultimate', icon: 'ultimate.svg', price_monthly: 19, price_yearly: 190 }
 			]
 		},
+		no_credits: {
+
+		},
 		contact_us: {
 			phone_number: '+972 55 966 5243',
 			email: 'client@lista.com',
@@ -474,6 +477,11 @@ const config = {
 			cancel_label: 'Cancel',
 			submit_label: 'Submit',
 			uploaded_photo: 'The photo is uploaded'
+		},
+		no_credits: {
+			first_part_title: 'No Credit Card Needed!',
+			second_part_title: 'No Any Obligations!',
+			button_label: 'Try for Free!',
 		},
 		pricing: {
 			title: 'Plans for Everyone and Any Business',
