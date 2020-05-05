@@ -226,10 +226,11 @@ const config = {
 		},
 		pricing: {
 			currency: '$',
+			switch_bill_annually: true, // default value for pricig toggle switch
 			data: [
 				{ name: 'basic', icon: 'basic.svg', price_monthly: null, price_yearly: null },
-				{ name: 'premium', icon: 'premium.svg', price_monthly: 10, price_yearly: 100 },
-				{ name: 'ultimate', icon: 'ultimate.svg', price_monthly: 19, price_yearly: 190 }
+				{ name: 'premium', icon: 'premium.svg', price_monthly: 10, price_yearly: 100, discount: '20%' },
+				{ name: 'ultimate', icon: 'ultimate.svg', price_monthly: 19, price_yearly: 190, discount: '20%' }
 			]
 		},
 		no_credits: {
@@ -484,8 +485,13 @@ const config = {
 			button_label: 'Try for Free!',
 		},
 		pricing: {
+			internal_link_name: 'PRICING',
+			main_title: 'Pricing',
+			switch_annually: 'Bill annually',
+			switch_monthly: 'Bill monthly',
 			title: 'Plans for Everyone and Any Business',
 			subtitle: 'Choose the plan and tap to learn more',
+			discount_label: 'off',
 			data: {
 				basic: {
 					small_preview: {
