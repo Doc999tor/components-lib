@@ -101,9 +101,25 @@ export default class Debts extends React.Component {
   }
 
   changeInput = e => {
-    this.setState({ debt: +e.target.value }, () => this.props.getDebt(this.state.debt))
+    const value = e.target.value
+    this.setState({ debt: value }, () => this.props.getDebt(this.state.debt))
     this.handleWidth()
   }
+
+  handleBlurInput = e => {
+    const value = e.target.value
+    if (value === '') {
+      this.setState({ debt: 0 }, () => this.props.getDebt(this.state.debt))
+    }
+  }
+
+  handleFocusInput = e => {
+    const value = e.target.value
+    if (value == 0) {
+      this.setState({ debt: '' })
+    }
+  }
+
   changeDescription = e => this.setState({ description: e.target.value }, () => this.props.getDesc(this.state.description))
 
   showFullDebt = (i, id) => {
@@ -142,8 +158,9 @@ export default class Debts extends React.Component {
                     type='number'
                     value={this.state.debt}
                     onChange={this.changeInput}
-                    onFocus={e => { if (e.target.value == '0') e.target.value = '' }}
-                    onBlur={e => { if (e.target.value == '') e.target.value = 0 }} />
+                    onFocus={this.handleFocusInput}
+                    onBlur={this.handleBlurInput}
+                    />
                   <div className='ink' onClick={this.handleIncrementDebt}>
                     <img src={config.urls.media + 'plus.svg'} />
                   </div>
@@ -191,8 +208,9 @@ export default class Debts extends React.Component {
                         id='count-input'
                         value={this.state.debt}
                         onChange={this.changeInput}
-                        onFocus={e => { if (e.target.value == '0') e.target.value = '' }}
-                        onBlur={e => { if (e.target.value == '') e.target.value = 0 }} />
+                        onFocus={this.handleFocusInput}
+                        onBlur={this.handleBlurInput}
+                        />
                       <div className='ink' onClick={this.handleIncrementDebt}>
                         <img src={config.urls.media + 'plus.svg'} />
                       </div>
