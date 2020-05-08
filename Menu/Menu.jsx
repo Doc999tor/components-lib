@@ -33,7 +33,7 @@ export default ({ closeMenu, commonConfig, translations }) => {
 	const isSvg = finalConfig.user.business_logo.includes('.svg')
 	const cancelPropagation = e => e.stopPropagation()
 	return (
-		<div id='menu_modal' className='jsx-menu' onClick={closeMenu}>
+		<div id='menu_modal' className='jsx-menu' onClick={closeMenu || false}>
 			<div className='menu_container'>
 				<div className='menu_wrap' style={bgrImg}>
 					<div className='list-wrap' onClick={cancelPropagation}>
@@ -51,7 +51,7 @@ export default ({ closeMenu, commonConfig, translations }) => {
 								{finalConfig.menu.map(item => {
 									return (
 										item.text === 'install'
-											? <li id='install' className='list-item installed' onClick={closeMenu}>
+											? <li id='install' className='list-item installed' onClick={closeMenu || false}>
 												<p className='item-link'>
 													{finalConfig.translations.menu[item.text]}
 													<span className='menu-img-wrap'><img className='menu-img' src={finalConfig.urls.menu_icons + item.icon} alt={item.text} /></span>
