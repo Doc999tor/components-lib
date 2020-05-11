@@ -36,7 +36,7 @@ export default ({ closeMenu, commonConfig, translations }) => {
 		<div id='menu_modal' className='jsx-menu' onClick={closeMenu || false}>
 			<div className='menu_container'>
 				<div className='menu_wrap' style={bgrImg}>
-					<div className='list-wrap' onClick={cancelPropagation}>
+					<div className='list-wrap' onClick={closeMenu ? cancelPropagation : false}>
 						<div className='menu'>
 							<div className='menu-logo'>
 								<div className={'logo' + (isSvg ? ' svg-logo' : '')}>
