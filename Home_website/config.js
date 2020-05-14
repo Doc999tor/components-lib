@@ -420,7 +420,8 @@ const config = {
 				message_label: 'Message',
 				cancel_btn_label: 'Cancel',
 				send_btn_label: 'Send',
-				placeholder_contact: 'Contact details'
+				placeholder_contact: 'Contact details',
+				placeholder_message: 'Your Message'
 			},
 			send_popup: {
 				sending: 'Sending',
