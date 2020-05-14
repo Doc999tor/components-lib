@@ -404,24 +404,26 @@ const config = {
 		},
 		contact_us: {
 			main_title: 'Contact Us',
-			suggestions: 'Do you have any questions or suggestions? Let’s discuss it!',
-			enter_vadil_value: 'Please enter a valid email or phone number.',
-			enter_all_fields: 'Please note that all fields are required.',
-			preview_text: 'FAQ & Tutorials',
-			subtitle: 'Choose a messaging app or just call us',
-			send_mail_label: 'Send Email',
-			email: 'Email: ',
-			phone: 'Phone: ',
-			send_btn: 'Send message',
-			choose_messenger: 'We communicate in convenient for you messaging apps. Choose your',
-			send_form: {
-				main_title: 'Your Message',
-				phone_mail_label: 'Email or Phone',
-				message_label: 'Message',
-				cancel_btn_label: 'Cancel',
-				send_btn_label: 'Send',
-				placeholder_contact: 'Contact details',
-				placeholder_message: 'Your Message'
+			placeholder_contact: 'Contact details',
+			placeholder_message: 'Your Message',
+			contact_input_label: 'Email or Phone',
+			message_input_label: 'Message',
+			desktop: {
+				subtitle: 'Do you have any questions or suggestions? Let’s discuss it!',
+				warning_empty_fields: 'Please note that all fields are required.',
+				warning_not_valid_contact: 'Please enter a valid email or phone number.',
+				choose_messenger: 'We communicate in convenient for you messaging apps. Choose your',
+				send_mail_btn_label: 'Send message',
+				contact_info_email: 'Email:',
+				contact_info_phone: 'Phone:'
+			},
+			mobile: {
+				choose_messenger: 'Choose a messaging app or just call us',
+				preview_text: 'FAQ & Tutorials',
+				create_mail_btn_label: 'Send Email',
+				send_form_title: 'Your Message',
+				send_form_cancel_btn_label: 'Cancel',
+				send_form_send_btn_label: 'Send'
 			},
 			send_popup: {
 				sending: 'Sending',
