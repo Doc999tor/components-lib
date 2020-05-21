@@ -494,6 +494,7 @@ const config = {
 			switch_monthly: 'Bill monthly',
 			title: 'Plans for Everyone and Any Business',
 			subtitle: 'Choose the plan and tap to learn more',
+			to_save_label: 'Save',
 			discount_label: 'off',
 			data: {
 				basic: {
