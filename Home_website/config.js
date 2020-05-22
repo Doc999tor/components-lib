@@ -283,6 +283,7 @@ const config = {
 		media_business_types: './components-lib/Home_website/business_types/'
 	},
 	translations: {
+		mobile_sign_up_button_label: 'Sign up',
 		languages: {
 			en: 'EN - English',
 			ua: 'UA - Ukraine',
@@ -374,6 +375,7 @@ const config = {
 		},
 		features: {
 			back_to_features: 'Discover all',
+			main_title: 'Powerful Features',
 			internal_link_name: 'WHY',
 			content: {
 				title: 'Powerful Features & Simple to Use',
