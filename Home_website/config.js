@@ -376,6 +376,7 @@ const config = {
 		features: {
 			back_to_features: 'Discover all',
 			main_title: 'Powerful Features',
+			subtitle: 'Atzmaim App for any type of business',
 			internal_link_name: 'WHY',
 			content: {
 				title: 'Powerful Features & Simple to Use',
@@ -494,7 +495,7 @@ const config = {
 			main_title: 'Pricing',
 			switch_annually: 'Bill annually',
 			switch_monthly: 'Bill monthly',
-			title: 'Plans for Everyone and Any Business',
+			title: 'Plans for Everyone',
 			subtitle: 'Choose the plan and tap to learn more',
 			to_save_label: 'Save',
 			discount_label: 'off',
@@ -502,6 +503,7 @@ const config = {
 				basic: {
 					small_preview: {
 						name: 'Basic',
+						business_type: 'Individual',
 						group_preview_price: 'Free',
 						period: ''
 					},
@@ -520,6 +522,7 @@ const config = {
 				premium: {
 					small_preview: {
 						name: 'Premium',
+						business_type: 'Small Business',
 						group_preview_price: '{currency}{price_value}',
 						period: '/month'
 					},
@@ -538,6 +541,7 @@ const config = {
 				ultimate: {
 					small_preview: {
 						name: 'Ultimate',
+						business_type: 'Company',
 						group_preview_price: '{currency}{price_value}',
 						period: '/month'
 					},
