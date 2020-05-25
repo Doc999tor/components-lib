@@ -283,7 +283,6 @@ const config = {
 		media_business_types: './components-lib/Home_website/business_types/'
 	},
 	translations: {
-		mobile_sign_up_button_label: 'Sign up',
 		languages: {
 			en: 'EN - English',
 			ua: 'UA - Ukraine',
@@ -362,25 +361,17 @@ const config = {
 					description: 'Et voluptate sapiente. Ratione ror praesentium. Et voluptate sapiente. Ratione ror praesentium'
 				}
 			],
-			internal_link_name: 'HERO',
-			main_logo: 'LISTA',
-			main_logo_label: 'ATZMAIM Logo',
+			logo_label: 'ATZMAIM Logo',
 			main_title: 'Manage Business Easily',
 			log_in: 'Log in',
 			sign_up: 'Sign Up',
-			description: 'We’ve created for you an application with calendar,clients appointments, automated text reminders andother useful tools for managing your business easy',
-			join_us: 'Join Now for Free',
-			button_label: 'Try for Free!',
-			calendar_icon: 'Calendar picture'
+			button_label: 'Try for Free!'
 		},
 		features: {
 			back_to_features: 'Discover all',
 			main_title: 'Powerful Features',
 			subtitle: 'Atzmaim App for any type of business',
-			internal_link_name: 'WHY',
 			content: {
-				title: 'Powerful Features & Simple to Use',
-				description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod',
 				data: {
 					business: { name: 'Business Management', description: 'Voluptate autem unde voluptatum. Enim voluptatem voluptas.' },
 					appointments: { name: 'Appointments Calendar', description: 'Et voluptate sapiente. Ratione ror praesentium.' },
@@ -393,9 +384,7 @@ const config = {
 		},
 		showcases: {
 			phones_pics_alt: ['1111 alt', 'IMG_0923 alt', 'IMG_0923 alt', '1111 alt'],
-			internal_link_name: 'SHOWCASES',
 			main_title: 'Simply the Best Business Calendar',
-			learn_more: 'Learn More',
 			description: `Control your day, week and month with 
 				calendar events and tasks in a simple 
 				view.Lista was carefully designed to meet 
@@ -403,7 +392,6 @@ const config = {
 				and powerful, just like it should be. 
 				Created for business people.`,
 			button_label: 'Try for Free!',
-			icon_alt_text: 'Iphone icon'
 		},
 		contact_us: {
 			main_title: 'Contact Us',
@@ -440,10 +428,8 @@ const config = {
 			}
 		},
 		business_types: {
-			internal_link_name: 'BUSINESS TYPES',
 			main_title: 'Types of Business',
 			subtitle: 'Atzmaim App for any type of business',
-			preview_text: 'Tap on image for more info',
 			content: {   // * 6 items
 				hair_salons: {
 					title: 'Hair Stylists and Salons',
