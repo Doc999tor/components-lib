@@ -383,12 +383,12 @@ const config = {
 			subtitle: 'Atzmaim App for any type of business',
 			content: {
 				data: {
-					business: { name: 'Business Management', description: 'Voluptate autem unde voluptatum. Enim voluptatem voluptas.' },
-					appointments: { name: 'Appointments Calendar', description: 'Et voluptate sapiente. Ratione ror praesentium.' },
-					notifications: { name: 'SMS Notifications', description: 'Delectus fugiat voluptatem explicabo atque harum. Quis quae alias consequuntur.' },
-					subscriptions: { name: 'Client’s Subscriptions', description: 'Est perspiciatis veniam. Rerum aspernatur debitis ut deserunt quam aperiam.' },
-					management: { name: 'Client’s Management', description: 'Voluptate inventore quia necessitatibus. Vitae et quae quae. Doloribus tenetur sunt et ut.' },
-					reminders: { name: 'Tasks and Reminders', description: 'Sint qui et nihil praesentium adipisci tempore. Exercitationem in ut.' }
+					business: { name: 'Business Management Business Management', description: 'Voluptate autem unde voluptatum. Enim voluptatem voluptas.' },
+					appointments: { name: 'Appointments Calendar Appointments Calendar', description: 'Et voluptate sapiente. Ratione ror praesentium.' },
+					notifications: { name: 'SMS Notifications SMS Notifications', description: 'Delectus fugiat voluptatem explicabo atque harum. Quis quae alias consequuntur.' },
+					subscriptions: { name: 'Client’s Subscriptions Client’s Subscriptions', description: 'Est perspiciatis veniam. Rerum aspernatur debitis ut deserunt quam aperiam.' },
+					management: { name: 'Client’s Management Client’s Management', description: 'Voluptate inventore quia necessitatibus. Vitae et quae quae. Doloribus tenetur sunt et ut.' },
+					reminders: { name: 'Tasks and Reminders Tasks and Reminders', description: 'Sint qui et nihil praesentium adipisci tempore. Exercitationem in ut.' }
 				}
 			}
 		},
@@ -397,22 +397,27 @@ const config = {
 					data: [
 						{
 							title: 'Run Your Business from Your Pocket, with ease and from everywhere',
-							text: 'It’s never been easier to organize your busy life. Organize your tasks, lists and reminders in one easy calendar app. Lista syncs seamlessly across all of your devices, making your business management accessible everywhere. Stay organized and get more done!',
+							text: ' 11 It’s never been easier to organize your busy life. Organize your tasks, lists and reminders in one easy calendar app. Lista syncs seamlessly across all of your devices, making your business management accessible everywhere. Stay organized and get more done! 11',
 							alt: 'alt 1'
 						},
 						{
 							title: 'Manage Your Business Easily',
-							text: 'It’s never been easier to organize your busy life. Organize your tasks, lists and reminders in one easy calendar app. Lista syncs seamlessly across all of your devices, making your business management accessible everywhere. Stay organized and get more done!',
+							text: '11It’s never been easier to organize your busy life. Organize your tasks, \/n lists and reminders in one easy calendar app. Lista syncs seamlessly across all of your devices, making your business management accessible everywhere. Stay organized and get more done! 11',
 							alt: 'alt 2'
 						},
 						{
 							title: 'All Your Business in One App',
-							text: 'אין יותר פספוסים! כל הצעת מחיר, פגישה, תמונה או אפילו הקלטת שיחה – נכנסת לתיק הלקוח בקלו, פגישה, תמונה או אפילו הקלטת שיחה – נכנסת לתיק הלקוחת. Lista תזכור עבורכם הכל: היסטוריית לקוחות, מחירים, חובות, סדרות ומנויים ששולמו מראש, כרטיסי כימיה (למעצבי שיער), תמונות לפני/אחרי,  מעקבים ותזכורות... אחרי שתתחילו לא תבינו איך הסתדרתם בלעדיה.',
+							text: '22אין יותר פספוסים! כל הצעת מחיר, פגישה, תמונה או אפילו הקלטת שיחה – נכנסת לתיק הלקוח בקלו, פגישה, תמונה או אפילו הקלטת שיחה – נכנסת לתיק הלקוחת. Lista תזכור עבורכם הכל: היסטוריית לקוחות, מחירים, חובות, סדרות ומנויים ששולמו מראש, כרטיסי כימיה (למעצבי שיער), תמונות לפני/אחרי,  מעקבים ותזכורות... אחרי שתתחילו לא תבינו איך הסתדרתם בלעדיה. 11',
 							alt: 'alt 3'
 						},
 						{
 							title: 'Perfect Solution for Free!',
-							text: 'It’s never been easier to organize your busy life. Organize your tasks, lists and reminders in one easy calendar app. Lista syncs seamlessly across all of your devices, making your business management accessible everywhere. Stay organized and get more done!',
+							text: `Control your day, week and month with 
+							calendar events and tasks in a simple 
+							view.Lista was carefully designed to meet 
+							your needs every single time.It's simple 
+							and powerful, just like it should be. 
+							Created for business people.`,
 							alt: 'alt 4'
 						}
 					]
