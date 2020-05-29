@@ -133,6 +133,14 @@ const config = {
 					}
 			]
 		},
+		main_benefit: {
+			data: [
+				{pic: 'pic1.png'},
+				{pic: 'pic2.png'},
+				{pic: 'pic3.png'},
+				{pic: 'pic4.png'}
+			],
+		},
 		showcases: {
 			phones_pics: ['screen', 'screen1', 'screen3', 'screen4']
 		},
@@ -280,7 +288,8 @@ const config = {
 		default_avatar: 'default_avatar.jpg',
 		media_showcases: './assets/media/showcases/',
 		hero_carousel: './assets/media/hero_carousel/',
-		media_business_types: './components-lib/Home_website/business_types/'
+		media_business_types: './components-lib/Home_website/business_types/',
+		media_benefit: './assets/benefit/'
 	},
 	translations: {
 		languages: {
@@ -380,6 +389,32 @@ const config = {
 					management: { name: 'Client’s Management', description: 'Voluptate inventore quia necessitatibus. Vitae et quae quae. Doloribus tenetur sunt et ut.' },
 					reminders: { name: 'Tasks and Reminders', description: 'Sint qui et nihil praesentium adipisci tempore. Exercitationem in ut.' }
 				}
+			}
+		},
+		main_benefit: {
+			content: {
+					data: [
+						{
+							title: 'Run Your Business from Your Pocket',
+							text: 'It’s never been easier to organize your busy life. Organize your tasks, lists and reminders in one easy calendar app. Lista syncs seamlessly across all of your devices, making your business management accessible everywhere. Stay organized and get more done!',
+							alt: 'alt 1'
+						},
+						{
+							title: 'Manage Your Business Easily',
+							text: 'It’s never been easier to organize your busy life. Organize your tasks, lists and reminders in one easy calendar app. Lista syncs seamlessly across all of your devices, making your business management accessible everywhere. Stay organized and get more done!',
+							alt: 'alt 2'
+						},
+						{
+							title: 'All Your Business in One App',
+							text: 'It’s never been easier to organize your busy life. Organize your tasks, lists and reminders in one easy calendar app. Lista syncs seamlessly across all of your devices, making your business management accessible everywhere. Stay organized and get more done!',
+							alt: 'alt 3'
+						},
+						{
+							title: 'Perfect Solution for Free!',
+							text: 'It’s never been easier to organize your busy life. Organize your tasks, lists and reminders in one easy calendar app. Lista syncs seamlessly across all of your devices, making your business management accessible everywhere. Stay organized and get more done!',
+							alt: 'alt 4'
+						}
+					]
 			}
 		},
 		showcases: {
