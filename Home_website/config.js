@@ -136,10 +136,10 @@ const config = {
 		main_benefit: {
 			carousel_time: 5000,
 			data: [
-				{pic: 'pic1.png'},
-				{pic: 'pic2.png'},
-				{pic: 'pic3.png'},
-				{pic: 'pic4.png'}
+				{pic: 'pic1'},
+				{pic: 'pic2'},
+				{pic: 'pic3'},
+				{pic: 'pic4'}
 			],
 		},
 		showcases: {
@@ -396,7 +396,7 @@ const config = {
 			content: {
 					data: [
 						{
-							title: 'Run Your Business from Your Pocket',
+							title: 'Run Your Business from Your Pocket, with ease and from everywhere',
 							text: 'It’s never been easier to organize your busy life. Organize your tasks, lists and reminders in one easy calendar app. Lista syncs seamlessly across all of your devices, making your business management accessible everywhere. Stay organized and get more done!',
 							alt: 'alt 1'
 						},
@@ -407,7 +407,7 @@ const config = {
 						},
 						{
 							title: 'All Your Business in One App',
-							text: 'It’s never been easier to organize your busy life. Organize your tasks, lists and reminders in one easy calendar app. Lista syncs seamlessly across all of your devices, making your business management accessible everywhere. Stay organized and get more done!',
+							text: 'אין יותר פספוסים! כל הצעת מחיר, פגישה, תמונה או אפילו הקלטת שיחה – נכנסת לתיק הלקוח בקלו, פגישה, תמונה או אפילו הקלטת שיחה – נכנסת לתיק הלקוחת. Lista תזכור עבורכם הכל: היסטוריית לקוחות, מחירים, חובות, סדרות ומנויים ששולמו מראש, כרטיסי כימיה (למעצבי שיער), תמונות לפני/אחרי,  מעקבים ותזכורות... אחרי שתתחילו לא תבינו איך הסתדרתם בלעדיה.',
 							alt: 'alt 3'
 						},
 						{
