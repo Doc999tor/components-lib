@@ -134,6 +134,7 @@ const config = {
 			]
 		},
 		main_benefit: {
+			carousel_time: 5000,
 			data: [
 				{pic: 'pic1.png'},
 				{pic: 'pic2.png'},
