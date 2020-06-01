@@ -46,7 +46,7 @@ const config = {
 	modules: {
 		hero: {
 			features: ['management', 'reminders', 'notifications'],
-			gallery: ['screen', 'screen1', 'screen2', 'screen3', 'screen4'],
+			gallery: ['agenda', 'preview', 'calendar'],
 			carousel_time: 3000,
 		},
 		features: {
