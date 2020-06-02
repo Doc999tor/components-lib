@@ -45,9 +45,8 @@ const config = {
 	],
 	modules: {
 		hero: {
-			features: ['management', 'reminders', 'notifications'],
 			gallery: ['agenda', 'preview', 'calendar'],
-			carousel_time: 3000,
+			carousel_time: 5000,
 		},
 		features: {
 			data: [
@@ -348,15 +347,18 @@ const config = {
 		hero: {
 			carousel_text: [
 				{ title: 'Manage Business Easily', 
-					description: 'We’ve created for you an application with calendar,clients appointments, automated text reminders andother useful tools for managing your business easy' 
+					description: 'We’ve created for you an application with calendar,clients appointments, automated text reminders andother useful tools for managing your business easy',
+					features: ['management', 'reminders', 'notifications']
 				},
 				{
 					title: 'ATZMAIM Logo',
-					description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
+					description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo',
+					features: ['management', 'reminders', 'notifications']
 				},
 				{
 					title: 'Join Now for Free',
 					description: 'Voluptate inventore quia necessitatibus. Vitae et quae quae. Doloribus tenetur sunt et ut. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
+					features: ['management', 'reminders', 'notifications']
 				},
 				{
 					title: 'Calendar picture',
@@ -372,7 +374,6 @@ const config = {
 				}
 			],
 			logo_label: 'ATZMAIM Logo',
-			main_title: 'Manage Business Easily',
 			log_in: 'Log in',
 			sign_up: 'Sign Up',
 			button_label: 'Try for Free!'
