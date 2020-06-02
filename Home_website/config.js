@@ -357,7 +357,7 @@ const config = {
 				},
 				{
 					title: 'Join Now for Free',
-					description: 'Voluptate inventore quia necessitatibus. Vitae et quae quae. Doloribus tenetur sunt et ut. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
+					description: 'Voluptate inventore quia necessitatibus. Vitae et quae quae. Doloribus tenetur sunt et ut. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo',
 					features: ['management', 'reminders', 'notifications']
 				},
 				{
