@@ -157,6 +157,7 @@ const config = {
     showcases: {
       phones_pics: ['screen', 'screen1', 'screen3', 'screen4']
     },
+    lead: {},
     business_types: {
       internal_link: {
         name: 'business_types',
@@ -444,6 +445,13 @@ const config = {
 				and powerful, just like it should be. 
 				Created for business people.`,
       button_label: 'Try for Free!',
+    },
+    lead: {
+      main_title: 'First month - Free! Do you like it?',
+      subtitle: 'Fill the form and we’ll sign up you to our free program, without any obligations',
+      placeholder_name: 'Your Name',
+      placeholder_contact: 'Phone or Email',
+      btn_label: 'Send'
     },
     contact_us: {
       main_title: 'Contact Us',
