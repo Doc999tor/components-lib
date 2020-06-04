@@ -128,14 +128,14 @@ export default class Debts extends React.Component {
   }
 
   render () {
-    let totalPrice = this.price()
+    const totalPrice = this.price()
     const sortDebts = this.props.debtsData.sort((a, b) => moment(b.date) - moment(a.date))
     return (
       <div id='debts'>
         {(this.props.debtEdit || this.props.debtsData.length > 0) && <div className='debt-header'>
           <div className='header-text'>
             {config.translations.debts.title}
-            {totalPrice && <div className='total-debts-wrap'><span>{config.data.currency}</span>{totalPrice}</div>}
+            <div className='total-debts-wrap'><span>{config.data.currency}</span>{totalPrice || 0}</div>
           </div>
           {this.props.debtEdit &&
           <div className='btn-header' onClick={this.backButton}>
