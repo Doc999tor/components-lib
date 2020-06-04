@@ -452,7 +452,9 @@ const config = {
       subtitle: 'Fill the form and we’ll sign up you to our free program, without any obligations',
       placeholder_name: 'Your Name',
       placeholder_contact: 'Phone or Email',
-      btn_label: 'Send'
+      btn_label: 'Send',
+      empty_warning_label: 'Fill in this field',
+      not_valid_field_label: 'Enter valid value'
     },
     contact_us: {
       main_title: 'Contact Us',
