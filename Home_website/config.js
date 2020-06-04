@@ -290,6 +290,7 @@ const config = {
     error_page: `/${ lang }/home?page=error`,
     home_page: '/{lang}/home',
     send_mail: 'https://api.bewebmaster.co.il/home/contact_us',
+    api_leads: 'https://api.bewebmaster.co.il/home/contact_us/leads',
     old_website: '/text_website.html',
     hero_gallery: './components-lib/Home_website/gallery/',
     media: './assets/media/',
