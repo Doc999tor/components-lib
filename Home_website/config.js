@@ -157,7 +157,7 @@ const config = {
     showcases: {
       phones_pics: ['screen', 'screen1', 'screen3', 'screen4']
     },
-    lead: {},
+    leads: {},
     business_types: {
       internal_link: {
         name: 'business_types',
