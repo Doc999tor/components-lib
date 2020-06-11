@@ -31,7 +31,7 @@ export default ({ closeMenu, commonConfig, translations }) => {
 	return (
 		<div id='menu_modal' className='jsx-menu' onClick={closeMenu || false}>
 			<div className='menu_container'>
-				<div className={'menu_wrap' + (finalConfig.isRTL || finalConfig.data.isRTL ? ' animation_rtl' : ' animation_ltr')}>
+				<div className={'menu_wrap' + (finalConfig.isRTL || (finalConfig.data && finalConfig.data.isRTL) || finalConfig.calendar.isRTL ? ' animation_rtl' : ' animation_ltr')}>
 					<div className='list-wrap' onClick={closeMenu ? cancelPropagation : false}>
 						<div className='menu'>
 							<div className='menu-logo'>
