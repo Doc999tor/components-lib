@@ -535,9 +535,9 @@ const config = {
       uploaded_photo: 'The photo is uploaded'
     },
     no_credits: {
-      first_part_title: 'No Credit Card Needed!',
-      second_part_title: 'No Any Obligations!',
-      button_label: 'Try for Free!',
+      main_title: 'First month - Free!',
+      subtitle: 'Fill the form and we’ll sign up you to our free program',
+      button_label: 'Send'
     },
     pricing: {
       internal_link_name: 'PRICING',
