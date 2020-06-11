@@ -20,7 +20,6 @@
   .menu_wrap
     width 80%
     min-height 100%
-    animation openMenu 0.3s
   .list-wrap
     height 100%
   .menu
@@ -119,6 +118,14 @@
     height 1.5rem
     width 1.5rem
 
-@keyframes openMenu
+  .animation_rtl
+    animation openMenu_rtl 0.3s
+  .animation_ltr
+    animation openMenu_ltr 0.3s
+@keyframes openMenu_rtl
   0%
     transform translateX(-100%)
+@keyframes openMenu_ltr
+  0%
+    transform translateX(100%)
+
