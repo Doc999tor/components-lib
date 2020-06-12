@@ -121,10 +121,19 @@
     animation openMenu_rtl 0.3s
   .animation_ltr
     animation openMenu_ltr 0.3s
+  .close_animation_rtl
+    animation closeMenu_rtl 0.3s forwards
+  .close_animation_ltr
+    animation closeMenu_ltr 0.3s forwards
 @keyframes openMenu_rtl
   0%
     transform translateX(-100%)
+@keyframes closeMenu_rtl
+  100%
+@keyframes closeMenu_ltr
+  100%
+    transform translateX(100%)
+
 @keyframes openMenu_ltr
   0%
     transform translateX(100%)
-

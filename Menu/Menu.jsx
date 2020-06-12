@@ -22,16 +22,18 @@ if (typeof window !== 'undefined' && typeof config !== 'undefined') {
 	}
 }
 
-export default ({ closeMenu, commonConfig, translations }) => {
+export default ({ closeMenu, commonConfig, translations, closeAnimation }) => {
 	let finalConfig = commonConfig || config
 	if (Object.entries(finalConfig.translations).length === 0 && finalConfig.translations.constructor === Object) {
 		finalConfig.translations = translations
 	}
 	const cancelPropagation = e => e.stopPropagation()
+	const rtlDir = finalConfig.isRTL || (finalConfig.data && finalConfig.data.isRTL) || (finalConfig.calendar && finalConfig.calendar.isRTL)
+
 	return (
 		<div id='menu_modal' className='jsx-menu' onClick={closeMenu || false}>
 			<div className='menu_container'>
-				<div className={'menu_wrap' + (finalConfig.isRTL || (finalConfig.data && finalConfig.data.isRTL) || finalConfig.calendar.isRTL ? ' animation_rtl' : ' animation_ltr')}>
+				<div className={'menu_wrap' + (rtlDir ? ' animation_rtl' : ' animation_ltr') + (closeAnimation ? (rtlDir ? ' close_animation_rtl' : ' close_animation_ltr') : '')}>
 					<div className='list-wrap' onClick={closeMenu ? cancelPropagation : false}>
 						<div className='menu'>
 							<div className='menu-logo'>
