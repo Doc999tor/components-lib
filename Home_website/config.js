@@ -537,7 +537,9 @@ const config = {
     no_credits: {
       main_title: 'First month - Free!',
       subtitle: 'Fill the form and we’ll sign up you to our free program',
-      button_label: 'Send'
+      button_label: 'Send',
+      placeholder_name: 'Your Name',
+      placeholder_contact: 'Your Phone'
     },
     pricing: {
       internal_link_name: 'PRICING',
