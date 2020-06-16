@@ -266,7 +266,13 @@ const config = {
         { name: 'viber', icon: 'ic_viber.svg', url: 'https://invite.viber.com/?g2=AQAaEITkv4zPmUsWCDPJdalyyNyjPJD7M4IGjUWirJBlGgOrzsgVMWB6Q1gw3jHx', color: '#ede7ff', color_text: '#845ffa' },
         { name: 'messenger', icon: 'ic_messenger.svg', url: 'https://m.me/join/AbbDIHCbzcIo2u-R', color: '#e7f7ff', color_text: '#2998ff' },
         { name: 'telegram', icon: 'ic_telegram.svg', url: 'https://t.me/TestAtzmaim', color: '#e7f7ff', color_text: '#12aef1' }
-      ]
+      ],
+			useful_links: [
+				{ link_to: '/page1' },
+				{ link_to: '/page2' },
+				{ link_to: '/page3' },
+				{ link_to: '/page4' }
+			],
     },
     footer: {
       data: [
@@ -488,7 +494,17 @@ const config = {
         whatsapp: { name: 'Whatsapp' },
         messenger: { name: 'Messenger' },
         telegram: { name: 'Telegram' }
-      }
+      },
+      useful_links: {
+				main_title: 'Useful Links',
+				link_label: 'View',
+				links: [
+					{ title: 'How to record your phone\'s screen? ',text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium'  },
+					{ title: 'TeamViewer for remote support', text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium'  },
+					{ title: 'How to create a new client?', text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium'  },
+					{ title: 'How to create a new service?', text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium'  },
+				]
+			},
     },
     business_types: {
       main_title: 'Types of Business',
