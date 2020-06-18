@@ -366,31 +366,8 @@ const config = {
       feedback: { name: 'Feedback' }
     },
     hero: {
-      carousel_text: [
-        { title: 'Manage Business Easily', 
-          description: 'We’ve created for you an application with calendar,clients appointments, automated text reminders andother useful tools for managing your business easy',
-        },
-        {
-          title: 'ATZMAIM Logo',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo',
-        },
-        {
-          title: 'Join Now for Free',
-          description: 'Voluptate inventore quia necessitatibus. Vitae et quae quae. Doloribus tenetur sunt et ut. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo',
-        },
-        {
-          title: 'Calendar picture',
-          description: 'Delectus fugiat voluptatem explicabo atque harum. Quis quae alias consequuntur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo'
-        },
-        {
-          title: 'LISTA',
-          description: 'Et voluptate sapiente. Ratione ror praesentium.'
-        },
-        {
-          title: 'Powerful Features & Simple to Use',
-          description: 'Et voluptate sapiente. Ratione ror praesentium. Et voluptate sapiente. Ratione ror praesentium'
-        }
-      ],
+      main_title: 'Manage Business Easily',
+      description: 'We’ve created for you an application with calendar,clients appointments, automated text reminders andother useful tools for managing your business easy',
       logo_label: 'ATZMAIM Logo',
       log_in: 'Log in',
       sign_up: 'Sign Up',
