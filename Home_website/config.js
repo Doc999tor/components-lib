@@ -430,7 +430,7 @@ const config = {
 				Created for business people.`,
       button_label: 'Try for Free!',
     },
-    lead: {
+    leads: {
       main_title: 'First month - Free! Do you like it?',
       subtitle: 'Fill the form and we’ll sign up you to our free program, without any obligations',
       placeholder_name: 'Your Name',
