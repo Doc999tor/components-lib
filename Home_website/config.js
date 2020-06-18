@@ -445,6 +445,8 @@ const config = {
       placeholder_message: 'Your Message',
       contact_input_label: 'Email or Phone',
       message_input_label: 'Message',
+      attach_file_text: 'Having trouble with an app? Attach a screenshot or a video to show us and we’ll solve it!',
+      attach_file_btn_label: 'Attach a file',
       desktop: {
         subtitle: 'Do you have any questions or suggestions? Let’s discuss it!',
         warning_empty_fields: 'Please note that all fields are required.',
