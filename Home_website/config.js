@@ -250,7 +250,7 @@ const config = {
       currency: '$',
       switch_bill_annually: true, // default value for pricig toggle switch
       data: [
-        { name: 'basic', icon: 'basic.svg', price_monthly: null, price_yearly: null },
+        { name: 'basic', icon: 'basic.svg', price_monthly: null, price_yearly: null, discount: '13%', preferred: true },
         { name: 'premium', icon: 'premium.svg', price_monthly: 10, price_yearly: 100, discount: '20%' },
         { name: 'ultimate', icon: 'ultimate.svg', price_monthly: 19, price_yearly: 190, discount: '20%' }
       ]
@@ -550,17 +550,17 @@ const config = {
           small_preview: {
             name: 'Basic',
             business_type: 'Individual',
-            group_preview_price: 'Free',
+            group_preview_price: '{currency}{price_value}',
             period: ''
           },
           opened_preview: {
             name: 'Basic',
             business_type: 'Small businesses',
-            group_preview_price: 'Free',
+            group_preview_price: '{currency}{price_value}',
             period_month: '/forever',
             period_year: '/forever',
-            price_monthly: null,
-            price_yearly: null,
+            price_monthly: '/month',
+            price_yearly: '/year',
             features: ['100 Appointments monthly', 'Available on 1 Device', 'Text message reminders', 'Client management', 'Sync with Google Calendar', ],
             cta_label: 'Try for free' // call-to-action, "join us" text
           }
