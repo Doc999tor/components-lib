@@ -276,9 +276,9 @@ const config = {
     },
     footer: {
       data: [
-        { name: 'about_us', link: `/${lang}/about_us` },
-        { name: 'contact_us', link: `/${lang}/contact_us` },
-        { name: 'terms_of_use', link: `/${lang}/terms_of_use` }
+        { name: 'about_us', link: `/${lang}/about_us`, icon: 'fruit.png'},
+        { name: 'contact_us', link: `/${lang}/contact_us, ` },
+        { name: 'terms_of_use', link: `/${lang}/terms_of_use`, icon: 'music.png' }
       ]
     }
   },
