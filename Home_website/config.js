@@ -9,6 +9,7 @@ const config = {
     features: { icon: 'ic_features.svg', link: '#features' },
     business_types: { icon: 'ic_business.svg', link: '#business_types' },
     showcases: { link: '#showcases' },
+    contact_us: { link: '#contact_us' },
     pricing: { icon: 'ic_pricing.svg', link: '#pricing' },
     feedback: { icon: 'ic_reviews.svg', link: '#feedback' }
   },
@@ -361,6 +362,7 @@ const config = {
       hero: { name: 'App info' },
       features: { name: 'Features' },
       showcases: { name: 'Showcases' },
+      contact_us: { name: 'Contact US' },
       business_types: { name: 'For whom' },
       pricing: { name: 'Pricing' },
       feedback: { name: 'Feedback' }
