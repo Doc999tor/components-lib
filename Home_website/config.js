@@ -319,6 +319,11 @@ const config = {
       ua: 'UA - Ukraine',
       he: 'HE - Hebrew'
     },
+    module_names: {
+			groups: 'Groups',
+			calendar: 'Calendar',
+			settings: 'Settings'
+		},
     menu: {
       calendar: 'Calendar',
       clients_list: 'Clients list',
