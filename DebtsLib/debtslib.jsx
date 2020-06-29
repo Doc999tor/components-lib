@@ -256,7 +256,7 @@ export default class Debts extends React.Component {
                 <div className='left-side'>
                   <span className={'debt-list-date ' + ((config.isRTL || config.data.isRTL) ? 'rtl-side' : '')}>{i.date}</span>
                   <div className='debt-list-name'>
-                    <label className='currency'>{i.sum}{config.data.currency}</label>
+                    <label className='currency'><span>{config.data.currency}</span>{i.sum}</label>
                     {i.desc && <div className='debt-list-desc'>
                       <span onClick={() => this.showFullDebt(i, i.id)} id={i.id}>{i.desc}</span>
                     </div>}
