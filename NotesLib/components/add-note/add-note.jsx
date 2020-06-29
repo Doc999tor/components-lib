@@ -100,7 +100,7 @@ export default class AddNote extends React.Component {
           </button>}
           <button
             className='save'
-            onClick={this.props.noteReplace && this.props.description.length > 2 && this.props.submit}>
+            onClick={this.props.noteReplace && this.props.description.length > 0 && this.props.submit}>
             <div className={'img-wrap' + (!this.props.loader ? '' : ' spin')}>{!this.props.loader
               ? <svg className='img_apply'>
                 <use xlinkHref={config.urls.media + 'sprite.svg#apply'} />
