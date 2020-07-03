@@ -41,7 +41,7 @@ export default ({ closeMenu, commonConfig, translations, closeAnimation }) => {
 									<img src={finalConfig.urls.menu_icons + 'wave_menu.svg'} alt='wave' />
 								</div>
 								<div className='logo'>
-									<img className='business_logo' src={finalConfig.urls.menu_icons + 'smart_manager.svg'} alt='smart_manager' />
+									<img className='business_logo' src={finalConfig.urls.menu_icons + 'lista.svg'} alt='lista' />
 								</div>
 								<div className='business_container'>
 									<div className='neon-light'>
