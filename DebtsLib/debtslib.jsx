@@ -96,14 +96,16 @@ export default class Debts extends React.Component {
   }
 
   handleWidth = () => {
-    let width = document.getElementById('count-input').scrollWidth
+    const width = document.getElementById('count-input').scrollWidth
     document.getElementById('count-input').setAttribute('style', 'width:' + width + 'px')
   }
 
   changeInput = e => {
     const value = e.target.value
-    this.setState({ debt: value }, () => this.props.getDebt(this.state.debt))
-    this.handleWidth()
+    this.setState({ debt: value }, () => {
+      this.props.getDebt(this.state.debt)
+      this.handleWidth()
+    })
   }
 
   handleBlurInput = e => {
