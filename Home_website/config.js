@@ -144,7 +144,8 @@ const config = {
           preview_pic: 'pic_iphone.png',
           icon: 'ic_gallery.svg'
         }
-      ]
+      ],
+      carousel_time: 5000
     },
     main_benefit: {
       carousel_time: 5000,
