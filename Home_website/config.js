@@ -165,6 +165,7 @@ const config = {
         name: 'business_types',
         url: 'business_types'
       },
+      carousel_time: 5000,
       data: [
         {
           name: 'hair_salons',
