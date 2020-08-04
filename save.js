@@ -11,7 +11,7 @@ export default (newPicture, newAgreement) => {
     const bodyUpdated = config.data[i]
     if (i === 'phone' && !bodyUpdated) body.append(i, null)
     if (bodyUpdated) {
-      Array.isArray(bodyUpdated) ? bodyUpdated.length > 0 && body.append(i, JSON.stringify(encodeURIComponent(bodyUpdated))) : body.append(i, encodeURIComponent(bodyUpdated))
+      Array.isArray(bodyUpdated) ? bodyUpdated.length > 0 && body.append(i, JSON.stringify(bodyUpdated)) : body.append(i, encodeURIComponent(bodyUpdated))
     }
   })
   return body
