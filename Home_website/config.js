@@ -296,6 +296,7 @@ const config = {
     login: `/${ lang }/login`,
     signup: `/${ lang }/signup`,
     contact_us: `/${ lang }/home?page=contact_us`,
+    pricing: `/${ lang }/home?page=pricing`,
     error_page: `/${ lang }/home?page=error`,
     home_page: '/{lang}/home',
     send_mail: 'https://api.bewebmaster.co.il/home/contact_us',
