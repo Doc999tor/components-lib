@@ -314,7 +314,10 @@ const config = {
     media_showcases: './assets/media/showcases/',
     hero_carousel: './assets/media/hero_carousel/',
     media_business_types: './components-lib/Home_website/business_types/',
-    media_benefit: './assets/benefit/'
+    media_benefit: './assets/benefit/',
+    page_pricing: '/pricing',
+	page_contact_us: '/contact_us',
+	page_error: '/error'
   },
   translations: {
     languages: {
