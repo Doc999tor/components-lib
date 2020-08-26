@@ -160,6 +160,7 @@ const config = {
       phones_pics: ['screen', 'screen1', 'screen3', 'screen4']
     },
     leads: {},
+    business_types_mobile: {},
     business_types: {
       internal_link: {
         name: 'business_types',
@@ -316,8 +317,8 @@ const config = {
     media_business_types: './components-lib/Home_website/business_types/',
     media_benefit: './assets/benefit/',
     page_pricing: '/pricing',
-	page_contact_us: '/contact_us',
-	page_error: '/error'
+    page_contact_us: '/contact_us',
+    page_error: '/error'
   },
   translations: {
     languages: {
@@ -497,6 +498,10 @@ const config = {
 					{ title: 'How to create a new service?', text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium'  },
 				]
 			},
+    },
+    business_types_mobile: {
+      main_title: 'Types of Business',
+      subtitle: 'Atzmaim App for any type of business'
     },
     business_types: {
       main_title: 'Types of Business',
