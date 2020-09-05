@@ -67,9 +67,9 @@ export default class ProceduresList extends React.Component {
               </div>
               <div className='border' />
             </div>
-            <div className={'acordeon ' + (showServices && clickId === i.id && 'active')}>
+            {showServices && clickId === i.id  && <div className='acordeon'>
               {this.state.services.filter(item => item.category.id === i.id).map(i => this.renderService(i))}
-            </div>
+            </div>}
             </div>)
             : <div>
               {visibleServices.map(i => this.renderService(i))}
