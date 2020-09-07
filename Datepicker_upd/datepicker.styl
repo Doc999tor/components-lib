@@ -1,7 +1,25 @@
-select
+.select_wrap
+    display flex
+    align-items center
     background #fff
-    border none
-    font-size 0.9rem
-    outline none
-    -moz-appearance none
-    -webkit-appearance none
+    padding-inline-end 0.6rem
+    position relative
+    select
+        border none
+        font-size 0.9rem
+        outline none
+        -moz-appearance none
+        -webkit-appearance none
+        background-color transparent
+.select_wrap:after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    transform: translateY(-30%)
+    right: 0.3rem;
+    width: 0;
+    height: 0;
+    border-radius: 0.2rem
+    border: 0.4rem solid transparent;
+    border-color: var(--dark-color) transparent transparent transparent;
+    }
