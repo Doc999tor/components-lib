@@ -4,6 +4,8 @@
     background #fff
     padding-inline-end 0.6rem
     position relative
+    border 2px solid var(--white-color)
+    transition border-color 0.5s
     select
         border none
         font-size 0.9rem
@@ -12,14 +14,17 @@
         -webkit-appearance none
         background-color transparent
 .select_wrap:after {
-    position: absolute;
-    content: "";
-    top: 50%;
+    position absolute
+    content: ""
+    top 50%
     transform: translateY(-30%)
-    right: 0.3rem;
-    width: 0;
-    height: 0;
-    border-radius: 0.2rem
-    border: 0.4rem solid transparent;
-    border-color: var(--dark-color) transparent transparent transparent;
+    right 0.3rem
+    width 0
+    height 0
+    border-radius 0.2rem
+    border 0.4rem solid transparent
+    border-color var(--dark-color) transparent transparent transparent
     }
+.warning
+    border 2px solid var(--active-color)
+    transition border-color 0.5s

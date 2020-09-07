@@ -72,7 +72,7 @@ export default class Datepicker extends React.Component {
             }
           </select>
         </div>
-        <div className='select_wrap'>
+        <div className={'select_wrap' + (this.props.highlightMonth ? ' warning' : '')}>
           <select className='month' value={this.props.month} onChange={this.props.handleChangeMonth}>
             <option value={config.translations.datepicker.placeholder.month} disabled>{config.translations.datepicker.placeholder.month}</option>
             {
@@ -80,7 +80,7 @@ export default class Datepicker extends React.Component {
             }
           </select>
         </div>
-        <div className='select_wrap'>
+        <div className={'select_wrap' + (this.props.highlightDay ? ' warning' : '')}>
           <select className='day' value={this.props.day} onChange={this.props.handleChangeDay}>
             <option value={config.translations.datepicker.placeholder.day} disabled>{config.translations.datepicker.placeholder.day}</option>
             {
