@@ -580,6 +580,7 @@ const config = {
             price_monthly: '/month',
             price_yearly: '/year',
             features: ['100 Appointments monthly', 'Available on 1 Device', 'Text message reminders', 'Client management', 'Sync with Google Calendar', ],
+            gift: 'Gift for signing up - 1000 SMS!',
             cta_label: 'Try for free' // call-to-action, "join us" text
           }
         },
@@ -599,6 +600,7 @@ const config = {
             price_monthly: 'Bill monthly',
             price_yearly: 'Bill yearly',
             features: ['Unlimited Appointments', 'Available on 2 Devices', 'Text message reminders', 'Client management', 'Sync with Google Calendar', 'Sync across devices', 'Group appoinments', 'Recurring appointments', 'Messages without our branding', 'Priority support', ],
+            gift: 'Gift for signing up - 2000 SMS!',
             cta_label: 'Subscribe now' // call-to-action, "join us" text
           }
         },
@@ -618,9 +620,15 @@ const config = {
             price_monthly: 'Bill monthly',
             price_yearly: 'Bill yearly',
             features: ['Unlimited Appointments', 'Unlimited Devices', 'Text message reminders', 'Client management', 'Sync with Google Calendar', 'Sync across devices', 'Group appoinments', 'Recurring appointments', 'Messages without our branding', 'Priority support', ],
+            gift: 'Gift for signing up - 3000 SMS!',
             cta_label: 'Subscribe now' // call-to-action, "join us" text
           }
         }
+      },
+      all_plans: {
+        title: 'Benefits for All Pricing Plans',
+        features: ['Help with sign up & onboarding', 'Unlimited support', 'No obligations, cancel at any time' ],
+        minor_features: ['* All prices without VAT']
       }
     },
     footer: {
