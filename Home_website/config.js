@@ -185,6 +185,54 @@ const config = {
           icon: 'cosmetics'
         },
         {
+          name: 'hair_salons',
+          icon: 'pic_mask'
+        },
+        {
+          name: 'nail_and_makeup_artists',
+          icon: 'nail_and_makeup_artists'
+        },
+        {
+          name: 'installers_and_technicians',
+          icon: 'installers_and_technicians'
+        },
+        {
+          name: 'cosmetics',
+          icon: 'cosmetics'
+        },
+        {
+          name: 'hair_salons',
+          icon: 'pic_mask'
+        },
+        {
+          name: 'nail_and_makeup_artists',
+          icon: 'nail_and_makeup_artists'
+        },
+        {
+          name: 'installers_and_technicians',
+          icon: 'installers_and_technicians'
+        },
+        {
+          name: 'cosmetics',
+          icon: 'cosmetics'
+        },
+        {
+          name: 'hair_salons',
+          icon: 'pic_mask'
+        },
+        {
+          name: 'nail_and_makeup_artists',
+          icon: 'nail_and_makeup_artists'
+        },
+        {
+          name: 'installers_and_technicians',
+          icon: 'installers_and_technicians'
+        },
+        {
+          name: 'cosmetics',
+          icon: 'cosmetics'
+        },
+        {
           name: 'massage_centers',
           icon: 'massage_centers'
         }
@@ -280,18 +328,17 @@ const config = {
     },
     footer: {
       data: [
-        { name: 'about_us', link: `/${lang}/about_us`, icon: 'fruit.png'},
+        { name: 'about_us', link: `/${lang}/about_us`, icon: 'ic_taxes-israel-license.svg' },
         { name: 'contact_us', link: `/${lang}/contact_us, ` },
-        { name: 'terms_of_use', link: `/${lang}/terms_of_use`, icon: 'music.png' }
+        { name: 'terms_of_use', link: `/${lang}/terms_of_use` }
       ]
     }
   },
   urls: {
     social_networks: [
-      { name: 'twitter', url: 'https://twitter.com', icon: 'ic_twitter.svg' },
-      { name: 'facebook', url: 'https://facebook.com', icon: 'ic_facebook.svg' },
-      { name: 'instagram', url: 'https://instagram.com', icon: 'ic_instagram.svg' },
-      { name: 'youtube', url: 'https://youtube.com', icon: 'ic_youtube.svg' }
+      { name: 'facebook', url: 'https://facebook.com', icon: 'network_facebook.svg' },
+      { name: 'instagram', url: 'https://instagram.com', icon: 'network_instagram.svg' },
+      { name: 'twitter', url: 'https://twitter.com', icon: 'ic_twitter.svg' }
     ],
     menu_icons: './assets/menu/',
     login: `/${ lang }/login`,
@@ -389,8 +436,8 @@ const config = {
     },
     features: {
       back_to_features: 'Discover all',
-      main_title: 'Powerful Features',
-      subtitle: 'Atzmaim App for any type of business',
+      main_title: 'Everything you need in one app',
+      subtitle: 'All tools for easy managing and the growth of your business. Easy access from any device, anywhere, anytime.',
       content: {
         data: {
           business: { name: 'Business Management Business Management', description: 'Voluptate autem unde voluptatum. Enim voluptatem voluptas.' },
@@ -445,11 +492,11 @@ const config = {
       button_label: 'Try for Free!',
     },
     leads: {
-      main_title: 'First month - Free! Do you like it?',
-      subtitle: 'Fill the form and we’ll sign up you to our free program, without any obligations',
+      main_title: 'Try Lista for Free!',
+      subtitle: 'Fill in the fields below and enjoy our 14-day free trial. Also we’ve a bonus for you! So what are you waiting for?',
       placeholder_name: 'Your Name',
       placeholder_contact: 'Phone or Email',
-      btn_label: 'Send',
+      btn_label: 'Continue',
       empty_warning_label: 'Fill in this field',
       not_valid_field_label: 'Enter valid value'
     },
@@ -461,6 +508,7 @@ const config = {
       message_input_label: 'Message',
       attach_file_text: 'Having trouble with an app? Attach a screenshot or a video to show us and we’ll solve it!',
       attach_file_btn_label: 'Attach a file',
+      networks_ladel: 'Follow Us',
       desktop: {
         subtitle: 'Do you have any questions or suggestions? Let’s discuss it!',
         warning_empty_fields: 'Please note that all fields are required.',
@@ -471,6 +519,8 @@ const config = {
         contact_info_phone: 'Phone:'
       },
       mobile: {
+        main_title: 'Any questions?',
+        subtitle: 'We are here to help you and answer on any questions. Choose your favorite messaging app or drop us an email. ',
         choose_messenger: 'Choose a messaging app or just call us',
         preview_text: 'FAQ & Tutorials',
         create_mail_btn_label: 'Send Email',
@@ -500,8 +550,8 @@ const config = {
 			},
     },
     business_types_mobile: {
-      main_title: 'Types of Business',
-      subtitle: 'Atzmaim App for any type of business'
+      main_title: 'Does it fit for you? Just try it and enjoy!',
+      subtitle: 'Lista fits for every businesses that wants to manage customers, calendar, services series, reminders and more.'
     },
     business_types: {
       main_title: 'Types of Business',
