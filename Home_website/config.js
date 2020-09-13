@@ -123,26 +123,6 @@ const config = {
           name: 'business',
           preview_pic: 'pic_iphone.png',
           icon: 'ic_calendar.svg'
-        },
-        {
-          name: 'business',
-          preview_pic: 'pic_iphone.png',
-          icon: 'ic_gallery.svg'
-        },
-        {
-          name: 'business',
-          preview_pic: 'pic_iphone.png',
-          icon: 'ic_gallery.svg'
-        },
-        {
-          name: 'business',
-          preview_pic: 'pic_iphone.png',
-          icon: 'ic_gallery.svg'
-        },
-        {
-          name: 'business',
-          preview_pic: 'pic_iphone.png',
-          icon: 'ic_gallery.svg'
         }
       ],
       carousel_time: 5000
@@ -227,6 +207,10 @@ const config = {
         {
           name: 'installers_and_technicians',
           icon: 'installers_and_technicians'
+        },
+        {
+          name: 'cosmetics',
+          icon: 'cosmetics'
         },
         {
           name: 'cosmetics',
@@ -501,15 +485,15 @@ const config = {
       not_valid_field_label: 'Enter valid value'
     },
     contact_us: {
-      main_title: 'Contact Us',
       placeholder_contact: 'Contact details',
       placeholder_message: 'Your Message',
       contact_input_label: 'Email or Phone',
       message_input_label: 'Message',
       attach_file_text: 'Having trouble with an app? Attach a screenshot or a video to show us and we’ll solve it!',
       attach_file_btn_label: 'Attach a file',
-      networks_ladel: 'Follow Us',
+      networks_label: 'Follow Us',
       desktop: {
+        main_title: 'Contact Us',
         subtitle: 'Do you have any questions or suggestions? Let’s discuss it!',
         warning_empty_fields: 'Please note that all fields are required.',
         warning_not_valid_contact: 'Please enter a valid email or phone number.',
