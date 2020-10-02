@@ -1,5 +1,14 @@
 import './ProceduresList.styl'
-const getVisibleServices = (services, filter) => services.filter(service => service.name.includes(filter))
+const sortByName = (a, b) => {
+  if (a.name > b.name) {
+    return 1;
+  }
+  if (a.name < b.name) {
+    return -1;
+  }
+  return 0;
+}
+const getVisibleServices = (services, filter) => services.filter(service => service.name.includes(filter)).sort((a, b) => sortByName(a, b))
 export default class ProceduresList extends React.Component {
   constructor (props) {
     super(props)
@@ -15,7 +24,7 @@ export default class ProceduresList extends React.Component {
   getGroup = a => {
     let o = {}
     a.forEach(i => { o[i.category.id] = { ...i.category, count: o[i.category.id] ? o[i.category.id].count + 1 : 1 } })
-    return Object.values(o)
+    return Object.values(o).sort((a, b) => sortByName(a, b))
   }
   handleFilterChange = e => {
     this.setState({ filter: e.target.value })
@@ -68,7 +77,7 @@ export default class ProceduresList extends React.Component {
               <div className='border' />
             </div>
             {showServices && clickId === i.id  && <div className='acordeon'>
-              {this.state.services.filter(item => item.category.id === i.id).map(i => this.renderService(i))}
+              {this.state.services.filter(item => item.category.id === i.id).sort((a, b) => sortByName(a, b)).map(i => this.renderService(i))}
             </div>}
             </div>)
             : <div>
