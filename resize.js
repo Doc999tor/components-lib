@@ -1,4 +1,5 @@
 import { default as getOrientation } from 'project-components/getOrientation.js'
+const max_side = config.data.max_side || 1000
 export default (photo, callback, highresPhotos = false) => {
   let img = new Image()
   getOrientation(photo, srcOrientation => {
@@ -12,6 +13,19 @@ export default (photo, callback, highresPhotos = false) => {
       let height = img.height
       let userAgent = navigator.userAgent.toLowerCase()
       let SamsungBrowser = /samsungbrowser/.test(userAgent)
+      if (!highresPhotos && (width > max_side || height > max_side)) {
+        if (width > height) {
+          if (width > max_side) {
+            height = (height * max_side) / width
+            width = max_side
+          }
+        } else {
+          if (height > max_side) {
+            width = (width * max_side) / height
+            height = max_side
+          }
+        }
+      }
       if (4 < srcOrientation && srcOrientation < 9 && userAgent && SamsungBrowser) {
         canvas.width = height
         canvas.height = width
@@ -31,7 +45,7 @@ export default (photo, callback, highresPhotos = false) => {
         default: break
         }
       }
-      ctx.drawImage(img, 0, 0)
+      ctx.drawImage(img, 0, 0, width, height)
       let dataURL = highresPhotos ? canvas.toDataURL('image/jpeg') : canvas.toDataURL('image/jpeg', 0.7)
       callback(dataURL)
     }
