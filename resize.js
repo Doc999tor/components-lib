@@ -46,7 +46,7 @@ export default (photo, callback, highresPhotos = false) => {
         }
       }
       ctx.drawImage(img, 0, 0, width, height)
-      let dataURL = highresPhotos ? canvas.toDataURL('image/jpeg') : canvas.toDataURL('image/jpeg', 0.7)
+      let dataURL = highresPhotos ? canvas.toDataURL('image/jpeg', 0.8) : canvas.toDataURL('image/jpeg', 0.6)
       callback(dataURL)
     }
   })
