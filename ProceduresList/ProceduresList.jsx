@@ -80,9 +80,7 @@ export default class ProceduresList extends React.Component {
               {this.state.services.filter(item => item.category.id === i.id).sort((a, b) => sortByName(a, b)).map(i => this.renderService(i))}
             </div>}
             </div>)
-            : <div>
-              {visibleServices.map(i => this.renderService(i))}
-            </div>}
+            : visibleServices.map(i => this.renderService(i))}
         </div>
       </div>
     )
