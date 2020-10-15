@@ -64,7 +64,7 @@ export default ({ closeMenu, commonConfig, translations, closeAnimation, reminde
 												</p>
 											</li>
 											: <li className='list-item'>
-												{item.link.includes('/reminders') && value > 0 && <div className='reminders-wrap'><div className='reminders-menu'><span className='reminders-value'>{value}</span></div></div>}
+												{item.link.includes('/reminders') && <div className='reminders-wrap'>{value > 0 && <div className='reminders-menu'><span className='reminders-value'>{value}</span></div>}</div>}
 												<a className='item-link' href={item.link}>
 													{finalConfig.translations.menu[item.text]}
 													<span className='menu-img-wrap'><img className='menu-img' src={finalConfig.urls.menu_icons + item.icon} alt={item.text} /></span>
