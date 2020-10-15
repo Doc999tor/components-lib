@@ -27,12 +27,16 @@ export default class AddNote extends React.Component {
     if (this.props.reminderDate && this.props.switch) {
       const now = moment().format('YYYY-MM-DD HH:mm')
       const end = moment(this.props.reminderDate).format('YYYY-MM-DD HH:mm')
-      const diff = moment(end).diff(moment(now), 'day')
-      if (diff === 0) {
+      const diff = moment(end).diff(moment(now), 'minutes')
+      if (diff > 45 && diff < 1560) {
+        if (diff > 45 && diff < 100) return this.props.setDurationValues(1, 'hours')
         return this.props.setDurationValues(moment(end).diff(moment(now), 'hours'), 'hours')
-      } else if (diff >= 7 && diff <= 30) {
+      } else if (diff >= 8640 && diff <= 42480) {
+        if (diff >= 8640 && diff <= 9360) return this.props.setDurationValues(moment(end).diff(moment(now), 'days'), 'days')
+        if (diff > 9360 && diff <= 10800) return this.props.setDurationValues(1, 'weeks')
         return this.props.setDurationValues(moment(end).diff(moment(now), 'weeks'), 'weeks')
-      } else if (diff > 30 && diff <= 365) {
+      } else if (diff > 42480 && diff <= 525600) {
+        if (diff > 42480 && diff < 43920) return this.props.setDurationValues(1, 'months')
         return this.props.setDurationValues(moment(end).diff(moment(now), 'months'), 'months')
       } else {
         return this.props.setDurationValues(moment(end).diff(moment(now), 'days'), 'days')
