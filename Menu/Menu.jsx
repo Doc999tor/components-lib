@@ -22,14 +22,16 @@ if (typeof window !== 'undefined' && typeof config !== 'undefined') {
 	}
 }
 
-export default ({ closeMenu, commonConfig, translations, closeAnimation }) => {
+export default ({ closeMenu, commonConfig, translations, closeAnimation, reminders = false }) => {
 	let finalConfig = commonConfig || config
 	if (Object.entries(finalConfig.translations).length === 0 && finalConfig.translations.constructor === Object) {
 		finalConfig.translations = translations
 	}
 	const cancelPropagation = e => e.stopPropagation()
 	const rtlDir = finalConfig.isRTL || (finalConfig.data && finalConfig.data.isRTL) || (finalConfig.calendar && finalConfig.calendar.isRTL)
-
+	const remindersString = localStorage.getItem('reminders_data')
+	const remindersCount = remindersString && JSON.parse(remindersString).length
+	const value = reminders || remindersCount
 	return (
 		<div id='menu_modal' className='jsx-menu' onClick={closeMenu || false}>
 			<div className='menu_container'>
@@ -62,6 +64,7 @@ export default ({ closeMenu, commonConfig, translations, closeAnimation }) => {
 												</p>
 											</li>
 											: <li className='list-item'>
+												{item.link.includes('/reminders') && value > 0 && <div className='reminders-wrap'><div className='reminders'><span className='reminders-value'>{value}</span></div></div>}
 												<a className='item-link' href={item.link}>
 													{finalConfig.translations.menu[item.text]}
 													<span className='menu-img-wrap'><img className='menu-img' src={finalConfig.urls.menu_icons + item.icon} alt={item.text} /></span>
