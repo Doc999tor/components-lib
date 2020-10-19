@@ -75,7 +75,13 @@ export default class AddNote extends React.Component {
                 <div className='input-wrap'>
                   <span className='reminder-in'>{config.translations.notes.in_label}</span>
                   <div className='ink' onClick={this.props.handleIncrementTime}><img src={`${config.urls.media}plus.svg`} /></div>
-                  <input className='count-input total-input' type='text' value={this.props.time} disabled />
+                  <input
+                    className='count-input total-input'
+                    type='number'
+                    onChange={this.props.handleChangeNoteInput}
+                    onBlur={this.props.handleBlurNoteInput}
+                    value={this.props.time}
+                  />
                   <div className='ink' onClick={this.props.handleDecrementTime}><img src={`${config.urls.media}minus.svg`} /></div>
                 </div>
                 <div className='select-wrap' onClick={this.props.letsScroll}>

@@ -55,6 +55,27 @@ export default class Notes extends React.Component {
       }), () => this.setState({reminderDate: reminder(this.state.time, this.state.selectedValue)}))
     }
   }
+
+  handleChangeNoteInput = ({ target }) => {
+    const { value } = target
+    if (+value >= 0) {
+      this.setState({
+        time: value,
+        reminderDate: reminder(value, this.state.selectedValue)
+      })
+    }
+  }
+
+  handleBlurNoteInput = ({ target }) => {
+    const { value } = target
+    if (value === '') {
+      this.setState({
+        time: 0,
+        reminderDate: reminder(0, this.state.selectedValue)
+      })
+    }
+  }
+
   save = () => {
     let id = Math.floor(Math.random() * 100) + 1
     let rem = this.state.switch ? reminder(this.state.time, this.state.selectedValue) : ''
@@ -152,6 +173,8 @@ export default class Notes extends React.Component {
                 description={this.state.description}
                 handleIncrementTime={this.handleIncrementTime}
                 handleDecrementTime={this.handleDecrementTime}
+                handleChangeNoteInput={this.handleChangeNoteInput}
+                handleBlurNoteInput={this.handleBlurNoteInput}
                 cancelSearch={this.cancelSearch}
                 loader={this.props.loader}
                 selectedValue={this.state.selectedValue}
@@ -198,6 +221,8 @@ export default class Notes extends React.Component {
           description={this.state.description}
           handleIncrementTime={this.handleIncrementTime}
           handleDecrementTime={this.handleDecrementTime}
+          handleChangeNoteInput={this.handleChangeNoteInput}
+          handleBlurNoteInput={this.handleBlurNoteInput}
           cancelSearch={this.cancelSearch}
           selectedValue={this.state.selectedValue}
           selectedValueLable={this.state.selectedValueLable}
