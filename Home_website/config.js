@@ -341,6 +341,7 @@ const config = {
       { name: 'instagram', url: 'https://instagram.com', icon: 'network_instagram.svg' },
       { name: 'twitter', url: 'https://twitter.com', icon: 'ic_twitter.svg' }
     ],
+    wa_api: 'https://wa.me/{phone}',
     menu_icons: './assets/menu/',
     login: `/${ lang }/login`,
     signup: `/${ lang }/signup`,
