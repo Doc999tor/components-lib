@@ -137,7 +137,24 @@ const config = {
       ],
     },
     showcases: {
-      phones_pics: ['screen', 'screen1', 'screen3', 'screen4']
+      data: [
+        {
+          en: 'pic_calendar_en',
+          he: 'pic_calendar_he'
+        },
+        {
+          en: 'pic_profile_groups_en',
+          he: 'pic_profile_groups_he'
+        },
+        {
+          en: 'pic_punch_cards_en',
+          he: 'pic_punch_cards_he'
+        },
+        {
+          en: 'pic_cross_platform_en',
+          he: 'pic_cross_platform_he'
+        }
+      ]
     },
     leads: {},
     business_types_mobile: {},
@@ -411,8 +428,8 @@ const config = {
       feedback: { name: 'Feedback' }
     },
     hero: {
-      main_title: 'Manage Business Easily',
-      description: 'We’ve created for you an application with calendar,clients appointments, automated text reminders andother useful tools for managing your business easy',
+      main_title: 'Your new smart calendar app',
+      description: 'Stay organized and growth up your business with Lista - personal business assistant in your pocket.',
       logo_label: 'ATZMAIM Logo',
       log_in: 'Log in',
       sign_up: 'Sign Up',
@@ -465,15 +482,28 @@ const config = {
       }
     },
     showcases: {
-      phones_pics_alt: ['1111 alt', 'IMG_0923 alt', 'IMG_0923 alt', '1111 alt'],
-      main_title: 'Simply the Best Business Calendar',
-      description: `Control your day, week and month with 
-				calendar events and tasks in a simple 
-				view.Lista was carefully designed to meet 
-				your needs every single time.It's simple 
-				and powerful, just like it should be. 
-				Created for business people.`,
-      button_label: 'Try for Free!',
+      data: [
+        {
+          title: 'Perfect calendar',
+          text: 'Navigate quickly and easily between your appointments using calendar views: Agenda, Day, 3 Days, Week and Month.',
+          alt: 'calendar'
+        },
+        {
+          title: 'Customer profile and sorting into groups',
+          text: 'Remember everything about your customers: visits history, notes, debts, photo and video gallery. Also Lista automatically sort customers into groups and save your time.',
+          alt: 'groups'
+        },
+        {
+          title: 'Punch cards',
+          text: 'Create and set up the number of uses, price and discount for any services. It’s a great customer retention tool.',
+          alt: 'punch cards'
+        },
+        {
+          title: 'Cross-platform',
+          text: 'Lista works perfectly on any mobile phone and tablet. Fast access to your business anywhere and anytime.',
+          alt: 'cross-platform'
+        },
+      ]
     },
     leads: {
       main_title: 'Try Lista for Free!',
@@ -538,8 +568,8 @@ const config = {
       subtitle: 'Lista fits for every businesses that wants to manage customers, calendar, services series, reminders and more.'
     },
     business_types: {
-      main_title: 'Types of Business',
-      subtitle: 'Atzmaim App for any type of business',
+      main_title: 'Does it fit for you? Just try it and enjoy!',
+      subtitle: 'Lista fits for every businesses that wants to manage customers, calendar, services series, reminders and more.',
       content: {   // * 6 items
         hair_salons: {
           title: 'Hair Stylists and Salons',
