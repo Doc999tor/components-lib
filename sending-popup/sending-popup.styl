@@ -1,0 +1,100 @@
+.sending_popup
+  position fixed
+  top 0
+  left 0
+  width 100%
+  height 100%
+  display flex
+  align-items center
+  justify-content center
+  z-index 14
+  background-color rgba(0, 0, 0, 0)
+  animation form-background 0.3s forwards
+  .sending_body
+    width 80%
+    max-width 500px
+    display flex
+    justify-content center
+    align-items center
+    border-radius 15px
+    overflow hidden
+    background-color var(--white-color)
+    font-size 1.2rem
+    font-weight 500
+    min-height 19.25rem
+    padding 2rem 1rem 1rem
+    .plane
+      width 6.2rem
+    .mark_modal
+      width 10rem
+    .sending 
+      display flex
+      flex-direction column
+      color var(--dark-color)
+      align-items center
+      justify-content space-between
+      min-height 70%
+      p
+        font-size 1.125rem
+        font-weight 500
+    .plane
+      opacity 0
+      padding-bottom 2rem
+      animation plane_in 1.5s ease-in 0.1s forwards infinite
+    .success
+      display flex
+      flex-direction column
+      align-items center
+      color var(--main-color)
+      animation success 0.6s
+      div 
+        display flex
+        align-items center
+        justify-content center
+        border-radius 50%
+      p 
+        width 80%
+        font-weight 500
+        text-align center
+        font-size 1.125rem
+      .outer_circle
+        margin-bottom 1.4rem
+        img 
+          animation center_mark 0.3s
+    
+  @keyframes plane_in
+    0%
+      opacity 0
+      transform translateX(-250%) scale(0.3)
+    50%
+      opacity 1
+      transform translateX(0%) scale(1)
+    100%
+      opacity 1
+      transform translateX(250%) scale(0.3)
+  @keyframes success
+    0%
+      opacity 0
+  @keyframes center_mark
+    0%
+      transform scale(-1, 0.3)
+  @keyframes hide-body
+    0%
+      transform scale(1)
+    100%
+      transform scale(0)
+  .hide-body
+    animation hide-body 0.3s forwards
+.hide-background
+  animation hide-background 0.3s forwards
+@keyframes show_sending_popup
+  0%
+    transform scale(0)
+@keyframes form-background
+  0%
+    background-color rgba(0, 0, 0, 0)
+  100%
+    background-color rgba(0, 0, 0, 0.3)
+
+
+    
