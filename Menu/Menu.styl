@@ -14,6 +14,7 @@
     overflow-y auto
     scrollbar-width none
     background-color rgba(4, 4, 15, 0.4)
+    animation menu_background_on 0.3s
   .menu_container
     display flex
     justify-content flex-end
@@ -142,16 +143,28 @@
   .position_rtl
     right -35%
   .animation_rtl
-    animation openMenu_rtl 0.3s
+    animation openMenu_rtl 0.3s forwards
   .animation_ltr
-    animation openMenu_ltr 0.3s
+    animation openMenu_ltr 0.3s forwards
   .close_animation_rtl
     animation closeMenu_rtl 0.3s forwards
   .close_animation_ltr
     animation closeMenu_ltr 0.3s forwards
+#menu_modal.close_background
+  animation menu_background_off 0.3s forwards
 @keyframes openMenu_rtl
   0%
     transform translateX(-100%)
+  100%
+    transform translateX(0)
+@keyframes menu_background_on
+  0%
+    background-color rgba(4, 4, 15, 0)
+@keyframes menu_background_off
+  0%
+    background-color rgba(4, 4, 15, 0.4)
+  100%
+    background-color rgba(4, 4, 15, 0)
 @keyframes closeMenu_rtl
   100%
     transform translateX(-100%)
@@ -162,3 +175,5 @@
 @keyframes openMenu_ltr
   0%
     transform translateX(100%)
+  100%
+    transform translateX(0)

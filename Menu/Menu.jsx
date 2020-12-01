@@ -33,7 +33,7 @@ export default ({ closeMenu, commonConfig, translations, closeAnimation, reminde
 	const remindersCount = remindersString && JSON.parse(remindersString).length
 	const value = reminders || remindersCount
 	return (
-		<div id='menu_modal' className='jsx-menu' onClick={closeMenu || false}>
+    <div id='menu_modal' className={(!closeAnimation ? 'jsx-menu' : '') + (closeAnimation ? ' close_background' : '')} onClick={closeMenu || false}>
 			<div className='menu_container'>
 				<div className={'menu_wrap' + (rtlDir ? ' animation_rtl' : ' animation_ltr') + (closeAnimation ? (rtlDir ? ' close_animation_rtl' : ' close_animation_ltr') : '')}>
 					<div className='list-wrap' onClick={closeMenu ? cancelPropagation : false}>
