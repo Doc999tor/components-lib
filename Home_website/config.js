@@ -137,6 +137,7 @@ const config = {
       ],
     },
     showcases: {
+      phones_pics: ['screen', 'screen1', 'screen3', 'screen4'],
       data: [
         {
           en: 'pic_calendar_en',
@@ -155,9 +156,6 @@ const config = {
           he: 'pic_cross_platform_he'
         }
       ]
-    },
-    showcases_desktop: {
-      phones_pics: ['screen', 'screen1', 'screen3', 'screen4']
     },
     leads: {},
     business_types_mobile: {},
@@ -486,6 +484,15 @@ const config = {
       }
     },
     showcases: {
+      phones_pics_alt: ['1111 alt', 'IMG_0923 alt', 'IMG_0923 alt', '1111 alt'],
+      main_title: 'Simply the Best Business Calendar',
+      description: `Control your day, week and month with 
+				calendar events and tasks in a simple 
+				view.Lista was carefully designed to meet 
+				your needs every single time.It's simple 
+				and powerful, just like it should be. 
+				Created for business people.`,
+      button_label: 'Try for Free!',
       data: [
         {
           title: 'Perfect calendar',
@@ -508,17 +515,6 @@ const config = {
           alt: 'cross-platform'
         },
       ]
-    },
-    showcases_desktop: {
-      phones_pics_alt: ['1111 alt', 'IMG_0923 alt', 'IMG_0923 alt', '1111 alt'],
-      main_title: 'Simply the Best Business Calendar',
-      description: `Control your day, week and month with 
-				calendar events and tasks in a simple 
-				view.Lista was carefully designed to meet 
-				your needs every single time.It's simple 
-				and powerful, just like it should be. 
-				Created for business people.`,
-      button_label: 'Try for Free!',
     },
     leads: {
       main_title: 'Try Lista for Free!',
