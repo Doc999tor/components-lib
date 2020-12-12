@@ -1,13 +1,11 @@
 import './datepicker.styl'
 export default class Datepicker extends React.Component {
-  state = {
-    min: '1930',
-    max: moment().format('YYYY')
-  }
+  maxYearOption = new Date().getFullYear()
+  minYearOption = this.maxYearOption - 75
 
   renderOptionsYear = () => {
     const arr = []
-    for (let i = this.state.min; i <= this.state.max; i++) {
+    for (let i = this.minYearOption; i <= this.maxYearOption; ++i) {
       arr.push(i)
     }
     return (
