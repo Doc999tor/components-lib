@@ -25,7 +25,7 @@ const config = {
   menu_mobile: [
     { name: 'about_us', link: `/${lang}/about_us` },
     { name: 'contact_us', link: `/${lang}/contact_us` },
-    { name: 'faq', link: `/${lang}/faq`},
+    { name: 'faq', link: `/${lang}/faq` },
     { name: 'terms_of_use', link: `/${lang}/terms_of_use` }
   ],
   menu: [
@@ -130,10 +130,10 @@ const config = {
     main_benefit: {
       carousel_time: 5000,
       data: [
-        {pic: 'pic1'},
-        {pic: 'pic2'},
-        {pic: 'pic3'},
-        {pic: 'pic4'}
+        { pic: 'pic1' },
+        { pic: 'pic2' },
+        { pic: 'pic3' },
+        { pic: 'pic4' }
       ],
     },
     showcases: {
@@ -304,10 +304,14 @@ const config = {
       currency: '$',
       switch_bill_annually: true, // default value for pricig toggle switch
       data: [
-        { name: 'basic', icon: 'basic.svg', price_monthly: 'Free', price_yearly: 'Free', discount: '13%', preferred: true },
-        { name: 'premium', icon: 'premium.svg', price_monthly: 10, price_yearly: 100, discount: '20%' },
-        { name: 'ultimate', icon: 'ultimate.svg', price_monthly: 19, price_yearly: 190, discount: '20%' }
-      ]
+        { name: 'basic', icon: 'ill_paper_plane.svg', price_monthly: 'Free', price_yearly: 'Free', discount: '', preferred: true },
+        { name: 'premium', icon: 'ill_plane.svg', price_monthly: 10, price_yearly: 100, discount: '20%' },
+        { name: 'ultimate', icon: 'ill_rocket.svg', price_monthly: 19, price_yearly: 190, discount: '20%' }
+      ],
+      follow_us: [
+        { icon: 'link_facebook.svg', url: '/facebook_url', type: 'facebook' },
+        { icon: 'link_instagram.svg', url: '/instagram', type: 'instagram' }
+      ],
     },
     no_credits: {
 
@@ -321,34 +325,34 @@ const config = {
         { name: 'messenger', icon: 'ic_messenger.svg', url: 'https://m.me/join/AbbDIHCbzcIo2u-R', color: '#e7f7ff', color_text: '#2998ff' },
         { name: 'telegram', icon: 'ic_telegram.svg', url: 'https://t.me/TestAtzmaim', color: '#e7f7ff', color_text: '#12aef1' }
       ],
-			useful_links: [
-				{ link_to: '/page1' },
-				{ link_to: '/page2' },
-				{ link_to: '/page3' },
-				{ link_to: '/page4' }
-			],
+      useful_links: [
+        { link_to: '/page1' },
+        { link_to: '/page2' },
+        { link_to: '/page3' },
+        { link_to: '/page4' }
+      ],
     },
     footer: {
       data: [
         { name: 'about_us', link: `/${lang}/about_us`, icon: 'ic_taxes-israel-license.svg' },
-        { name: 'contact_us', link: `/${lang}/contact_us, ` },
+        { name: 'contact_us', link: `/${lang}/contact_us` },
         { name: 'terms_of_use', link: `/${lang}/terms_of_use` }
       ]
     }
   },
   urls: {
     social_networks: [
-      { name: 'facebook', url: 'https://facebook.com', icon: 'network_facebook.svg' },
-      { name: 'instagram', url: 'https://instagram.com', icon: 'network_instagram.svg' },
-      { name: 'twitter', url: 'https://twitter.com', icon: 'ic_twitter.svg' }
+      { name: 'facebook', url: 'https://facebook.com', icon: 'network_facebook.svg', type: 'facebook' },
+      { name: 'instagram', url: 'https://instagram.com', icon: 'network_instagram.svg', type: 'instagram' },
+      { name: 'twitter', url: 'https://twitter.com', icon: 'ic_twitter.svg', type: 'website' }
     ],
     wa_api: 'https://wa.me/{phone}',
     menu_icons: './assets/menu/',
-    login: `/${ lang }/login`,
-    signup: `/${ lang }/signup`,
-    contact_us: `/${ lang }/home?page=contact_us`,
-    pricing: `/${ lang }/home?page=pricing`,
-    error_page: `/${ lang }/home?page=error`,
+    login: `/${lang}/login`,
+    signup: `/${lang}/signup`,
+    contact_us: `/${lang}/home?page=contact_us`,
+    pricing: `/${lang}/home?page=pricing`,
+    error_page: `/${lang}/home?page=error`,
     home_page: '/{lang}/home',
     send_mail: 'https://api.bewebmaster.co.il/home/contact_us',
     api_leads: 'https://api.bewebmaster.co.il/home/contact_us/leads',
@@ -377,10 +381,10 @@ const config = {
       he: 'HE - Hebrew'
     },
     module_names: {
-			groups: 'Groups',
-			calendar: 'Calendar',
-			settings: 'Settings'
-		},
+      groups: 'Groups',
+      calendar: 'Calendar',
+      settings: 'Settings'
+    },
     menu: {
       calendar: 'Calendar',
       clients_list: 'Clients list',
@@ -472,11 +476,11 @@ const config = {
           },
           {
             title: 'Perfect Solution for Free!',
-            text: `Control your day, week and month with 
-							calendar events and tasks in a simple 
-							view.Lista was carefully designed to meet 
-							your needs every single time.It's simple 
-							and powerful, just like it should be. 
+            text: `Control your day, week and month with
+							calendar events and tasks in a simple
+							view.Lista was carefully designed to meet
+							your needs every single time.It's simple
+							and powerful, just like it should be.
 							Created for business people.`,
             alt: 'alt 4'
           }
@@ -486,11 +490,11 @@ const config = {
     showcases: {
       phones_pics_alt: ['1111 alt', 'IMG_0923 alt', 'IMG_0923 alt', '1111 alt'],
       main_title: 'Simply the Best Business Calendar',
-      description: `Control your day, week and month with 
-				calendar events and tasks in a simple 
-				view.Lista was carefully designed to meet 
-				your needs every single time.It's simple 
-				and powerful, just like it should be. 
+      description: `Control your day, week and month with
+				calendar events and tasks in a simple
+				view.Lista was carefully designed to meet
+				your needs every single time.It's simple
+				and powerful, just like it should be.
 				Created for business people.`,
       button_label: 'Try for Free!',
       data: [
@@ -564,15 +568,15 @@ const config = {
         telegram: { name: 'Telegram' }
       },
       useful_links: {
-				main_title: 'Useful Links',
-				link_label: 'View',
-				links: [
-					{ title: 'How to record your phone\'s screen? ',text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium'  },
-					{ title: 'TeamViewer for remote support', text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium'  },
-					{ title: 'How to create a new client?', text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium'  },
-					{ title: 'How to create a new service?', text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium'  },
-				]
-			},
+        main_title: 'Useful Links',
+        link_label: 'View',
+        links: [
+          { title: 'How to record your phone\'s screen? ', text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium' },
+          { title: 'TeamViewer for remote support', text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium' },
+          { title: 'How to create a new client?', text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium' },
+          { title: 'How to create a new service?', text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium' },
+        ]
+      },
     },
     business_types_mobile: {
       main_title: 'Does it fit for you? Just try it and enjoy!',
@@ -648,13 +652,13 @@ const config = {
           },
           opened_preview: {
             name: 'Basic',
-            business_type: 'Small businesses',
+            business_type: 'For personal use For personal use',
             group_preview_price: '{price_value}',
             period_month: '/forever',
             period_year: '/forever',
             price_monthly: '/month',
             price_yearly: '/year',
-            features: ['100 Appointments monthly', 'Available on 1 Device', 'Text message reminders', 'Client management', 'Sync with Google Calendar', ],
+            features: ['100 Appointments monthly', 'Available on 1 Device', 'Text message reminders', 'Client management', 'Sync with Google Calendar',],
             gift: 'Gift for signing up - 1000 SMS!',
             cta_label: 'Try for free' // call-to-action, "join us" text
           }
@@ -668,13 +672,13 @@ const config = {
           },
           opened_preview: {
             name: 'Premium',
-            business_type: 'Decent businesses',
+            business_type: 'For small and mid-size businesses and mid-size businesses',
             group_preview_price: '{currency}{price_value}',
             period_month: '/month',
             period_year: '/year',
             price_monthly: 'Bill monthly',
             price_yearly: 'Bill yearly',
-            features: ['Unlimited Appointments', 'Available on 2 Devices', 'Text message reminders', 'Client management', 'Sync with Google Calendar', 'Sync across devices', 'Group appoinments', 'Recurring appointments', 'Messages without our branding', 'Priority support', ],
+            features: ['Unlimited Appointments', 'Available on 2 Devices', 'Text message reminders', 'Client management', 'Sync with Google Calendar', 'Sync across devices', 'Group appoinments', 'Recurring appointments', 'Messages without our branding', 'Priority support',],
             gift: 'Gift for signing up - 2000 SMS!',
             cta_label: 'Subscribe now' // call-to-action, "join us" text
           }
@@ -688,13 +692,13 @@ const config = {
           },
           opened_preview: {
             name: 'Ultimate',
-            business_type: 'Well based businesses',
+            business_type: 'For big business For big business',
             group_preview_price: '{currency}{price_value}',
             period_month: '/month',
             period_year: '/year',
             price_monthly: 'Bill monthly',
             price_yearly: 'Bill yearly',
-            features: ['Unlimited Appointments', 'Unlimited Devices', 'Text message reminders', 'Client management', 'Sync with Google Calendar', 'Sync across devices', 'Group appoinments', 'Recurring appointments', 'Messages without our branding', 'Priority support', ],
+            features: ['Unlimited Appointments', 'Unlimited Devices', 'Text message reminders', 'Client management', 'Sync with Google Calendar', 'Sync across devices', 'Group appoinments', 'Recurring appointments', 'Messages without our branding', 'Priority support',],
             gift: 'Gift for signing up - 3000 SMS!',
             cta_label: 'Subscribe now' // call-to-action, "join us" text
           }
@@ -702,9 +706,12 @@ const config = {
       },
       all_plans: {
         title: 'Benefits for All Pricing Plans',
-        features: ['Help with sign up & onboarding', 'Unlimited support', 'No obligations, cancel at any time' ],
+        features: ['Help with sign up & onboarding', 'Unlimited support', 'No obligations, cancel at any time'],
         minor_features: ['* All prices without VAT']
-      }
+      },
+      follow_us: {
+        title: 'Follow Us'
+      },
     },
     footer: {
       copy_right: '© ' + new Date().getFullYear() + ' Lista. All right reserved',
