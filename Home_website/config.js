@@ -304,8 +304,8 @@ const config = {
       currency: '$',
       switch_bill_annually: true, // default value for pricig toggle switch
       data: [
-        { name: 'basic', icon: 'ill_paper_plane.svg', price_monthly: 'Free', price_yearly: 'Free', discount: '', preferred: true },
-        { name: 'premium', icon: 'ill_plane.svg', price_monthly: 10, price_yearly: 100, discount: '20%' },
+        { name: 'basic', icon: 'ill_paper_plane.svg', price_monthly: 'Free', price_yearly: 'Free', discount: ''},
+        { name: 'premium', icon: 'ill_plane.svg', price_monthly: 10, price_yearly: 100, discount: '20%', preferred: true  },
         { name: 'ultimate', icon: 'ill_rocket.svg', price_monthly: 19, price_yearly: 190, discount: '20%' }
       ],
       follow_us: [
