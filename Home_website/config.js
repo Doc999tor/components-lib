@@ -157,6 +157,7 @@ const config = {
         }
       ]
     },
+    filling_link: {},
     leads: {},
     business_types_mobile: {},
     business_types: {
@@ -519,6 +520,11 @@ const config = {
           alt: 'cross-platform'
         },
       ]
+    },
+    filling_link: {
+      main_title: 'Autofill client profile',
+      subtitle: 'Save your time with Lista and let clients fill in details. They will sign up through Facebook in one click.',
+      btn_label: 'Send link'
     },
     leads: {
       main_title: 'Try Lista for Free!',
