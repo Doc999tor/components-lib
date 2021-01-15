@@ -1,7 +1,9 @@
 import './warning_popup.styl'
 
 const WarningPopup = ({
-  onCloseWarningPopup = () => {},
+  onCloseWarningPopup = () => { },
+  actionButton,
+  notAllClients = false,
   isActivePopup,
   cancel_label,
   mediaSrc,
@@ -21,7 +23,7 @@ const WarningPopup = ({
           <p className='warning_text'>
             {text}
           </p>
-          <button className='cancel_warning_popup' type='button' onClick={onCloseWarningPopup}>
+          <button className='cancel_warning_popup' type='button' onClick={notAllClients ? actionButton : onCloseWarningPopup}>
             {cancel_label}
           </button>
         </div>
