@@ -7,6 +7,7 @@ const WarningPopup = ({
   isActivePopup,
   cancel_label,
   mediaSrc,
+  icon = 'ic_sms_warning.svg',
   text
 }) => {
   const preventClick = e => e.stopPropagation()
@@ -18,7 +19,7 @@ const WarningPopup = ({
         </button>
         <div className='warning_info'>
           <div className='common_circle'>
-            <img src={`${mediaSrc}ic_sms_warning.svg`} />
+            <img src={`${mediaSrc}${icon}`} />
           </div>
           <p className='warning_text'>
             {text}
