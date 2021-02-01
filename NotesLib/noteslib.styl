@@ -30,8 +30,6 @@
         -moz-margin-end 0.2rem
         margin-inline-end 0.2rem
   .note-body
-    // overflow hidden
-    // overflow-y auto
     background-color: #fff
     .note-list
       display flex
@@ -57,7 +55,10 @@
           font-size 1.3em
           display -webkit-box
           -webkit-line-clamp 3
-          -webkit-box-orient vertical  
+          -webkit-box-orient vertical 
+        .parsed_link
+          text-decoration none
+          color var(--dark-color)
         .full-note
           white-space pre-line
           max-height: unset 

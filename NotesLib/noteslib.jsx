@@ -1,5 +1,6 @@
 import { default as formatDate } from '../format-date.js'
 import { default as reminder } from '../reminder.js'
+import parseLinkFromText from '../parse_link_from_text.js'
 import AddNote from './components/add-note/add-note.jsx'
 import './noteslib.styl'
 
@@ -45,14 +46,14 @@ export default class Notes extends React.Component {
   handleIncrementTime = () => {
     this.setState(prevState => ({
       time: +prevState.time + 1
-    }), () => this.setState({reminderDate: reminder(this.state.time, this.state.selectedValue)})
+    }), () => this.setState({ reminderDate: reminder(this.state.time, this.state.selectedValue) })
     )
   }
   handleDecrementTime = () => {
     if (+this.state.time > 0) {
       this.setState(prevState => ({
         time: +prevState.time - 1
-      }), () => this.setState({reminderDate: reminder(this.state.time, this.state.selectedValue)}))
+      }), () => this.setState({ reminderDate: reminder(this.state.time, this.state.selectedValue) }))
     }
   }
 
@@ -101,7 +102,7 @@ export default class Notes extends React.Component {
     if (this.props.isEditNotes && !this.props.newEditNotes && this.props.noteReplace) {
       this.backButton()
     } else {
-      this.setState({...INITIAL_STATE})
+      this.setState({ ...INITIAL_STATE })
       this.props.allowActions()
       this.props.hiddenNotes()
     }
@@ -141,18 +142,18 @@ export default class Notes extends React.Component {
   }
   setDurationValues = (time, selectedValue) => {
     let obj = config.translations.notes_list.find(i => i.value === selectedValue)
-    this.setState({time, selectedValue: obj.value, selectedValueLable: obj.label})
+    this.setState({ time, selectedValue: obj.value, selectedValueLable: obj.label })
   }
-  setDescription = value => this.setState({description: value})
-  cancelSearch = () => this.setState({description: ''})
-  activateSwitch = () => this.setState({switch: !this.state.switch, isReminderEdit: !this.state.isReminderEdit})
+  setDescription = value => this.setState({ description: value })
+  cancelSearch = () => this.setState({ description: '' })
+  activateSwitch = () => this.setState({ switch: !this.state.switch, isReminderEdit: !this.state.isReminderEdit })
 
   showFullNote = (i, id) => {
     let a = document.getElementById(id)
     a.classList.toggle('full-note')
   }
   letsScroll = () => setTimeout(() => { this.noteRef.scrollTop += 200 }, 0)
-  render () {
+  render() {
     return (
       <div id='notes'>
         {(this.props.isEditNotes || this.props.notesData.length > 0) && <div className='note-header'>
@@ -162,7 +163,7 @@ export default class Notes extends React.Component {
             {config.translations.notes.back_label_btn}
           </button>}
         </div>}
-        <div className='note-body' ref={noteBody => (this.noteRef = noteBody)} style={{'max-height': (config.notes_height_limit * 56)}}>
+        <div className='note-body' ref={noteBody => (this.noteRef = noteBody)} style={{ 'max-height': (config.notes_height_limit * 56) }}>
           {this.props.notesData.map(i => (
             this.props.editNoteId === i.id
               ? <AddNote
@@ -200,41 +201,41 @@ export default class Notes extends React.Component {
                     </div>}
                   </div>
                   <p className={'notes-list-desc ' + (i.reminder_date ? 'rem_true' : 'rem_false')}
-                    onClick={this.props.flag ? () => this.showFullNote(i, i.id) : () => {}}
-                    id={i.id}>
-                    {i.text}
-                  </p>
+                    onClick={this.props.flag ? () => this.showFullNote(i, i.id) : () => { }}
+                    id={i.id}
+                    dangerouslySetInnerHTML={{ __html: parseLinkFromText(i.text) }}
+                  />
                 </div>
                 <div className='right-side'>
                   <img src={config.urls.media + 'ic_edit_stroke.svg'}
-                    onClick={this.props.flag ? () => this.replace(i, i.id) : () => {}}
+                    onClick={this.props.flag ? () => this.replace(i, i.id) : () => { }}
                   />
                 </div>
               </div>
           ))}
         </div>
-        {this.props.newEditNotes && this.props.isEditNotes && 
-        <AddNote
-          customers={this.props.customers}
-          loader={this.props.loader}
-          setDescription={this.setDescription}
-          description={this.state.description}
-          handleIncrementTime={this.handleIncrementTime}
-          handleDecrementTime={this.handleDecrementTime}
-          handleChangeNoteInput={this.handleChangeNoteInput}
-          handleBlurNoteInput={this.handleBlurNoteInput}
-          cancelSearch={this.cancelSearch}
-          selectedValue={this.state.selectedValue}
-          selectedValueLable={this.state.selectedValueLable}
-          switch={this.state.switch}
-          time={this.state.time}
-          setSelectValues={this.setSelectValues}
-          isReminderEdit={this.state.isReminderEdit}
-          activateSwitch={this.activateSwitch}
-          noteReplace={this.props.noteReplace}
-          note_id={this.state.note_id}
-          submit={this.save}
-        />}
+        {this.props.newEditNotes && this.props.isEditNotes &&
+          <AddNote
+            customers={this.props.customers}
+            loader={this.props.loader}
+            setDescription={this.setDescription}
+            description={this.state.description}
+            handleIncrementTime={this.handleIncrementTime}
+            handleDecrementTime={this.handleDecrementTime}
+            handleChangeNoteInput={this.handleChangeNoteInput}
+            handleBlurNoteInput={this.handleBlurNoteInput}
+            cancelSearch={this.cancelSearch}
+            selectedValue={this.state.selectedValue}
+            selectedValueLable={this.state.selectedValueLable}
+            switch={this.state.switch}
+            time={this.state.time}
+            setSelectValues={this.setSelectValues}
+            isReminderEdit={this.state.isReminderEdit}
+            activateSwitch={this.activateSwitch}
+            noteReplace={this.props.noteReplace}
+            note_id={this.state.note_id}
+            submit={this.save}
+          />}
         {!this.props.newEditNotes && <div className={'note-footer ' + ((this.props.isEditNotes || this.props.noteReplace || this.props.notesData.length > 0) ? 'bot-border' : 'top-border')} onClick={this.openAddForm}>
           <label>{config.translations.notes.add_note_label}</label>
           <img src={config.urls.media + 'c_add_stroke.svg'} />
