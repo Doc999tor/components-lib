@@ -2,6 +2,7 @@ import './warning_popup.styl'
 
 const WarningPopup = ({
   onCloseWarningPopup = () => { },
+  modifier = false,
   actionButton,
   notAllClients = false,
   isActivePopup,
@@ -12,7 +13,7 @@ const WarningPopup = ({
 }) => {
   const preventClick = e => e.stopPropagation()
   return (
-    <div className={'warning_popup' + (isActivePopup ? ' hide-background' : '')} onClick={onCloseWarningPopup}>
+    <div className={'warning_popup' + (isActivePopup ? ' hide-background' : '') + (modifier ? ' sms-modifier' : '')} onClick={onCloseWarningPopup}>
       <div className={'warning_body' + (isActivePopup ? ' hide-body' : '')} onClick={preventClick}>
         <button type='button' className='close_popup_btn' onClick={onCloseWarningPopup}>
           <img src={`${mediaSrc}ic_close_blue.svg`} />
