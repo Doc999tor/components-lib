@@ -1,0 +1,38 @@
+:root{
+  --main-color: #141434;
+  --main-bgcolor: #1571DE;
+  --sec-color: #efefff;
+  --sec-bgcolor: #bfafe0;
+  --white-color: #fff;
+  --active-color: #ff358c;
+  --dark-color: #5A6BD8;
+  --font-family: Ubuntu, "Ubuntu Latin", "San Francisco", "Lucida Grande", "Helvetica Neue", Roboto, -apple-system, "Apple Color Emoji", "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", Arial, sans-serif;}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('../assets/fonts/ubuntu-regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Ubuntu Latin';
+  src: url('../assets/fonts/ubuntu-latin-regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Ubuntu Medium';
+  src: url('../assets/fonts/ubuntu-medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Ubuntu Latin Medium';
+  src: url('../assets/fonts/ubuntu-latin-medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
