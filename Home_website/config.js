@@ -649,6 +649,8 @@ const config = {
       subtitle: 'Choose the plan and tap to learn more',
       to_save_label: 'Save',
       discount_label: 'off',
+      contact_us_link_text: 'some text some text some text some text some text {contact_us_link}',
+      contact_us_link_label: 'contact us',
       data: {
         basic: {
           small_preview: {
