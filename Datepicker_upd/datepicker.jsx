@@ -4,7 +4,7 @@ Date.prototype.daysInMonth = function() {
 }
 export default class Datepicker extends React.Component {
   state = {
-    min: '1930',
+    min: new Date().getFullYear() - 88,
     max: new Date().getFullYear()
   }
 
