@@ -1,5 +1,5 @@
 import { default as getOrientation } from 'project-components/getOrientation.js'
-const max_side = config.data.max_side || 1000
+const max_side = (config.data && config.data.max_side) || 1000
 export default (photo, callback, highresPhotos = false) => {
   let img = new Image()
   getOrientation(photo, srcOrientation => {
